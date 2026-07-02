@@ -1,0 +1,41 @@
+
+.navbar {
+    /*background-color: teal;*/
+    background-color: white;
+    overflow: hidden;
+    color: black;
+    font-size: 0.7em;
+
+}
+
+.nav-option {
+    float: left;
+    display: block;
+    color: grey;
+    text-align: center;
+    padding: 14px 16px;
+
+    cursor: pointer;
+    margin: 0;
+}
+
+.nav-option:hover {
+
+    background-color: #ddd;
+    color: black;
+    border-radius: 10px
+}
+
+.nav-option.active {
+/*    background-color: yellow;*/
+    text-decoration: underline;
+    text-decoration-thickness: 10%;
+    text-decoration-color: Crimson;
+    color: black;
+
+}
+
+.content {
+    padding: 16px;
+    display: none;
+}

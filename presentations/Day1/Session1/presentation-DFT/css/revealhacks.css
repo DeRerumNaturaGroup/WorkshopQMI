@@ -1,0 +1,4 @@
+
+.reveal .slide-number > a[href*='title-slide'] {
+  display: none;
+}

@@ -1,0 +1,21 @@
+.center-line {
+  position: absolute;
+  top: 50%; /* Center the line vertically */
+  left: 10%; /* Start the line a little inwards */
+  width: 80%; /* Adjust the length */
+  height: 2px; /* Thickness */
+  background-color: black; /* Line color */
+  transform: translateY(-50%); /* Fine-tune centering */
+}
+
+.vertical-line {
+  position: absolute;
+  top: 2em;  /* Adjust to match the button's vertical position */
+  left: 50%;  /* Adjust as necessary for positioning */
+  width: 2px;
+  height: 0;
+  background-color: black;
+  opacity: 0;  /* Start invisible */
+  transition: opacity 0.5s, height 0.5s;
+}
+

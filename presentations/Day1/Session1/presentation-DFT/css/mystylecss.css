@@ -1,0 +1,56 @@
+.myddm {
+  margin: 1em 0;
+  /* border: 2px solid gray; */
+  /* border-left: 10px solid teal;  */
+  border-radius: 10px;
+  position: absolute; /* Allows precise positioning */
+  top: 0.5em; /* Adjusts vertical position */
+  left: 1em; /* Adjusts horizontal position */
+}
+
+.myddm-head {
+  margin-left: 0em;
+  padding: 0 0 0 0;
+  color: black;
+  /* background-color: rgb(123, 173, 173);  */
+  border-top-right-radius: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  background-size: 40px;
+  width: 200px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-position: 15px center;
+  text-align: center;
+  /* background-image: url("goal.png"); */
+  border-bottom: 5px solid red;
+  cursor: pointer; /* Add cursor style to indicate it's clickable */
+}
+
+.myddm-box {
+  padding-top: 5px;
+  padding-left: 10px;
+  color: black;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+  display: none; /* Initially hide the container */
+}
+
+.leaderline-box {
+  padding: 20px;
+  background-color: lightblue;
+  border: 2px solid #000;
+  text-align: center;
+  cursor: pointer;
+  width: 150px;
+  position: absolute;
+  display: inline-block;
+}
+
+.arrow {
+  stroke: blue;
+  stroke-width: 3;
+  fill: none;
+  visibility: hidden; /* Initially hidden */
+}
+

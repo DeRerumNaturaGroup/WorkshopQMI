@@ -1,0 +1,50 @@
+.panel-tabset-tabby {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 0px;
+  font-weight: 100;
+  font-size: 0.8em;
+}
+
+.panel-tabset-tabby li {
+  float: left;
+  background-color: #9CC5A1;
+  padding: 0;
+  margin: 0;
+
+}
+
+.panel-tabset-tabby a {
+  background-color: #DDDDDD;
+  display: block;
+  color: #222222;
+  text-align: center;
+  padding: 0px 0px;
+  text-decoration: none;
+  transition: 0.1s;
+  border-radius: 0.25em 0.25em 0em 0em;
+}
+
+.panel-tabset-tabby a:hover {
+  background-color:gray;
+    color: white;
+}
+
+.panel-tabset-tabby a.active {
+    background-color: red;
+    color: white;
+}
+
+
+
+.tab-content {
+  padding: 0px;
+  border-radius: 0 0 10px 10px;
+  
+}
+
+
+
