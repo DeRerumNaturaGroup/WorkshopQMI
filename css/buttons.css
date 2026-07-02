@@ -1,0 +1,42 @@
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.button1 {border-radius: 2px;}
+.button2 {border-radius: 4px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 12px;}
+.button5 {border-radius: 50%;}
+
+
+.keyword-pill {
+    background-color: #0f766e;  /* teal */
+    color: white;
+    font-weight: 500;
+    font-size: 0.85em;
+    padding: 0.4em 0.75em;
+    margin-right: 0.4em;
+    margin-bottom: 0.4em;
+    display: inline-block;
+    border-radius: 999px;
+}
+
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: teal;
+  border-radius: 50%;
+  display: inline-block;
+  margin:0.5em 0em 0em 0em;
+  
+}
+

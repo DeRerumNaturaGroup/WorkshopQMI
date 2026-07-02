@@ -1,0 +1,58 @@
+/* Increase font size for code blocks and their outputs */
+pre.sourceCode, code.sourceCode, div.cell-output {
+    font-size: 0.85em; 
+    background-color: #e4dbb5;
+
+
+}
+
+div.sourceCode {
+    /* Remove borders around code blocks */
+  border-left: none !important;
+  border: none !important; 
+    /* color: white; */
+
+}
+
+
+/* Increase font size for inline code */
+code:not(.sourceCode) {
+    font-size: 0.85em;
+}
+
+div.sourceCode {
+    filter: brightness(1);
+}
+
+/* Selection color only inside code blocks */
+pre.sourceCode ::selection,
+code.sourceCode ::selection {
+    background-color: #264f78;;  /* adjust as you like */
+    color: #ffffff;
+}
+
+/* Firefox */
+pre.sourceCode ::-moz-selection,
+code.sourceCode ::-moz-selection {
+    background-color: #264f78;
+    color: #ffffff;
+}
+
+
+/* Selection color only inside code blocks */
+pre.sourceCode :hover,
+code.sourceCode :hover {
+    background-color: #cee7ff;;  /* adjust as you like */
+    color: #ff5959;
+}
+
+/* Firefox */
+pre.sourceCode :-moz-hover,
+code.sourceCode :-moz-hover {
+    background-color: #cee7ff;
+    color: #ff5959;
+}
+
+
+
+

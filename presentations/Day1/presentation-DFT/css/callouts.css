@@ -1,0 +1,268 @@
+/*.goals{
+  margin: 1em 0;
+  border: 2px solid gray;
+  border-left: 10px solid teal; 
+  border-radius: 10px;
+}
+
+.goals-header {
+  margin-left: 0em;
+  padding-left:  60px;
+  padding-top:  5px;
+  padding-bottom: 0.1em;
+  color: black;
+  background-color: rgb(123, 173, 173);
+  border-top-right-radius: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: 15px center;
+  background-image: url("goal.png");
+}
+
+.goals-container {
+  padding-top: 5px;
+  padding-left: 10px;
+  color: black;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+}*/
+
+/*dd = Dropdown. Clickable*/
+    .dd {
+      margin: 1em 0;
+      /* border: 2px solid gray; */
+      border-left: 10px solid teal; 
+      border-radius: 10px;
+    }
+
+    .dd-head {
+      margin-left: 0em;
+      padding-left:  60px;
+      padding-top:  5px;
+      padding-bottom: 0.1em;
+      color: black;
+      background-color: rgb(123, 173, 173);
+      border-top-right-radius: 10px;
+      font-size: 1em;
+      font-weight: bold;
+      background-size: 40px;
+      background-repeat: no-repeat;
+      background-position: 15px center;
+      /* background-image: url("goal.png"); */
+      cursor: pointer; /* Add cursor style to indicate it's clickable */
+    }
+
+    .dd-box {
+      padding-top: 5px;
+      padding-left: 10px;
+      color: black;
+      background-color: white;
+      border-bottom-right-radius: 10px;
+      display: none; /* Initially hide the container */
+    }
+
+/*----Dropdown Minimal------*/
+
+    .ddm {
+      margin: 1em 0;
+      /* border: 2px solid gray; */
+      /* border-left: 10px solid teal;  */
+      border-radius: 10px;
+    }
+
+    .ddm-head {
+      margin-left: 0em;
+      padding: 0 0 0 0;
+      color: black;
+      border: 2px solid var(--border-color,white);
+      background-color: white; 
+      /* border-top-right-radius: 10px; */
+      border-radius: 10px;
+      font-size: 1em;
+      font-weight: bold;
+      background-size: 40px;
+      /* width: 2em; */
+      /* height: 1.5em; */
+      background-repeat: no-repeat;
+      /* background-position: 15px center; */
+      text-align: center;
+      /* background-image: url("goal.png"); */
+      border-bottom: 5px solid red;
+      cursor: pointer; /* Add cursor style to indicate it's clickable */
+      /* position: absolute; Allows precise positioning */
+      /* top: 0.5em; /* Adjusts vertical position */
+      /* left: 1em; Adjusts horizontal position */ */
+    }
+
+    .ddm-box {
+      padding-top: 5px;
+      padding-left: 10px;
+      color: black;
+      background-color:white;
+      line-height: 1.0;
+      border: 2px solid var(--border-color, FireBrick);
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      display: none; /* Initially hide the container */
+      /* position: absolute; Allows precise positioning */
+      /* top: 0.5em; Adjusts vertical position */
+      /* left: 1em; Adjusts horizontal position */
+    }
+    
+    .ddm-box-2border {
+      padding-top: 5px;
+      padding-left: 10px;
+      color: black;
+      background-color: white;
+      font-size: 0.85em;
+      line-height: 1.0;
+      border-top: 7px solid var(--border-color, FireBrick);
+      border-bottom: 7px solid var(--border-color, FireBrick);
+      border-left: none; 
+      border-right: none; 
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      display: none; 
+    }
+  
+
+    
+
+    .ddm-box-2border::after {
+      content: ""; /* Required to display the pseudo-element */
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      display: none; /* Hide by default */
+      position: absolute;
+      /* top: 3.5em; /* Adjusts vertical position */
+      /* left: 1em; Adjusts horizontal position */ */
+      left: 50%; /* Center the arrow */
+      transform: translateX(-50%); /* Adjust horizontal positioning */
+      display: none; /* Hide by default */
+    }
+    
+    /* Downward Arrow */
+    .ddm-box-2border.show-arrow::after {
+      /* Show downward arrow */
+      border-top: 20px solid black; /* Red downward arrow */
+      top: 100%;
+      left: 80%; /* Position it exactly at the bottom of the .ddm-box */
+      display: block;
+    }
+    
+    /* Upward Arrow */
+    .ddm-box-2border.show-up-arrow::after {
+      /* Show upward arrow */
+      border-top: 0; /* Remove downward border */
+      border-bottom: 20px solid black; /* Blue upward arrow */
+      /* top: auto; */
+      /* position:absolute; */
+      bottom: 100%;
+      left: 20%; /* Position it exactly at the top of the .ddm-box */
+      display: block;
+  
+    }
+
+
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  position: absolute; /* Allows precise positioning */
+  top: 0.5em; /* Adjusts vertical position */
+  left: 1em; /* Adjusts horizontal position */
+  
+  border-top: 20px solid #f00;
+}
+
+    .text-box {
+      border: 0.1em solid var(--border-color, black);
+      padding: 25px;
+      /* width: 2em;
+      height: 1.5em; */
+      text-align: center;
+      display: flex;
+      justify-content: center;  /* Centers content horizontally */
+      align-items: center;
+      background-color: transparent;
+      color: Green;
+      border-radius: 10px;
+      position: absolute; /* Allows precise positioning */
+      top: 0.5em; /* Adjusts vertical position */
+      left: 1em; /* Adjusts horizontal position */
+    }
+
+
+      /* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .popuptext.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+    .lowkey{
+        border-bottom: 3px solid grey;
+    }
+
+
+/*~~~~~~~~~~Example
+
+  <div class="goals">
+    <div class="goals-header" onclick="toggleContainer(this)">Click me to toggle</div>
+    <div class="goals-container">
+      <!-- Content of the container -->
+      <p>Container Content...</p>
+    </div>
+  </div>
+  
+
+~~~~~~~~~~~~*/
+
+

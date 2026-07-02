@@ -1,0 +1,70 @@
+/* Headings */
+
+.center h2 {
+  text-align: center;
+    color: green
+}
+
+.col h2{color: blue}
+
+/* Lines */
+.vl {
+  border-left: 10px solid gray;
+  height: 200px;
+  position: absolute;
+  left: 75%;
+  margin-left: -3px;
+  top: 0;
+}
+
+/* Text alignment */
+.right {
+text-align: right;
+}
+
+.left {
+text-align: left;
+}
+
+/* Tabs */
+.pill-nav a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 17px;
+  border-radius: 5px;
+}
+
+.pill-nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.pill-nav a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Tabs 2*/
+.nav-link.active, .nav-pills .show > .nav-link {
+  background-color: #CD853F !important;
+  color: white !important;
+  border-radius: 0;
+  border: 3px solid #CD853F;
+  padding-bottom: 2px;      
+}
+.nav-link {
+  margin-bottom: 25px !important;
+  color: #CD853F !important;
+  border: 3px solid #CD853F !important;      
+}
+.nav-tabs{
+  border-bottom: 0 !important;
+}
+
+
+/* Lists */
+
+

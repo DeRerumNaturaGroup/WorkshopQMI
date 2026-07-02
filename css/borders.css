@@ -1,0 +1,345 @@
+/*Source*/
+/*https://dev.to/thormeier/hand-drawn-border-animation-using-clip-path-and-border-radius-36ln*/
+/* @import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap'); */
+
+.border {
+  border: 6px solid #000;
+  border-radius: 255px 15px 255px 15px
+    / 15px 255px 15px 255px;
+}
+
+.is-drawn {
+  animation: draw 2s;
+  animation-fill-mode: forwards;
+}
+
+.is-undrawn {
+  animation: draw-reverse 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes draw {
+  0% {
+    clip-path: polygon(
+      /* Inner */ min(8%, 13px) min(8%, 13px),
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      min(8%, 13px) min(8%, 13px),
+      /* First line */ 0 0,
+      0 0,
+      0 0,
+      /* Second line */ 0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      /* Third line */ 0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      /* Fourth line */ 0 0,
+      0 0,
+      0 0,
+      0 0
+    );
+  }
+
+  0.1% {
+    clip-path: polygon(
+      /* Inner */ min(8%, 13px) min(8%, 13px),
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      min(8%, 13px) min(8%, 13px),
+      /* First line */ 0 0,
+      0 0,
+      0 min(8%, 13px),
+      /* Second line */ min(8%, 13px) min(8%, 13px),
+      0 0,
+      0 0,
+      0 0,
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      /* Third line */ calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      100% 100%,
+      100% 100%,
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      /* Fourth line */ min(8%, 13px) calc(100% - min(8%, 13px)),
+      0 100%,
+      0 100%,
+      min(8%, 13px) calc(100% - min(8%, 13px))
+    );
+  }
+
+  23.9% {
+    clip-path: polygon(
+      /* Inner */ min(8%, 13px) min(8%, 13px),
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      min(8%, 13px) min(8%, 13px),
+      /* First line */ 0 0,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      /* Second line */ calc(100% - min(8%, 13px)) 0,
+      100% 0,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      /* Third line */ calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      100% 100%,
+      100% 100%,
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      /* Fourth line */ min(8%, 13px) calc(100% - min(8%, 13px)),
+      0 100%,
+      0 100%,
+      min(8%, 13px) calc(100% - min(8%, 13px))
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      /* Inner */ min(8%, 13px) min(8%, 13px),
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      min(8%, 13px) min(8%, 13px),
+      /* First line */ 0 0,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      /* Second line */ calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      100% 100%,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      /* Third line */ calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      100% 100%,
+      100% 100%,
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      /* Fourth line */ min(8%, 13px) calc(100% - min(8%, 13px)),
+      0 100%,
+      0 100%,
+      min(8%, 13px) calc(100% - min(8%, 13px))
+    );
+  }
+
+  73.9% {
+    clip-path: polygon(
+      /* Inner */ min(8%, 13px) min(8%, 13px),
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      min(8%, 13px) min(8%, 13px),
+      /* First line */ 0 0,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      /* Second line */ calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      100% 100%,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      /* Third line */ min(8%, 13px) calc(100% - min(8%, 13px)),
+      0 100%,
+      100% 100%,
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      /* Fourth line */ min(8%, 13px) calc(100% - min(8%, 13px)),
+      0 100%,
+      0 100%,
+      min(8%, 13px) calc(100% - min(8%, 13px))
+    );
+  }
+
+  100% {
+    clip-path: polygon(
+      /* Inner */ min(8%, 13px) min(8%, 13px),
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      min(8%, 13px) min(8%, 13px),
+      /* First line */ 0 0,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      /* Second line */ calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      100% 100%,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      /* Third line */ min(8%, 13px) calc(100% - min(8%, 13px)),
+      0 100%,
+      100% 100%,
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      /* Fourth line */ min(8%, 13px) min(8%, 13px),
+      0 0,
+      0 100%,
+      min(8%, 13px) calc(100% - min(8%, 13px))
+    );
+  }
+}
+
+@keyframes draw-reverse {
+  0% {
+    clip-path: polygon(
+      /* Inner */ min(8%, 13px) min(8%, 13px),
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      min(8%, 13px) min(8%, 13px),
+      /* First line */ 0 0,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      /* Second line */ calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      100% 100%,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      /* Third line */ min(8%, 13px) calc(100% - min(8%, 13px)),
+      0 100%,
+      100% 100%,
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      /* Fourth line */ min(8%, 13px) min(8%, 13px),
+      0 0,
+      0 100%,
+      min(8%, 13px) calc(100% - min(8%, 13px))
+    );
+  }
+
+  23.9% {
+    clip-path: polygon(
+      /* Inner */ min(8%, 13px) min(8%, 13px),
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      min(8%, 13px) min(8%, 13px),
+      /* First line */ 0 0,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      /* Second line */ calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      100% 100%,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      /* Third line */ min(8%, 13px) calc(100% - min(8%, 13px)),
+      0 100%,
+      100% 100%,
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      /* Fourth line */ min(8%, 13px) calc(100% - min(8%, 13px)),
+      0 100%,
+      0 100%,
+      min(8%, 13px) calc(100% - min(8%, 13px))
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      /* Inner */ min(8%, 13px) min(8%, 13px),
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      min(8%, 13px) min(8%, 13px),
+      /* First line */ 0 0,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      /* Second line */ calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      100% 100%,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      /* Third line */ calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      100% 100%,
+      100% 100%,
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      /* Fourth line */ min(8%, 13px) calc(100% - min(8%, 13px)),
+      0 100%,
+      0 100%,
+      min(8%, 13px) calc(100% - min(8%, 13px))
+    );
+  }
+
+  73.9% {
+    clip-path: polygon(
+      /* Inner */ min(8%, 13px) min(8%, 13px),
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      min(8%, 13px) min(8%, 13px),
+      /* First line */ 0 0,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      /* Second line */ calc(100% - min(8%, 13px)) 0,
+      100% 0,
+      100% 0,
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      /* Third line */ calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      100% 100%,
+      100% 100%,
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      /* Fourth line */ min(8%, 13px) calc(100% - min(8%, 13px)),
+      0 100%,
+      0 100%,
+      min(8%, 13px) calc(100% - min(8%, 13px))
+    );
+  }
+
+  100% {
+    clip-path: polygon(
+      /* Inner */ min(8%, 13px) min(8%, 13px),
+      calc(100% - min(8%, 13px)) min(8%, 13px),
+      calc(100% - min(8%, 13px)) calc(100% - min(8%, 13px)),
+      min(8%, 13px) calc(100% - min(8%, 13px)),
+      min(8%, 13px) min(8%, 13px),
+      /* First line */ 0 0,
+      0 0,
+      0 0,
+      /* Second line */ 0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      /* Third line */ 0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      /* Fourth line */ 0 0,
+      0 0,
+      0 0,
+      0 0
+    );
+  }
+}
+
+.space-around {
+  margin: 60px;
+}
+
+
+/* Position the element nicely, so it looks better */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-size: 25px;
+  font-family: Kalam;
+}
+
+.container {
+  height: 100%;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+

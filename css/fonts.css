@@ -1,0 +1,287 @@
+/* Fonts */
+
+/*____Garamond 08*/
+
+
+@font-face {
+  font-family: 'EBGaramond08';
+  font-variant: small-caps;
+    font-weight: 600;
+  src: local(''),
+       url("../fonts/ebgaramond/EBGaramondSC08-Regular.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/ebgaramond/EBGaramondSC08-Regular.woff") format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'EBGaramond08';
+  font-style: normal;
+  src: local(''),
+       url("../fonts/ebgaramond/EBGaramond08-Regular.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/ebgaramond/EBGaramond08-Regular.woff") format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+
+@font-face {
+  font-family: 'EBGaramond08';
+  font-weight: bold;
+  src: local(''),
+       url("../fonts/ebgaramond/EBGaramond12-Bold.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/ebgaramond/EBGaramond12-Bold.woff") format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+
+
+@font-face {
+  font-family: 'EBGaramond08';
+  font-style: italic;
+    font-weight: 200;
+  src: local(''),
+       url("../fonts/ebgaramond/EBGaramond08-Italic.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/ebgaramond/EBGaramond08-Italic.woff") format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'EBGaramond08';
+  font-style: italic;
+    font-weight: 600;
+  src: local(''),
+       url("../fonts/ebgaramond/EBGaramond08-Italic.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/ebgaramond/EBGaramond08-Italic.woff") format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/*_______Garamond 12*/
+
+@font-face {
+  font-family: 'EBGaramond12';
+  font-style: italic;
+  src: local(''),
+       url("../fonts/ebgaramond/EBGaramond12-Italic.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/ebgaramond/EBGaramond12-Italic.woff") format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'EBGaramond12';
+  font-variant: small-caps;
+  src: local(''),
+       url("../fonts/ebgaramond/EBGaramondSC12-Regular.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/ebgaramond/EBGaramondSC12-Regular.woff") format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'EBGaramond12';
+  font-style: normal;
+  src: local(''),
+       url("../fonts/ebgaramond/EBGaramond12-Regular.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/ebgaramond/EBGaramond12-Regular.woff") format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+@font-face {
+  font-family: 'EBGaramond12';
+  font-weight: bold;
+  src: local(''),
+       url("../fonts/ebgaramond/EBGaramond12-Bold.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/ebgaramond/EBGaramond12-Bold.woff") format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+
+/*===========Sans Serifs*/
+/*____________Gill Sans*/
+
+@font-face {
+  font-family: 'GS';
+  src: local(''),
+       url("../fonts/GillSans/GillSansC.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/GillSans/GillSansC.woff2") format('woff2'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'GS-I';
+  src: local(''),
+       url("../fonts/GillSans/GillSansC-Italic.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/GillSans/GillSansC-Italic.woff2") format('woff2'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'GS-B';
+  src: local(''),
+       url("../fonts/GillSans/GillSansC-Bold.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/GillSans/GillSansC-Bold.woff2") format('woff2'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'GS-BI';
+  src: local(''),
+       url("../fonts/GillSans/GillSansC-BoldItalic.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/GillSans/GillSansC-BoldItalic.woff2") format('woff2'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'GS_C';
+  src: local(''),
+       url("../fonts/GillSans/GillSansCondC.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/GillSans/GillSansCondC.woff2") format('woff2'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'GS_C-B';
+  src: local(''),
+       url("../fonts/GillSans/GillSansCondC-Bold.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/GillSans/GillSansCondC-Bold.woff2") format('woff2'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'GS_L';
+  src: local(''),
+       url("../fonts/GillSans/GillSansLightC.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/GillSans/GillSansLightC.woff2") format('woff2'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'GS_L-I';
+  src: local(''),
+       url("../fonts/GillSans/GillSansLightC-Italic.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/GillSans/GillSansLightC-Italic.woff2") format('woff2'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+
+
+
+/* ==========================================================================
+   1. GILL SANS STANDARD (Family: 'Gill Sans')
+   ========================================================================== */
+
+/* Light */
+@font-face {
+  font-family: 'Gill Sans';
+  src: url("../fonts/GillSans/GillSansLightC.woff2") format('woff2'),
+       url("../fonts/GillSans/GillSansLightC.woff") format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Light Italic */
+@font-face {
+  font-family: 'Gill Sans';
+  src: url("../fonts/GillSans/GillSansLightC-Italic.woff2") format('woff2'),
+       url("../fonts/GillSans/GillSansLightC-Italic.woff") format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Regular / Normal */
+@font-face {
+  font-family: 'Gill Sans';
+  src: url("../fonts/GillSans/GillSansC.woff2") format('woff2'),
+       url("../fonts/GillSans/GillSansC.woff") format('woff');
+  font-weight: 400; /* or 'normal' */
+  font-style: normal;
+}
+
+/* Italic */
+@font-face {
+  font-family: 'Gill Sans';
+  src: url("../fonts/GillSans/GillSansC-Italic.woff2") format('woff2'),
+       url("../fonts/GillSans/GillSansC-Italic.woff") format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'Gill Sans';
+  src: url("../fonts/GillSans/GillSansC-Bold.woff2") format('woff2'),
+       url("../fonts/GillSans/GillSansC-Bold.woff") format('woff');
+  font-weight: 700; /* or 'bold' */
+  font-style: normal;
+}
+
+/* Bold Italic */
+@font-face {
+  font-family: 'Gill Sans';
+  src: url("../fonts/GillSans/GillSansC-BoldItalic.woff2") format('woff2'),
+       url("../fonts/GillSans/GillSansC-BoldItalic.woff") format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+/* ==========================================================================
+   2. GILL SANS CONDENSED (Family: 'Gill Sans Condensed')
+   ========================================================================== */
+
+/* Condensed Regular */
+@font-face {
+  font-family: 'Gill Sans Condensed';
+  src: url("../fonts/Fonts/GillSans/GillSansCondC.woff2") format('woff2'),
+       url("../fonts/Fonts/GillSans/GillSansCondC.woff") format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Condensed Bold */
+@font-face {
+  font-family: 'Gill Sans Condensed';
+  src: url("../fonts/Fonts/GillSans/GillSansCondC-Bold.woff2") format('woff2'),
+       url("../fonts/Fonts/GillSans/GillSansCondC-Bold.woff") format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/*____________Kalam*/
+
+/* ____________Kalam */
+
+@font-face {
+  font-family: 'Kalam';
+  src: url("../fonts/Kalam/Kalam-Regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kalam'; /* Use the same family name */
+  src: url("../fonts/Kalam/Kalam-Light.ttf") format('truetype');
+  font-weight: 300;     /* Map it to a lighter weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kalam'; /* Use the same family name */
+  src: url("../fonts/Kalam/Kalam-Bold.ttf") format('truetype');
+  font-weight: bold;    /* Map it to bold */
+  font-style: normal;
+}
+
+
+
+
+
+.textsc {
+  font-variant: small-caps;
+}
+
+.emph{
+  font-style: italic;
+}
+
+.sans{
+  font-family: 'Inter', 'GS_L', sans-serif;
+  font-weight: 300;
+}
+
+.highlight {
+  background-color: #ffc250;
+  padding: 0.25em;
+  border-radius: 5px;
+}
+.highlightlight {
+  background-color: #ffd27e;
+  padding: 0.25em;
+  border-radius: 5px;
+}
+
+

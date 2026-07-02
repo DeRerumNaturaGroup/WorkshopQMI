@@ -1,0 +1,233 @@
+/* Headings */
+
+.center h2 {
+  text-align: center;
+    color: green
+}
+
+.col h2{color: blue}
+
+/* Lines */
+.vl {
+  border-left: 10px solid gray;
+  height: 200px;
+  position: absolute;
+  left: 75%;
+  margin-left: -3px;
+  top: 0;
+}
+
+/* Text alignment */
+.right {
+text-align: right;
+}
+
+.left {
+text-align: left;
+}
+
+/* Tabs */
+.pill-nav a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 17px;
+  border-radius: 5px;
+}
+
+.pill-nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.pill-nav a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Tabs 2*/
+.nav-link.active, .nav-pills .show > .nav-link {
+  background-color: #CD853F !important;
+  color: white !important;
+  border-radius: 0;
+  border: 3px solid #CD853F;
+  padding-bottom: 2px;      
+}
+.nav-link {
+  margin-bottom: 25px !important;
+  color: #CD853F !important;
+  border: 3px solid #CD853F !important;      
+}
+.nav-tabs{
+  border-bottom: 0 !important;
+}
+
+/* Highlight */
+
+
+.highlight-red {
+  color: red;
+  transition: color 0.5s ease-in-out;
+}
+
+.highlight-red.visible {
+  color: red; /* Highlight in red on click */
+}
+
+.highlight-red {
+  color: red;
+}
+
+/* Lists */
+
+
+/* Fonts */
+
+/*____Garamond 08*/
+
+
+@font-face {
+  font-family: 'EBGaramond08';
+  font-variant: small-caps;
+    font-weight: 600;
+  src: local(''),
+       url("../fonts/ebgaramond/EBGaramondSC08-Regular.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/ebgaramond/EBGaramondSC08-Regular.woff") format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'EBGaramond08';
+  font-style: normal;
+  src: local(''),
+       url("../fonts/ebgaramond/EBGaramond08-Regular.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/ebgaramond/EBGaramond08-Regular.woff") format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+
+@font-face {
+  font-family: 'EBGaramond08';
+  font-weight: bold;
+  src: local(''),
+       url("../fonts/ebgaramond/EBGaramond12-Bold.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/ebgaramond/EBGaramond12-Bold.woff") format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+
+
+@font-face {
+  font-family: 'EBGaramond08';
+  font-style: italic;
+    font-weight: 200;
+  src: local(''),
+       url("../fonts/ebgaramond/EBGaramond08-Italic.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/ebgaramond/EBGaramond08-Italic.woff") format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'EBGaramond08';
+  font-style: italic;
+    font-weight: 600;
+  src: local(''),
+       url("../fonts/ebgaramond/EBGaramond08-Italic.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/ebgaramond/EBGaramond08-Italic.woff") format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/*_______Garamond 12*/
+
+@font-face {
+  font-family: 'EBGaramond12';
+  font-style: italic;
+  src: local(''),
+       url("../fonts/ebgaramond/EBGaramond12-Italic.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/ebgaramond/EBGaramond12-Italic.woff") format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'EBGaramond12';
+  font-variant: small-caps;
+  src: local(''),
+       url("../fonts/ebgaramond/EBGaramondSC12-Regular.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/ebgaramond/EBGaramondSC12-Regular.woff") format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'EBGaramond12';
+  font-style: normal;
+  src: local(''),
+       url("../fonts/ebgaramond/EBGaramond12-Regular.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/ebgaramond/EBGaramond12-Regular.woff") format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+@font-face {
+  font-family: 'EBGaramond12';
+  font-weight: bold;
+  src: local(''),
+       url("../fonts/ebgaramond/EBGaramond12-Bold.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/ebgaramond/EBGaramond12-Bold.woff") format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+
+/*===========Sans Serifs*/
+/*____________Gill Sans*/
+
+@font-face {
+  font-family: 'GS';
+  src: local(''),
+       url("../fonts/GillSans/GillSansC.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/GillSans/GillSansC.woff2") format('woff2'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'GS-I';
+  src: local(''),
+       url("../fonts/GillSans/GillSansC-Italic.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/GillSans/GillSansC-Italic.woff2") format('woff2'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'GS-B';
+  src: local(''),
+       url("../fonts/GillSans/GillSansC-Bold.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/GillSans/GillSansC-Bold.woff2") format('woff2'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'GS-BI';
+  src: local(''),
+       url("../fonts/GillSans/GillSansC-BoldItalic.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/GillSans/GillSansC-BoldItalic.woff2") format('woff2'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'GS_C';
+  src: local(''),
+       url("../fonts/GillSans/GillSansCondC.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/GillSans/GillSansCondC.woff2") format('woff2'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'GS_C-B';
+  src: local(''),
+       url("../fonts/GillSans/GillSansCondC-Bold.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/GillSans/GillSansCondC-Bold.woff2") format('woff2'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'GS_L';
+  src: local(''),
+       url("../fonts/GillSans/GillSansLightC.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/GillSans/GillSansLightC.woff2") format('woff2'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'GS_L-I';
+  src: local(''),
+       url("../fonts/GillSans/GillSansLightC-Italic.woff") format('woff'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("../fonts/GillSans/GillSansLightC-Italic.woff2") format('woff2'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
