@@ -284,22 +284,30 @@
     <div class="slides">
 
 
-<section id="section" class="slide level2 center">
+<section id="section" class="slide level2">
 <h2></h2>
+<h3 class="center" style="text-align:center;color:#B22222; font-size:1.2em" id="information">Information</h3>
+<p>Welcome to the <strong>Workshop on DFT and AI</strong>, part of <strong>Quantum Meets AI 2026</strong>, hosted at <strong>GIK Institute, Topi, Pakistan</strong>.</p>
+<p>The workshop is organized by the <strong><a href="https://dererumnaturagroup.github.io/">De Rerum Natura (DRN) Group</a></strong>.</p>
+<hr>
+<h3 class="center" style="text-align:center;color:#B22222; font-size:1.2em" id="navigation">Navigation</h3>
+<ul>
+<li><strong>Desktop:</strong> Use the arrow keys (<strong>← → ↑ ↓</strong>) to navigate. <code>Ctrl + →</code> and <code>Ctrl + ←</code> to jump between sections. <code>Ctrl + Click</code> to zoom in on a slide. <code>Ctrl + Click</code> again to zoom out.</li>
+<li><strong>Mobile:</strong> Swipe or scroll between slides.</li>
+<li>Many slides include expandable sections with additional details.</li>
+</ul>
+<div style="margin-top:2em; text-align:center;">
+<p><a href="../../../../index.html" class="btn btn-primary btn-lg"> ← Return to Workshop Home </a></p>
+</div>
 </section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-<p>If you are using this presentation on your phone or computer, kindly scroll or use direction keys to move. Many texts blocks have drop downs and can be used for more information.</p>
-<p><a href="../../../../index.html">Return to main</a></p>
-</section>
-<section id="section-2" class="slide level2 center" data-background-color="white">
+<section id="section-1" class="slide level2 center" data-background-color="white">
 <h2></h2>
 <!-- ![](figs/logowhite.png){width=2in} -->
 <!-- <img src="figs/logowhite.png" style="display: flex; align-items: center; width: 25%; height: auto;"> -->
 <p><img src="../../../../figs/logowhite.png" style="display: block; margin: 0 auto; width: 20%; height: auto;"></p>
 </section>
 <section>
-<section id="section-3" class="title-slide slide level1 center">
+<section id="section-2" class="title-slide slide level1 center">
 <h1></h1>
 <p><br> <br></p>
 <div class="columns">
@@ -325,9 +333,13 @@
 </div>
 </div></div>
 </section>
-<section id="recap" class="slide level2">
-<h2>Recap</h2>
+<section id="section-3" class="slide level2">
+<h2></h2>
 <!-- Quantum Meets AI -->
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">🔵 Recap</a></li><li><a href="#tabset-1-2">🟢 Moving Forward</a></li><li><a href="#tabset-1-3">🟣</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
 <div class="columns">
 <div class="column" style="width:50%;">
 <div id="DFT" class="box" style="background: white; width: 80%">
@@ -356,10 +368,13 @@
 <p>What specific AI based techniques are applicable to quantum materials?</p>
 </div>
 </div>
-</section>
-<section id="section-4" class="slide level2">
-<h2></h2>
-<p>According to what we learned, two main pillars for deep learning are: Data + Architecture.</p>
+</div>
+<div id="tabset-1-2">
+<ul>
+<li>Two main pillars for deep learning are (1) Data representations and (2) Architecture.</li>
+<li>The quality of the data representation is crucial for the performance of the model. The architecture of the neural network is also important, as it determines how well the model can learn from the data.</li>
+<li>For our case, we have seen that CIF files can express crystal structures. But a CIF file is <span class="highlightlight">not a good represenation for a neural network.</span></li>
+</ul>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div id="DFT" class="box" style="background: white; width: 80%">
@@ -367,7 +382,7 @@
 <p>Session 1</p>
 </div>
 <div class="box-content">
-<p>How can we represent data in novel ways</p>
+<p>How can molecules, crystals, and materials be encoded for ML?</p>
 </div>
 </div>
 </div><!--  --><div class="column center" style="width:50%;">
@@ -376,17 +391,29 @@
 <p>Session 2</p>
 </div>
 <div class="box-content">
-<p>Interesting architectures that have been developed for Materials science</p>
+<p>Which neural network architectures are best suited to materials science?</p>
 </div>
 </div>
 </div></div>
+</div>
+<div id="tabset-1-3">
+<p>This session is about data representations and we will focus on three things:</p>
+<ul>
+<li>The SMILES notation for molecules</li>
+<li>Substructure searching based on SMILES</li>
+<li>Molecular fingerprints</li>
+<li>Molecular similarity (i.e.&nbsp;how similar are two fingerprints).</li>
+</ul>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="smiles" class="title-slide slide level1 center">
 <h1>SMILES</h1>
 
 </section>
-<section id="smiles-and-smartssubstructure-searching" class="slide level2">
+<section id="smiles-and-smartssubstructure-searching" class="slide level2 scrollable">
 <h2>SMILES (and SMARTS/Substructure Searching)</h2>
 <div class="navbar">
 <p><span class="nav-option" data-option="option30" onclick="showContent(this)">Overview</span> <span class="nav-option" data-option="option31" onclick="showContent(this)">Rules</span> <span class="nav-option" data-option="option32" onclick="showContent(this)">Code</span> <span class="nav-option" data-option="option33" onclick="showContent(this)">Materials to Model</span> <span class="nav-option" data-option="option34" onclick="showContent(this)">Projects</span></p>
@@ -401,20 +428,92 @@
 </div>
 <div id="option31Content" class="content">
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">🔵 Atoms and Bonds</a></li><li><a href="#tabset-1-2">🟡 Chains</a></li><li><a href="#tabset-1-3">🟢 Branches</a></li><li><a href="#tabset-1-4">🟣 Rings</a></li><li><a href="#tabset-1-5">🟠 Charged Atoms</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">🔵 Atoms and Bonds</a></li><li><a href="#tabset-2-2">🟡 Chains</a></li><li><a href="#tabset-2-3">🟢 Branches</a></li><li><a href="#tabset-2-4">🟣 Rings</a></li><li><a href="#tabset-2-5">🟠 Charged Atoms</a></li></ul>
 <div class="tab-content">
-<div id="tabset-1-1">
-<p>SMILES supports all elements in the periodic table. An atom is represented using its respective atomic symbol. Upper case letters refer to non-aromatic atoms; lower case letters refer to aromatic atoms. If the atomic symbol has more than one letter the second letter must be lower case.</p>
-<p>Bonds are denoted as shown below:</p>
-<pre><code>    -   Single bond
-    =   Double bond
-    #   Triple bond
-    *   Aromatic bond
-    .   Disconnected structures</code></pre>
-<p>Single bonds are the default and therefore need not be entered. For example, ‘CC’ would mean that there is a non-aromatic carbon attached to another non-aromatic carbon by a single bond, and the computer would identify the structure as the chemical ethane. It is also assumed that the bond between two lower case atom symbols is aromatic. A blank terminates the SMILES string.</p>
+<div id="tabset-2-1">
+<ul>
+<li>An atom is represented using its respective atomic symbol. + Upper case letters refer to non-aromatic atoms; lower case letters refer to aromatic atoms.</li>
+<li>Bonds are denoted as shown below:</li>
+</ul>
+<table class="booktabs">
+<!-- <thead>
+  <tr class="row-odd">
+  <th class="head text-left"><p>Node</p></th>
+  <th class="head text-right"><p>O</p></th>
+  </tr>
+</thead> -->
+<tbody>
+<tr class="row-even">
+<td style="text-align:center">
+<p>
+-
+</p>
+</td>
+<td class="text-right">
+<p>
+Single bond
+</p>
+</td>
+</tr>
+<tr class="row-odd">
+<td style="text-align:center">
+<p>
+=
+</p>
+</td>
+<td class="text-right">
+<p>
+Double bond
+</p>
+</td>
+</tr>
+<tr class="row-even">
+<td style="text-align:center">
+<p>
+#
+</p>
+</td>
+<td class="text-right">
+<p>
+Triple bond
+</p>
+</td>
+</tr>
+<tr class="row-odd">
+<td style="text-align:center">
+<p>
+.
+</p>
+</td>
+<td class="text-right">
+<p>
+Aromatic bond
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Single bonds are the default and therefore need not be entered. For example, ‘CC’ would mean that there is a non-aromatic carbon attached to another non-aromatic carbon by a single bond, and the computer would identify the structure as the chemical ethane.</li>
+<li>Bond between two lower case atom symbols is aromatic.</li>
+<li>A blank terminates the SMILES string.</li>
+</ul>
+<details>
+<summary>
+<span class="badge rounded-pill keyword-pill">Jargon Alert:</span> Aromaticity
+</summary>
+<p>
+is a chemical property in which a molecule has a cyclic structure with alternating single and double bonds. Aromatic compounds are stable and have unique chemical properties. Aromaticity is often associated with the presence of benzene rings, which are six-membered carbon rings with alternating single and double bonds.
+</p>
+</details>
 </div>
-<div id="tabset-1-2">
-<p>By combining atomic symbols and bond symbols simple chain structures can be represented. The structures that are entered using SMILES are hydrogen-suppressed, that is to say that the molecules are represented without hydrogens. The SMILES software understands the number of possible connections that an atom can have. If enough bonds are not identified by the user through SMILES notation, the system will automatically assume that the other connections are satisfied by hydrogen bonds.</p>
+<div id="tabset-2-2">
+<ul>
+<li>Combining atomic symbols and bond symbols yields simple chain structures.</li>
+<li>By default hydrogen is not written.</li>
+<li>The SMILES software understands the number of possible connections that an atom can have.</li>
+<li>If enough bonds are not identified by the user through SMILES notation, the system will automatically assume that the other connections are satisfied by hydrogen bonds.</li>
+</ul>
 <p>Some examples:</p>
 <pre><code>    CC  CH3CH3  Ethane
     C=C     CH2CH2  Ethene
@@ -423,9 +522,11 @@
     Na.Cl   NaCl    Sodium chloride</code></pre>
 <p>The user can explicitly identify the hydrogen bonds, but if one hydrogen bond is identified in the string, the SMILES interpreter will assume that the user has identified all hydrogens for that molecule.</p>
 <pre><code>    HC(H)=C(H)(H)   Ethene</code></pre>
-<p>Because SMILES allows entry of all elements in the periodic table, and also utilizes hydrogen suppression, the user should be aware of chemicals with two letters that could be misinterpreted by the computer. For example, ‘Sc’ could be interpreted as a sulfur atom connected to an aromatic carbon by a single bond, or it could be the symbol for scandium. The SMILES interpreter gives priority to the interpretation of a single bond connecting a sulfur atom and an aromatic carbon. To identify scandium the user should enter [Sc].</p>
+<ul>
+<li>Because SMILES allows entry of all elements in the periodic table, and also utilizes hydrogen suppression, the user should be aware of chemicals with two letters that could be misinterpreted by the computer. + Example: ‘Sc’ could be interpreted as a sulfur atom connected to an aromatic carbon by a single bond, or it could be the symbol for scandium. + The SMILES interpreter gives priority to the interpretation of a single bond connecting a sulfur atom and an aromatic carbon. + To identify scandium the user should enter [Sc].</li>
+</ul>
 </div>
-<div id="tabset-1-3">
+<div id="tabset-2-3">
 <p>A branch from a chain is specified by placing the SMILES symbol(s) for the branch between parenthesis. The string in parentheses is placed directly after the symbol for the atom to which it is connected. If it is connected by a double or triple bond, the bond symbol immediately follows the left parenthesis. Some examples:</p>
 <pre><code>    CC(O)C  2-Propanol
     CC(=O)C     2-Propanone
@@ -434,7 +535,7 @@
     c1c(N(=O)=O)cccc1   Nitrobenzene
     CC(C)(C)CC  2,2-Dimethylbutane</code></pre>
 </div>
-<div id="tabset-1-4">
+<div id="tabset-2-4">
 <p>SMILES allows a user to identify ring structures by using numbers to identify the opening and closing ring atom. For example, in C1CCCCC1, the first carbon has a number ‘1’ which connects by a single bond with the last carbon which also has a number ‘1’. The resulting structure is cyclohexane. Chemicals that have multiple rings may be identified by using different numbers for each ring. If a double, single, or aromatic bond is used for the ring closure, the bond symbol is placed before the ring closure number. Some examples:</p>
 <pre><code>    or  C=1CCCCC1   Cyclohexene
     C*1*C*C*C*C*C1  
@@ -442,7 +543,7 @@
     C1OC1CC     Ethyloxirane
     c1cc2ccccc2cc1  Naphthalene</code></pre>
 </div>
-<div id="tabset-1-5">
+<div id="tabset-2-5">
 <p>Charges on an atom can be used to override the knowledge regarding valence that is built into SMILES software. The format for identifying a charged atom consists of the atom followed by brackets which enclose the charge on the atom. The number of charges may be explicitly stated ({-1}) or not ({-}). For example:</p>
 <pre><code>    or  CCC(=O)O{-1}    Ionized form of propanoic acid
     CCC(=O)O{-}     
@@ -453,13 +554,13 @@
 </div>
 <div id="option32Content" class="content">
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Molecules I</a></li><li><a href="#tabset-2-2">Molecules II</a></li><li><a href="#tabset-2-3">Working with Molecules</a></li><li><a href="#tabset-2-4">Molecular Descriptors</a></li><li><a href="#tabset-2-5">Stereochemistry</a></li><li><a href="#tabset-2-6">Substructure Search</a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Molecules I</a></li><li><a href="#tabset-3-2">Molecules II</a></li><li><a href="#tabset-3-3">Working with Molecules</a></li><li><a href="#tabset-3-4">Molecular Descriptors</a></li><li><a href="#tabset-3-5">Stereochemistry</a></li><li><a href="#tabset-3-6">Substructure Search</a></li></ul>
 <div class="tab-content">
-<div id="tabset-2-1">
+<div id="tabset-3-1">
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb7" data-startfrom="1" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>methane <span class="op">=</span> Chem.MolFromSmiles(<span class="st">"C"</span>)</span>
-<span id="cb7-2"><a></a>methane</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6" data-startfrom="1" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>methane <span class="op">=</span> Chem.MolFromSmiles(<span class="st">"C"</span>)</span>
+<span id="cb6-2"><a></a>methane</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
@@ -473,12 +574,12 @@
 <li>A molecule of your choice.</li>
 </ul>
 </div>
-<div id="tabset-2-2">
+<div id="tabset-3-2">
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb8" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb8-2"><a></a><span class="co"># this phenylalanine uses canonical smiles (no stereochemistry information)</span></span>
-<span id="cb8-3"><a></a>phenylalanine <span class="op">=</span> Chem.MolFromSmiles(<span class="st">"C1=CC=C(C=C1)CC(C(=O)O)N"</span>)</span>
-<span id="cb8-4"><a></a>phenylalanine</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb7-2"><a></a><span class="co"># this phenylalanine uses canonical smiles (no stereochemistry information)</span></span>
+<span id="cb7-3"><a></a>phenylalanine <span class="op">=</span> Chem.MolFromSmiles(<span class="st">"C1=CC=C(C=C1)CC(C(=O)O)N"</span>)</span>
+<span id="cb7-4"><a></a>phenylalanine</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 <p>Insert image…</p>
@@ -487,8 +588,8 @@
 <p><br></p>
 <div class="ddc" style="margin:0">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb9" data-startfrom="3" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 2;"><span id="cb9-3"><a></a>benzene <span class="op">=</span> Chem.MolFromSmiles(<span class="st">"c1ccccc1"</span>)</span>
-<span id="cb9-4"><a></a>benzene</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8" data-startfrom="3" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 2;"><span id="cb8-3"><a></a>benzene <span class="op">=</span> Chem.MolFromSmiles(<span class="st">"c1ccccc1"</span>)</span>
+<span id="cb8-4"><a></a>benzene</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 <p>Insert image…</p>
@@ -515,7 +616,7 @@ Calculate the number of aromatic bonds.</code></pre>
 </div>
 <div class="ddc" style="margin:0">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb11" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb11-4"><a></a>gcnlayer(nodes_t, adj_mat_t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb10-4"><a></a>gcnlayer(nodes_t, adj_mat_t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 <ul>
@@ -551,12 +652,12 @@ Calculate the number of aromatic bonds.</code></pre>
 </div>
 </div>
 </div>
-<div id="tabset-2-3">
+<div id="tabset-3-3">
 <p>RDKit will allow us to access information about our molecule. For example, we can have RDKit tell us the number of atoms in our molecule.</p>
 <div class="ddc" style="margin:0">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb14" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb14-4"><a></a>num_methane <span class="op">=</span> methane.GetNumAtoms()</span>
-<span id="cb14-5"><a></a><span class="bu">print</span>(<span class="ss">f"The number of atoms in methane is </span><span class="sc">{</span>num_methane<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb13-4"><a></a>num_methane <span class="op">=</span> methane.GetNumAtoms()</span>
+<span id="cb13-5"><a></a><span class="bu">print</span>(<span class="ss">f"The number of atoms in methane is </span><span class="sc">{</span>num_methane<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 <ul>
@@ -566,7 +667,7 @@ Calculate the number of aromatic bonds.</code></pre>
 </div>
 </div>
 </div>
-<div id="tabset-2-4">
+<div id="tabset-3-4">
 <p>Molecular descriptors are properties of molecules which can be analyzed using statistical methods to make predictions about molecular properties. You can see a full list of RDKit descriptors or see the module documentation. RDKit has a module which can be used to retrieve and calculate molecular descriptors.</p>
 <p>Some molecular descriptors we might be interested in are:</p>
 <pre><code>Heavy Atom Count (HeavyAtomCount)
@@ -584,26 +685,26 @@ Number of aromatic rings (NumAromaticRings) And many others!</code></pre>
 <pre><code>Descriptors.DescriptorName(molecule_variable)</code></pre>
 <div class="ddc" style="margin:0">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb17" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb17-4"><a></a><span class="im">from</span> rdkit.Chem <span class="im">import</span> Descriptors</span>
-<span id="cb17-5"><a></a></span>
-<span id="cb17-6"><a></a><span class="bu">print</span>(<span class="st">"Printing info for benzene:"</span>)</span>
-<span id="cb17-7"><a></a><span class="bu">print</span>(<span class="ss">f"The molecular weight is </span><span class="sc">{</span>Descriptors<span class="sc">.</span>MolWt(benzene)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb17-8"><a></a><span class="bu">print</span>(<span class="ss">f"The number of aromatic rings is </span><span class="sc">{</span>Descriptors<span class="sc">.</span>NumAromaticRings(benzene)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb16-4"><a></a><span class="im">from</span> rdkit.Chem <span class="im">import</span> Descriptors</span>
+<span id="cb16-5"><a></a></span>
+<span id="cb16-6"><a></a><span class="bu">print</span>(<span class="st">"Printing info for benzene:"</span>)</span>
+<span id="cb16-7"><a></a><span class="bu">print</span>(<span class="ss">f"The molecular weight is </span><span class="sc">{</span>Descriptors<span class="sc">.</span>MolWt(benzene)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-8"><a></a><span class="bu">print</span>(<span class="ss">f"The number of aromatic rings is </span><span class="sc">{</span>Descriptors<span class="sc">.</span>NumAromaticRings(benzene)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
 </div>
 </div>
 </div>
-<div id="tabset-2-5">
+<div id="tabset-3-5">
 
 </div>
-<div id="tabset-2-6">
+<div id="tabset-3-6">
 <p>One amazing thing about RDKit is its ability to do substructure search. You can identify when molecules contain other molecules. Let’s try this with benzene and phenylalanine.</p>
 <div class="ddc" style="margin:0">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb18" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb18-4"><a></a>matches <span class="op">=</span> phenylalanine.GetSubstructMatches(benzene)</span>
-<span id="cb18-5"><a></a>phenylalanine</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb17-4"><a></a>matches <span class="op">=</span> phenylalanine.GetSubstructMatches(benzene)</span>
+<span id="cb17-5"><a></a>phenylalanine</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 <p>The returned value is a tuple of atom indices which represent the match(es) found.</p>
