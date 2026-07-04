@@ -95,7 +95,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-ad69e990ed1e2ce4d1a62295b97a389e.css">
+  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-d69cbdaf94968a425c46ae18fb1ec76d.css">
   <link rel="stylesheet" href="../../../../css/style.css">
   <link rel="stylesheet" href="../../../../css/fonts.css">
   <link rel="stylesheet" href="../../../../css/buttons.css">
@@ -109,16 +109,6 @@
   <link rel="stylesheet" href="../../../../css/lists.css">
   <link rel="stylesheet" href="../../../../css/animate.css">
   <link rel="stylesheet" href="../../../../css/test.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/buttons.css">
-  <link rel="stylesheet" href="css/tabs.css">
-  <link rel="stylesheet" href="css/callouts.css">
-  <link rel="stylesheet" href="css/nav.css">
-  <link rel="stylesheet" href="css/revealhacks.css">
-  <link rel="stylesheet" href="css/mystylecss.css">
-  <link rel="stylesheet" href="css/timeline.css">
-  <link rel="stylesheet" href="css/flip.css">
-  <link rel="stylesheet" href="css/test.css">
   <link href="../../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -211,171 +201,161 @@
     }
   </style>
   <script src="../../../../scripts/jquery-3.6.4.min.js"></script>
+
   <script src="../../../../scripts/LeaderLine/leader-line.min.js"></script>
 
+  
+
   <script>
+
   function toggleBox(header) {
+
       $(header).next('.dd-box, .ddm-box, .ddp-box, .ddc-box').slideToggle("slow");
+
   }
+
   </script> 
 
+  
+
+  
 
   <script>
+
   function toggleDesc(header) {
+
       $(header).next('p').slideToggle("slow");
+
   }
+
   </script>
 
+  
+
+  
 
   <script>
+
       function showContent(clickedElement) {
+
           // Hide all content divs
+
           var allContents = document.getElementsByClassName('content');
+
           for (var i = 0; i < allContents.length; i++) {
+
               allContents[i].style.display = 'none';
+
           }
+
+  
 
           // Deactivate all nav options
+
           var allNavOptions = document.getElementsByClassName('nav-option');
+
           for (var i = 0; i < allNavOptions.length; i++) {
+
               allNavOptions[i].classList.remove('active');
+
           }
 
+  
+
           // Show the selected content
+
           var option = clickedElement.getAttribute('data-option');
+
           document.getElementById(option + 'Content').style.display = 'block';
 
+  
+
           // Activate the selected nav option
+
           clickedElement.classList.add('active');
+
       }
+
   </script>
 
+  
 
+  
+
+  
 
   <script>
+
    Switch between drawing and un-drawing
+
   setInterval(() => {
+
     const borderEl = document.querySelector('#border')
+
     borderEl.classList.toggle('is-undrawn')
+
     borderEl.classList.toggle('is-drawn')
+
   }, 3000)
+
   </script>
 
+  
+
+  
 
   <script>
+
   // ACCORDION
+
   document.addEventListener("click", function(e) {
+
     const header = e.target.closest(".accordion-header");
+
     if (!header) return;
 
+  
+
     const content = header.nextElementSibling;
+
     content.classList.toggle("open");
+
   });
+
   </script>
 
+  
 
+  
+
+  
 
   <script>
+
   // TABLE CELL HIGHLIGHT OPTION
+
   document.addEventListener("DOMContentLoaded", function () {
+
     document.querySelectorAll(".booktabs").forEach(table => {
+
       table.addEventListener("click", function (e) {
+
         const cell = e.target.closest("td");
+
         if (!cell) return;
 
+  
+
         cell.classList.toggle("selected");
+
       });
+
     });
+
   });
-  </script>
-  <script src="scripts/jquery-3.6.4.min.js"></script>
-  <script src="scripts/LeaderLine/leader-line.min.js"></script>
-
-
-
-
-  <script>
-  function toggleBox(header) {
-      $(header).next('.dd-box, .ddm-box, .ddm-box-2border').slideToggle("slow");
-  }
-  </script> 
-
-  <script>
-      function showContent(clickedElement) {
-          // Hide all content divs
-          var allContents = document.getElementsByClassName('content');
-          for (var i = 0; i < allContents.length; i++) {
-              allContents[i].style.display = 'none';
-          }
-
-          // Deactivate all nav options
-          var allNavOptions = document.getElementsByClassName('nav-option');
-          for (var i = 0; i < allNavOptions.length; i++) {
-              allNavOptions[i].classList.remove('active');
-          }
-
-          // Show the selected content
-          var option = clickedElement.getAttribute('data-option');
-          document.getElementById(option + 'Content').style.display = 'block';
-
-          // Activate the selected nav option
-          clickedElement.classList.add('active');
-      }
-  </script>
-
-  <script>
-    // Wait for the document to fully load
-    document.addEventListener("DOMContentLoaded", function() {
-      // Select all elements with the fragment class
-      const fragments = document.querySelectorAll('.fragment');
-      
-      // Add an event listener to each fragment to change its color on click
-      fragments.forEach(function(fragment, index) {
-        fragment.addEventListener('click', function() {
-          // Change the color to red on click
-          fragment.style.color = 'red';
-        });
-      });
-    });
-  </script>
-
-  <script>
-  // When the user clicks on div, open the popup
-  function popup() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-  }
-  </script>
-
-
-
-  <script>
-  document.querySelector('.ddm-box').classList.add('show-arrow'); // Adds downward arrow
-  document.querySelector('.ddm-box').classList.add('show-up-arrow'); // Adds upward arrow
-  </script>
-
-
-  <script>
-  function flip(element) {
-    element.classList.toggle("flip-active");
-  }
 
   </script>
-  <script>
-  document.addEventListener("click", function (e) {
-    if (e.target.classList.contains("collapsible")) {
-        e.target.classList.toggle("open");
-        const nextContent = e.target.nextElementSibling;
-        if (nextContent && nextContent.classList.contains("content")) {
-            nextContent.style.display =
-                nextContent.style.display === "block" ? "none" : "block";
-        }
-    }
-  }
 
-  );
-
-  </script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -437,32 +417,56 @@ Different Methods of Simulations
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="fragment fade-in">
-<div style="color:teal; text-align:left">
+<div style="color:#AB8507; text-align:left">
 <p>✔ Quantum mechanical description of materials</p>
 <p>✔ Reasonably accurate for many properties</p>
 <p>✔ Applicable to solids, molecules, surfaces, and nanomaterials</p>
-<p>✔ Can predict properties before experiments e..g, energy of the system, dielectric coefficient, adsorption spectra, adsorption energy, phonons, defect concentration, defect stability etc.</p>
 <p>✔ Scales to hundreds of atoms</p>
 <p>✔ Large ecosystem of software and databases</p>
+<p>✔ Can predict properties before experiments e..g,</p>
+<ul>
+<li>energy of the system</li>
+<li>dielectric coefficient</li>
+<li>adsorption spectra</li>
+<li>adsorption energy</li>
+<li>phonons</li>
+<li>defect concentration</li>
+<li>defect stability etc</li>
+</ul>
 </div>
 </div>
 </div><div class="column" style="width:60%;">
-<figure style="text-align:center;">
-<img src="_figs/dftapps.png" style="width:1536px; height:auto;">
-<figcaption style="font-size:0.7em; margin-top:10px;">
-</figcaption>
-</figure>
+<div class="r-stack">
+<div class="fragment" style="position:absolute; left:700px; top:300px;">
+<p><img src="_figs/atomtodft.png" width="1500px" height="auto"></p>
+</div>
+<div class="fragment" style="position:absolute; left:778px; top:378px;">
+<p><img src="_figs/crystal.png" width="180px" height="auto"></p>
+</div>
+<div class="fragment" style="position:absolute; left:778px; top:400px;">
+<p><img src="_figs/molecule.png" width="180px" height="auto"></p>
+</div>
+<div class="fragment" style="position:absolute; left:778px; top:422px;">
+<p><img src="_figs/surfaceslab.png" width="180px" height="auto"></p>
+</div>
+<div class="fragment" style="position:absolute; left:778px; top:444px;">
+<p><img src="_figs/nanoparticle.png" width="180px" height="auto"></p>
+</div>
+<div class="fragment" style="position:absolute; left:778px; top:466px;">
+<p><img src="_figs/defect.png" width="180px" height="auto"></p>
+</div>
+</div>
 </div></div>
 </section>
 <section id="what-is-dft" class="slide level2 scrollable">
 <h2>WHAT IS DFT?</h2>
-<div class="ddm" style="font-size:0.63em; line-height:0">
-<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid red;font-family:GS_C-B">
+<div class="ddm" style="line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: transparent; font-family:GS_C-B">
 <p>DFT solves Many Body Problem</p>
 </div>
 <div class="ddm-box" style="font-family:GS_L;border-color:transparent;background-color:white">
 <div class="r-stack">
-<p><img data-src="_figs/family.jpg" class="fragment" style="width:220.0%" height="500"></p>
+<p><img data-src="_figs/afamily.png" class="fragment" style="width:220.0%" height="500"></p>
 <p><img data-src="_figs/plainrect.png" class="fragment" width="1000" height="500"></p>
 <div class="fragment" style="position:absolute; left:50px; top:200px;">
 <p><img src="_figs/2es.png" width="400px"></p>
@@ -476,8 +480,8 @@ Different Methods of Simulations
 </div>
 </div>
 </div>
-<div class="ddm" style="font-size:0.63em; line-height:0">
-<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid red;font-family:GS_C-B">
+<div class="ddm" style="line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: transparent; font-family:GS_C-B">
 <p>But How?</p>
 </div>
 <div class="ddm-box" style="font-family:GS_L;border-color:transparent">
@@ -492,43 +496,26 @@ Different Methods of Simulations
 \qquad(2)\]</span></span></p>
 </div>
 </div>
-<div class="ddm" style="font-size:0.63em; line-height:0">
-<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid red;font-family:GS_C-B">
+<div class="ddm" style="line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: transparent; font-family:GS_C-B">
 <p>Is it practical to consider each electron in a system?</p>
 </div>
-<div class="ddm-box" style="font-family:GS_L;border-color:transparent">
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: white">
 <p>Density Functional Theory (DFT) uses the electron density as the central quantity to determine and predict all physical and chemical properties of a material.</p>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <div class="fragment fade-in">
-<div class="flip-box" onclick="flip(this)">
-<div class="flip-box-inner">
-<div class="flip-box-front">
-<!-- ![Traffic Jam on Road](_figs/trafficjam.jpg) -->
 <figure style="text-align:center;">
-<img src="_figs/trafficjam.jpg" style="width:500px; height:400px;">
+<img src="_figs/electrodensity.png" style="width:800px; height:auto;">
 <figcaption style="font-size:0.7em; margin-top:10px;">
 Electron Density
 </figcaption>
 </figure>
 </div>
-<div class="flip-box-back">
-<!-- ![Google Map](_figs/trafficmap.jpg) -->
-<figure style="text-align:center;">
-<img src="_figs/trafficmap.jpg" style="width:630px; height:420px;">
-<figcaption style="font-size:0.7em; margin-top:10px;">
-Electron Density
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
 <div class="fragment fade-in">
-<!-- ![Electron Density](_figs/electrondensity.png) -->
 <figure style="text-align:center;">
-<img src="_figs/electrondensity.png" style="width:630px; height:420px;">
+<img src="_figs/waterelectrondensity.png" style="width:800px; height:auto;">
 <figcaption style="font-size:0.7em; margin-top:10px;">
 Electron Density
 </figcaption>
@@ -540,44 +527,55 @@ Electron Density
 </section>
 <section id="what-is-dft-1" class="slide level2 scrollable">
 <h2>WHAT IS DFT?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="ddm" style="font-size:0.63em; line-height:0">
-<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid red;font-family:GS_C-B">
-<p>How to estimate interactions?</p>
+<div class="ddm" style="line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: transparent;font-family:GS_C-B">
+<p>① How to estimate interactions?</p>
 </div>
-<div class="ddm-box" style="font-family:GS_L;border-color:transparent">
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: white">
 <p><span class="math display">\[
 \text{Total interactions} = \text{known} + \text{unknown}
 \]</span></p>
-<div class="fragment fade-in">
-<figure style="text-align:center;">
-<img src="_figs/expense.png">
-<figcaption style="font-size:0.7em; margin-top:10px;">
-</figcaption>
-</figure>
+<div class="r-stack">
+<p><img data-src="_figs/family1.png" class="fragment" style="width:220.0%" data-left="100px" height="500"></p>
+<div class="fragment" style="position:absolute; left:50px; top:200px; transform:rotate(20deg);">
+<p><img src="_figs/knowninteraction.png" width="300px" heght="auto"></p>
+</div>
+<div class="fragment" style="position:absolute; left:1250px; top:200px; transform:rotate(-20deg);">
+<p><img src="_figs/unknowninteraction.png" width="300px" heght="auto"></p>
+</div>
+</div>
+<div class="fade-in fragment">
+<p><img data-src="_figs/xc.png" class="fragment" style="width:220.0%" data-left="100px"></p>
+</div>
+<div class="fade-in fragment">
+<div style="color:teal; text-align:center">
+<p><strong>Hence Exchange Correlation Functionals</strong></p>
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
-<div class="ddm" style="font-size:0.63em; line-height:0">
-<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid red;font-family:GS_C-B">
-<p>How to calculate electron density?</p>
 </div>
-<div class="ddm-box" style="font-family:GS_L;border-color:transparent">
+<div class="ddm" style="line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: transparent;font-family:GS_C-B">
+<p>② How to calculate electron density?</p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
 <p><span class="math display">\[
 \text{Total electron density} = \text{core} + \text{valence}
 \]</span></p>
 <div class="fragment fade-in">
 <figure style="text-align:center;">
-<img src="_figs/esdensity.png">
+<img src="_figs/coreval.png">
 <figcaption style="font-size:0.7em; margin-top:10px;">
 </figcaption>
 </figure>
 </div>
+<div class="fade-in fragment">
+<div style="color:teal; text-align:center">
+<p><strong>Hence Pseudopotentials</strong></p>
 </div>
 </div>
-</div></div>
+</div>
+</div>
 <!-- ## Background {.scrollable}
 
 {{< include subslides/_DFTbackground.qmd >}} -->
@@ -602,7 +600,7 @@ Electron Density
 <div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
 <p>Step 1 - <strong>Convergence</strong></p>
 </div>
-<div class="ddm-box" style="font-family:GS_L;border-color:transparent">
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -631,7 +629,7 @@ Electron Density
 <div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
 <p>Step 2 - <strong>Structure Relaxation</strong></p>
 </div>
-<div class="ddm-box" style="font-family:GS_L;border-color:transparent">
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -660,7 +658,7 @@ Electron Density
 <div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
 <p>Step 3 - <strong>Self Consistent Field Calculations</strong></p>
 </div>
-<div class="ddm-box" style="font-family:GS_L;border-color:transparent">
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>An SCF calculation is performed to determine the electronic ground state of a material for a given atomic structure. During the SCF process, the electron density is updated iteratively until a self-consistent solution is achieved, where the input and output electron densities become nearly identical. The converged SCF calculation provides accurate total energy, charge density, and other electronic properties that serve as the basis for further analysis.</p>
@@ -676,7 +674,7 @@ Electron Density
 </div>
 <div class="fragment fade-in">
 <div class="ddm" style="font-size:1em; line-height:0">
-<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B; background-color: transparent">
 <p>Step 4 - <strong>Calculation of Physical Properties</strong></p>
 </div>
 <div class="ddm-box" style="font-family:GS_L;border-color:transparent">
@@ -685,10 +683,10 @@ Electron Density
 </div>
 </div>
 </section>
-<section id="tasks" class="slide level2 scrollable">
-<h2>Tasks</h2>
+<section id="basic-dft-tasks" class="slide level2 scrollable">
+<h2>Basic DFT Tasks</h2>
 <div class="navbar">
-<p><span class="nav-option" data-option="optiont1" onclick="showContent(this)">TASK 1</span> <span class="nav-option" data-option="optiont2" onclick="showContent(this)">TASK 2</span> <span class="nav-option" data-option="optiont3" onclick="showContent(this)">TASK 3</span> <span class="nav-option" data-option="optiont4" onclick="showContent(this)">TASK 4</span> <span class="nav-option" data-option="optiont5" onclick="showContent(this)">TASK 5</span> <span class="nav-option" data-option="optiont6" onclick="showContent(this)">TASK 6</span> <span class="nav-option" data-option="optiont7" onclick="showContent(this)">TASK 7</span> <span class="nav-option" data-option="optiont8" onclick="showContent(this)">TASK 8</span> <span class="nav-option" data-option="optiont9" onclick="showContent(this)">TASK 9</span> <span class="nav-option" data-option="optiont10" onclick="showContent(this)">TASK 10</span></p>
+<p><span class="nav-option" data-option="optiont1" onclick="showContent(this)">TASK 1</span> <span class="nav-option" data-option="optiont2" onclick="showContent(this)">TASK 2</span> <span class="nav-option" data-option="optiont3" onclick="showContent(this)">TASK 3</span> <span class="nav-option" data-option="optiont4" onclick="showContent(this)">TASK 4</span> <span class="nav-option" data-option="optiont5" onclick="showContent(this)">TASK 5</span></p>
 </div>
 <div id="optiont1Content" class="content">
 <div style="text-align:center">
@@ -810,6 +808,12 @@ Electron Density
 <li><p>Put the relaxed lattice parameters and atomic positions from relax.out file into scf.in file.</p></li>
 <li><p>Run the command on terminal:</p></li>
 </ul>
+</div>
+</section>
+<section id="advanced-tasks" class="slide level2 scrollable">
+<h2>Advanced Tasks</h2>
+<div class="navbar">
+<p><span class="nav-option" data-option="optiont6" onclick="showContent(this)">Eelctronic Properties</span> <span class="nav-option" data-option="optiont7" onclick="showContent(this)">Eelctronic Properties</span> <span class="nav-option" data-option="optiont8" onclick="showContent(this)">Eelctronic Properties</span> <span class="nav-option" data-option="optiont9" onclick="showContent(this)">Optical Properties</span> <span class="nav-option" data-option="optiont10" onclick="showContent(this)">Catalysis</span></p>
 </div>
 <div id="optiont6Content" class="content">
 <div style="text-align:center">
@@ -938,7 +942,6 @@ Electron Density
 <!-- THE END -->
 
 
-
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
@@ -972,11 +975,11 @@ Electron Density
 'controlsAuto': true,
 'previewLinksAuto': false,
 'pdfSeparateFragments': false,
-'autoAnimateEasing': "ease-in-out",
+'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1.5,
 'autoAnimateUnmatched': false,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -994,7 +997,7 @@ Electron Density
         controlsBackArrows: 'faded',
 
         // Display a presentation progress bar
-        progress: false,
+        progress: true,
 
         // Display the page number of the current slide
         slideNumber: 'c/t',
