@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 /* ========== LIST MARKERS =============== */
 /* Only targets <li> elements that are direct children of the main <ul> */
@@ -59,4 +60,70 @@ ul > li > ul > li:hover > ul > li {
 ul > li > ul > li > ul > li:hover {
     color: #007bff; /* Blue */
     transform: translateY(-2px);
+=======
+
+/* ========== LIST MARKERS =============== */
+/* Only targets <li> elements that are direct children of the main <ul> */
+ul > li::marker {
+  content: "\    ";
+  font-size:0.85em;
+  /* color:rgb(44, 44, 44); */
+  /* padding:1em; */
+}
+
+/* Optional: If you want a different custom marker for the nested list */
+ul > li > ul > li::marker {
+  content: "\\    ";
+  font-size:0.65em;
+
+}
+
+/* Optional: If you want a different custom marker for the nested list */
+ul > li > ul > li > ul > li::marker {
+  content: "\\\    ";
+}
+
+
+/* ========== LIST HOVERS =========== */
+
+/* ==========================================
+   LEVEL 1: MAIN LIST
+   ========================================== */
+/* Hover effect for Level 1 */
+ul > li:hover {
+    color: crimson; /* Red */
+    transform: translateY(-2px);
+}
+
+/* Protect Level 2 from Level 1 hover */
+ul > li:hover > ul > li {
+    color: black;
+    transform: none;
+}
+
+
+/* ==========================================
+   LEVEL 2: SUBLIST
+   ========================================== */
+/* Hover effect for Level 2 */
+ul > li > ul > li:hover {
+    color:teal; /* Green */
+    transform: translateY(-2px);
+}
+
+/* Protect Level 3 from Level 2 hover */
+ul > li > ul > li:hover > ul > li {
+    color: black;
+    transform: none;
+}
+
+
+/* ==========================================
+   LEVEL 3: SUB-SUBLIST
+   ========================================== */
+/* Hover effect for Level 3 (Pick a new color, e.g., Blue) */
+ul > li > ul > li > ul > li:hover {
+    color: Sienna; /* Blue */
+    transform: translateY(-2px);
+>>>>>>> 0ddf9a9 (office)
 }
