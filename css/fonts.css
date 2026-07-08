@@ -269,7 +269,7 @@
 }
 
 .sans{
-  font-family: 'Inter', 'GS_L', sans-serif;
+  font-family: 'Gill Sans', sans-serif;
   font-weight: 300;
 }
 
@@ -279,8 +279,8 @@
   border-radius: 5px;
 }
 .highlightlight {
-  background-color: #ffd27e;
-  padding: 0.25em;
+  background-color: #ffdfa2;
+  padding: 0.15em;
   border-radius: 5px;
 }
 

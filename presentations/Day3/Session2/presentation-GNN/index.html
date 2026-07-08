@@ -289,14 +289,18 @@
 <section id="section" class="slide level2">
 <h2></h2>
 <h3 class="center" style="text-align:center;color:#B22222; font-size:1.2em" id="information">Information</h3>
-<p>Welcome to the <strong>Workshop on DFT and AI</strong>, part of <strong>Quantum Meets AI 2026</strong>, hosted at <strong>GIK Institute, Topi, Pakistan</strong>.</p>
-<p>The workshop is organized by the <strong><a href="https://dererumnaturagroup.github.io/">De Rerum Natura (DRN) Group</a></strong>.</p>
-<hr>
+<p>Welcome to the workshop on DFT and AI, part of <em>Quantum Meets AI 2026</em>, organized by the <strong><a href="https://dererumnaturagroup.github.io/">De Rerum Natura (DRN) Group</a></strong> at the GIK Institute, Pakistan.</p>
+<div style="height:5rem;">
+
+</div>
 <h3 class="center" style="text-align:center;color:#B22222; font-size:1.2em" id="navigation">Navigation</h3>
 <ul>
-<li><strong>Desktop:</strong> Use the arrow keys (<strong>← → ↑ ↓</strong>) to navigate. <code>Ctrl + →</code> and <code>Ctrl + ←</code> to jump between sections. <code>Ctrl + Click</code> to zoom in on a slide. <code>Ctrl + Click</code> again to zoom out.</li>
-<li><strong>Mobile:</strong> Swipe or scroll between slides.</li>
-<li>Many slides include expandable sections with additional details.</li>
+<li><p><strong>Desktop:</strong></p>
+<p>Use the arrow keys (<strong>← → ↑ ↓</strong>) to navigate.</p>
+<p><code>Ctrl + →</code> and <code>Ctrl + ←</code> to jump between sections.</p>
+<p><code>Ctrl + Click</code> to zoom in on a slide. <code>Ctrl + Click</code> again to zoom out.</p></li>
+<li><p><strong>Mobile:</strong> Swipe or scroll between slides.</p></li>
+<li><p>Many slides include expandable sections with additional details.</p></li>
 </ul>
 <div style="margin-top:2em; text-align:center;">
 <p><a href="../../../../index.html" class="btn btn-primary btn-lg"> ← Return to Workshop Home </a></p>
@@ -313,7 +317,7 @@
 <p><br> <br></p>
 <div class="columns">
 <div class="column right" style="width:60%;">
-<p><span style="color:teal"><strong>The Materials Modeling Landscape</strong></span><br> <span style="color:gray"><em>(An introduction for Graduate Students)</em></span></p>
+<p><span style="color:teal"><strong>Graph Neural Networks for Molecules</strong></span><br> <span style="color:gray"><em>(Level: Intermediate - Advanced)</em></span></p>
 </div><div class="column right" style="width:5%;">
 <div data-id="box1" style="background: #bcd6d6; width: 15px; height: 135px; border-radius: 0px; align: right; margin: 0em 0em 0em 1.1em;">
 
@@ -348,7 +352,7 @@
 <div id="option21Content" class="content">
 <div class="ddm">
 <div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;--underline-bg:none;:None">
-<p><span style="color:teal">Motivation –</span> The difficulty for machine learning with molecules was the choice and computation of “descriptors”. Graph neural networks (GNNs) provide a way around the choice of descriptors. A GNN can take a molecule directly as input.</p>
+<p><span style="color:teal">The difficulty for machine learning with molecules</span> is the choice and computation of “descriptors”. Graph neural networks (GNNs) provide a way around the choice of descriptors because GNNs are designed to take molecules directly as input.</p>
 </div>
 <div class="ddm-box" style="font-family:GS">
 
@@ -356,7 +360,17 @@
 </div>
 <div class="ddm">
 <div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;--underline-bg:none;:None">
-<p><span style="color:teal">But why graphs –</span> Because they are <!-- <h3>Why graphs?</h3> --></p>
+<p><span style="color:teal">Okay, but what is a Graph –</span> …a collection of vertices (V) connected by edges (E).</p>
+<p>For us, nodes can represent atoms, and edges can represent bonds or interactions between atoms.</p>
+</div>
+<div class="ddm-box" style="font-family:GS">
+<p><span style="font-size:0.8em">⭕</span> Graphs are all around us.</p>
+<p><img data-src="figs/graphs_in_real_world.png"></p>
+</div>
+</div>
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;--underline-bg:none;:None">
+<p><span style="color:teal">But why graphs for molecules –</span> Because they are <!-- <h3>Why graphs?</h3> --></p>
 <ul>
 <li>intuitive data structures for representing materials,</li>
 <li>can naturally capture the relationships between atoms and their neighbors.</li>
@@ -371,39 +385,29 @@
 </div></div>
 </div>
 </div>
-<div class="ddm">
-<div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;--underline-bg:none;:None">
-<p><span style="color:teal">Okay, but what is a Graph –</span> …a collection of vertices (V) connected by edges (E).</p>
-<p>For us, nodes can represent atoms, and edges can represent bonds or interactions between atoms.</p>
-</div>
-<div class="ddm-box" style="font-family:GS">
-<p><span style="font-size:0.8em">⭕</span> Graphs are all around us.</p>
-<p><img data-src="figs/graphs_in_real_world.png"></p>
-</div>
-</div>
+<div class="columns">
+<div class="column">
+<p><span style="color:teal">Indeed molecules are graphs</span>. Think of atoms as vertices and bonds as edges.</p>
+</div><div class="column">
+<p><img data-src="figs/moleculargraph.png"></p>
+</div></div>
 </div>
 <div id="option22Content" class="content">
-<div class="split1">
-  <div class="left" style="background-color:white;text-align:center">
-    <h3>Molecules are graphs too</h3>
-    <p>Think of atoms as vertices and bonds as edges.</p>
-    <p>But the graphical picture isn't the only way of representing graphs.</p>
-  </div>
-
-  <div class="right">
-    <img src="figs/moleculargraph.png">
-  </div>
-</div>
-<h3 id="section-4"></h3>
+<div class="columns">
+<div class="column">
+<p><span style="color:teal">So molecules are graphs</span> but the graphical picture isn’t how the computer <em>thinks</em> of a graph.</p>
+</div><div class="column">
+<p><img data-src="figs/moleculargraph.png" height="150"></p>
+</div></div>
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="ddm">
 <div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;--underline-bg:none;:None">
-<p><span style="color:teal">Node list</span></p>
+<p><span style="color:sienna">Node list</span></p>
 </div>
 <div class="ddm-box" style="background-color:white;font-family:GS">
 <!-- [⭕]{style="font-size:0.8em"}  -->
-<table class="booktabs">
+<table class="booktabs compact">
 <thead>
 <tr class="row-odd">
 <th class="head text-left">
@@ -570,11 +574,11 @@ O
 </div><div class="column" style="width:45%;">
 <div class="ddm">
 <div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;--underline-bg:none;:None">
-<p><span style="color:teal">Adjacency Matrix</span></p>
+<p><span style="color:sienna">Adjacency Matrix</span></p>
 </div>
 <div class="ddm-box" style="background-color:white;font-family:GS">
 <!-- [⭕]{style="font-size:0.8em"}  -->
-<table class="booktabs firstcol">
+<table class="booktabs firstcol compact">
 <thead>
 <tr class="row-odd">
 <th class="head text-left">
@@ -847,8 +851,21 @@ O
 <div id="option23Content" class="content">
 <div class="ddm">
 <div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;--underline-bg:none;:None">
-<p><span style="color:teal">But we just learned the SMILES representation –</span></p>
-<p>In fact, the SMILES representation is simply the text encoding of that same graph.</p>
+<p><span style="color:teal">But we just learned the SMILES representation –</span> In fact, the SMILES representation is simply the text encoding of that same graph and we need to be able to convert between these different representations.</p>
+<div style="
+display:grid;
+grid-template-columns:30% 5% 30% 5% 30%;
+align-items:center;
+justify-items:center;
+text-align:center;
+column-gap:0.5rem;
+">
+<p><img data-src="figs/moleculargraph.png" style="width:100.0%"></p>
+<p><span style="font-size:2em;">⇔</span></p>
+<p><span> SMILES <br> ‘CO’ </span></p>
+<p><span style="font-size:2em;">⇔</span></p>
+<p><img data-src="figs/matrixnodeadj.png" style="width:100.0%"></p>
+</div>
 </div>
 <div class="ddm-box" style="font-family:GS">
 
@@ -856,9 +873,11 @@ O
 </div>
 </div>
 <div id="option24Content" class="content">
-<p>Graphs are collections of connections (edges) between vertices (nodes).</p>
-<p>Graphs can be represented in multiple ways.</p>
-<p>For our present purposes supplying a node list and an adjacency matrix is a good way to provide a graph.</p>
+<ul>
+<li>Graphs are collections of connections (edges) between vertices (nodes).</li>
+<li>Graphs can be represented in multiple ways.</li>
+<li>For our present purposes supplying a node list and an adjacency matrix is a good way to provide a graph.</li>
+</ul>
 </div>
 <!-- ##
 We will cover the following topics:
@@ -873,37 +892,16 @@ We will cover the following topics:
 <h1>Background: Graph Neural Networks (GNNs)</h1>
 
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-4" class="slide level2 scrollable">
 <h2></h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">🔵</a></li><li><a href="#tabset-1-2">🟡</a></li><li><a href="#tabset-1-3">🟢 Our First GNN (Layer)</a></li><li><a href="#tabset-1-4">🟣</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">What are GNNs?</a></li><li><a href="#tabset-2-2">ELI5 - A game</a></li><li><a href="#tabset-2-3">Our First GNN (Layer)</a></li><li><a href="#tabset-2-4">🟣 Summary</a></li></ul>
 <div class="tab-content">
-<div id="tabset-1-1">
-<div class="template1" style="margin-left:0em">
-<h3>
-Graph Neural Networks (GNNs) are…
-</h3>
-<p>a class of deep learning models that operate on graph-structured data.</p>
-</div>
-<div class="template1" style="margin-left:5em">
-<h3>
-Why use them?
-</h3>
-<p>Finding the right “descriptors” for machine learning with molecules is not easy. Graph neural networks (GNNs) provide a way around the choice of descriptors.</p>
-</div>
-<div class="template1" style="background-color: #19437D; margin-left:10em">
-<h3 style="color: #ffe08a;">
-A GNN takes molecules directly as input
-</h3>
-<p style="color: white;">
-So let’s explore them…
-</p>
-</div>
-</div>
-<div id="tabset-1-2">
+<div id="tabset-2-1">
+<p><span style="color:teal">Graph Neural Networks (GNNs)</span> are a class of deep learning models that operate on graph-structured data.</p>
 <div class="ddm">
-<div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;--underline-bg:none;:None">
-<p><span style="&quot;color:teal">Defining attributes –</span> A GNN is a neural network with two defining attributes:</p>
+<div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;--underline-bg:none;">
+<p><span style="color:teal">Defining attributes –</span> A GNN is a neural network with two defining attributes:</p>
 <ul>
 <li>Its input is a graph</li>
 <li>Its output is permutation equivariant</li>
@@ -914,8 +912,8 @@ So let’s explore them…
 </div>
 </div>
 <div class="ddm">
-<div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;--underline-bg:none;:None">
-<p>Permutation Equivariance is a fancy way of saying: If you shuffle the inputs, the output should get shuffled in the same way.</p>
+<div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;--underline-bg:none;">
+<p><span class="badge rounded-pill keyword-pill">Jargon Alert</span> <span style="color:teal">Permutation Equivariance</span> is a fancy way of saying: If you shuffle the inputs, the output should get shuffled in the same way.</p>
 </div>
 <div class="ddm-box" style="font-family:GS">
 <p><span style="font-size:0.8em">⭕</span> In the methanol example, we could have made the carbon be atom 1 instead of 4. The adjacency matrix would change.</p>
@@ -927,164 +925,101 @@ So let’s explore them…
 </div>
 </div>
 </div>
-<div id="tabset-1-3">
-<div class="ddm">
-<div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;width:100%;--underline-bg:none;:None">
-<div class="columns">
-<div class="column">
-<p><span style="color:teal">–</span> Let’s see an example of a simple layer for a GNN:</p>
-<p><span class="math display">\[
-\begin{equation}
-f_k = \sigma\left( \sum_i \sum_j v_{ij}w_{jk}  \right)
-\end{equation}
-\]</span></p>
-</div><div class="column">
-<p><img data-src="figs/GNN_eq1.png"></p>
-</div></div>
-</div>
-<div class="ddm-box" style="font-family:GS">
-<p><img data-src="figs/gnn_equation0.png"></p>
-</div>
-</div>
-<!--  -->
-<div class="ddm">
-<div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;width:100%;--underline-bg:none;:None">
-<p><span style="color:teal">–</span> This will yield a single feature vector for the graph.</p>
-<p>Is this equation permutation invariant? Yes, because the <span class="highlightlight">node index</span> in our expression is index <span class="math inline">\(i\)</span> which can be re-ordered without affecting the output.</p>
-</div>
-<div class="ddm-box" style="font-family:GS">
-<p><span style="font-size:0.8em">⭕</span></p>
-</div>
-</div>
-</div>
-<div id="tabset-1-4">
-<p><span style="color:teal">Alternative –</span> What if we make a small change. Could this layer be permutation invariant?</p>
-<p><span class="math display">\[
-f_k = \sigma\left( \sum_i v_{ij}w_{ik}  \right)
-\]</span></p>
+<div id="tabset-2-2">
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Setup</a></li><li><a href="#tabset-1-2">(1) Message Passing</a></li><li><a href="#tabset-1-3">(2) Update Your State</a></li><li><a href="#tabset-1-4">(3) Repeat</a></li><li><a href="#tabset-1-5">Result?</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p>To understand GNNs, let’s consider a simple game. We have a group of participants, each with a secret number. The goal is to find out what the group is <strong>thinking</strong> without ever leaving the seat.</p>
 <ul>
-<li>We have one weight vector per node now.</li>
-<li>The trainable weights depend on the ordering of the nodes.</li>
-<li>If we swap the node ordering, our weights will no longer align</li>
-</ul>
-<p>If we were to input two methanol molecules, which should have the same output, but we switched two atom numbers, we would get different answers.</p>
-<p>These simple examples differ from real GNNs in two important ways:</p>
-<ol type="i">
-<li>They give a single feature vector output, which throws away per-node information,</li>
-<li>They do not use the adjacency matrix.</li>
-</ol>
-<p>Let’s see a real GNN that has these properties while maintaining permutation invariance — or equivariance (swapping inputs swaps outputs the same way).</p>
-</div>
-</div>
-</div>
-</section>
-<section id="first-a-game" class="slide level2">
-<h2>First a game…</h2>
-<p>Put a number randomly on a piece of paper before you. Any number from 0 to 100.</p>
-<p>Don’t tell anyone.</p>
-</section></section>
-<section>
-<section id="a-graph-neural-network-game" class="title-slide slide level1 center">
-<h1>A Graph Neural Network Game</h1>
-
-</section>
-<section id="first-a-game-1" class="slide level2">
-<h2>First, a game…</h2>
-<ul>
-<li>Take out a small piece of paper.</li>
-<li>Without telling anyone, <strong>write down any whole number between 0 and 100</strong>.</li>
-<li>Don’t show it to anyone.</li>
-</ul>
-</section>
-<section id="your-network" class="slide level2">
-<h2>Your Network</h2>
-<p>Now create a table of your neighbors.</p>
+<li><p>Take out a small piece of paper. Without telling anyone, <strong>write down any whole number between 0 and 100</strong>.</p></li>
+<li><p>Now create a table of your neighbors.</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th>Neighbour</th>
-<th>Secret Number</th>
+<th style="text-align: right;">Secret Number</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td></td>
-<td></td>
+<td>Alice</td>
+<td style="text-align: right;"></td>
 </tr>
 <tr class="even">
-<td></td>
-<td></td>
+<td>Bob</td>
+<td style="text-align: right;"></td>
 </tr>
 <tr class="odd">
-<td></td>
-<td></td>
+<td>Charles</td>
+<td style="text-align: right;"></td>
 </tr>
 </tbody>
-</table>
-<p>At this point:</p>
+</table></li>
+<li><p>At this point:</p>
 <ul>
 <li>You know <strong>your own</strong> number.</li>
 <li>You know <strong>who your neighbours are</strong>.</li>
 <li>You <strong>do not</strong> know your neighbours’ numbers.</li>
+</ul></li>
 </ul>
-<h3 id="round-1-message-passing">Round 1 — Message Passing</h3>
-<p>Each participant tells <strong>only their assigned neighbours</strong> their secret number.</p>
-<p>Do <strong>not</strong> communicate with anyone else.</p>
-<p>Record your neighbours’ numbers.</p>
+</div>
+<div id="tabset-1-2">
+<ul>
+<li><p>Now each participant tells <strong>only their assigned neighbours</strong> their secret number. But do <strong>not</strong> communicate with anyone else.</p></li>
+<li><p>Record your neighbours’ numbers.</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th>Neighbour</th>
-<th>Secret Number</th>
+<th style="text-align: right;">Secret Number</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td></td>
-<td></td>
+<td>Alice</td>
+<td style="text-align: right;">12</td>
 </tr>
 <tr class="even">
-<td></td>
-<td></td>
+<td>Bob</td>
+<td style="text-align: right;">45</td>
 </tr>
 <tr class="odd">
-<td></td>
-<td></td>
+<td>Charles</td>
+<td style="text-align: right;">84</td>
 </tr>
 </tbody>
-</table>
-<h3 id="round-2-local-prediction">Round 2 — Local Prediction</h3>
-<p>Using only your own number and those of your neighbours, answer the following questions.</p>
+</table></li>
+<li><p>Using only your own number and those of your neighbours, answer the following questions.</p>
 <ul>
 <li>Is your number larger or smaller than the average of your neighbours?</li>
 <li>Is your neighbourhood generally <strong>high-valued</strong> or <strong>low-valued</strong>?</li>
 <li>What do you predict about the rest of the room?</li>
+</ul></li>
+<li><p>Notice that your prediction is based <strong>only on local information</strong>.</p></li>
 </ul>
-<p>Notice that your prediction is based <strong>only on local information</strong>.</p>
-<h3 id="round-3-update-your-state">Round 3 — Update Your State</h3>
+</div>
+<div id="tabset-1-3">
 <p>Compute</p>
 <blockquote>
 <p><strong>The average of your own number and all of your neighbours’ numbers.</strong></p>
 </blockquote>
-<p>Replace your original number with this new value.</p>
-<p>Everyone does this <strong>at the same time</strong>.</p>
-</section>
-<section class="slide level2">
-
-<h3 id="round-4-repeat">Round 4 — Repeat</h3>
-<p>Exchange your <strong>updated</strong> number with your neighbours.</p>
-<p>Again compute the average of</p>
 <ul>
-<li>your own updated number,</li>
-<li>all of your neighbours’ updated numbers.</li>
+<li>Replace your original number with this new value.</li>
+<li>Everyone does this <strong>at the same time</strong>.</li>
 </ul>
-<p>Repeat this process three or four times.</p>
-<p>Observe how the numbers begin to converge.</p>
-</section>
-<section class="slide level2">
-
-<h3 id="what-just-happened">What just happened?</h3>
-<p>Without realizing it, you have implemented the core operation of a <strong>Graph Neural Network (GNN).</strong></p>
+</div>
+<div id="tabset-1-4">
+<p>We repeat this process three or four times.</p>
+<ol type="1">
+<li>Exchange your <strong>updated</strong> number with your neighbours.</li>
+<li>Compute the average of</li>
+</ol>
+<ul>
+<li><p>your own updated number,</p></li>
+<li><p>all of your neighbours’ updated numbers.</p></li>
+<li><p>Observe how the numbers begin to converge. Without realizing it, you have implemented the core operation of a <strong>Graph Neural Network (GNN).</strong></p></li>
+</ul>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -1123,13 +1058,90 @@ f_k = \sigma\left( \sum_i v_{ij}w_{ik}  \right)
 </tr>
 </tbody>
 </table>
-<p>The remarkable idea is this:</p>
+</div>
+<div id="tabset-1-5">
+<p>Remarkably:</p>
 <blockquote>
-<p><strong>No participant ever sees the entire network.</strong></p>
+<p><span style="color:sienna"><strong>No participant ever sees the entire network.</strong></span></p>
 </blockquote>
 <p>Yet, after several rounds of local communication, every participant’s value contains information originating from increasingly distant parts of the graph.</p>
 <p>This is exactly how Graph Neural Networks learn from molecules, crystals, social networks, citation networks, and many other graph-structured datasets.</p>
 <p>Instead of people exchanging numbers, computers exchange vectors representing atoms, molecules, or other connected entities.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-3">
+<ul>
+<li>We can now try to seek a mathematical formulation for a simple GNN layer.</li>
+</ul>
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;width:100%;--underline-bg:none;">
+<div class="columns">
+<div class="column">
+<p><span class="math display">\[
+\begin{equation}
+f_k = \sigma\left( \sum_i \sum_j v_{ij}w_{jk}  \right)
+\end{equation}
+\]</span></p>
+</div><div class="column">
+<p><img data-src="figs/GNN_eq1.png"></p>
+</div></div>
+</div>
+<div class="ddm-box" style="font-family:GS">
+<p><img data-src="figs/gnn_equation0.png"></p>
+</div>
+</div>
+<!--  -->
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;width:100%;--underline-bg:none;">
+<ul>
+<li>This will yield a single feature vector for the graph.</li>
+<li>Is this equation permutation invariant? Yes, because the <span class="highlightlight">node index</span> in our expression is index <span class="math inline">\(i\)</span> which can be re-ordered without affecting the output.</li>
+</ul>
+</div>
+<div class="ddm-box" style="font-family:GS">
+<p><span style="font-size:0.8em">⭕</span></p>
+</div>
+</div>
+<!--  -->
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)" style="font-family:GS;width:100%;font-weight:500;--underline-bg:none;">
+<p><span style="color:teal">Alternative –</span> What if we make a small change…</p>
+</div>
+<div class="ddm-box" style="font-family:GS">
+<p><span style="font-size:0.8em">⭕</span></p>
+<p><span class="math display">\[
+f_k = \sigma\left( \sum_i v_{ij}w_{ik}  \right)
+\]</span></p>
+<p><span style="color:sienna">Problem?</span></p>
+<ul>
+<li>We have one weight vector per node now.</li>
+<li>The trainable weights depend on the ordering of the nodes.</li>
+<li>If we swap the node ordering, our weights will no longer align</li>
+</ul>
+<p>If we input two methanol molecules, but switched the labels of two atoms, we would get different answers.</p>
+<blockquote>
+<p>This then is not permutation invariant.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="tabset-2-4">
+<p>These simple examples differ from real GNNs in two important ways:</p>
+<ol type="i">
+<li>They give a single feature vector output, which throws away per-node information,</li>
+<li>They do not use the adjacency matrix.</li>
+</ol>
+<p>Let’s see a real GNN that has these properties while maintaining permutation invariance — or equivariance (swapping inputs swaps outputs the same way).</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="graph-convlution-networks-gcns" class="title-slide slide level1 center">
+<h1>Graph Convlution Networks (GCNs)</h1>
+
 </section>
 <section id="graph-convolution-networks" class="slide level2 scrollable">
 <h2>Graph Convolution Networks</h2>
@@ -1138,88 +1150,78 @@ f_k = \sigma\left( \sum_i v_{ij}w_{ik}  \right)
 </div>
 <div id="option30Content" class="content">
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">🔵 Idea</a></li><li><a href="#tabset-2-2">Stacking layers</a></li><li><a href="#tabset-2-3">🟡 Procedure</a></li><li><a href="#tabset-2-4">🟣 By Analogy</a></li><li><a href="#tabset-2-5">🟢 Animation</a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">🟤 Overview</a></li><li><a href="#tabset-3-2">🟣 By Analogy</a></li><li><a href="#tabset-3-3">🟢 Animation</a></li></ul>
 <div class="tab-content">
-<div id="tabset-2-1">
-<table class="booktabs caption-top" data-quarto-postprocess="true">
-<tbody>
-<tr class="row-even odd">
-<td class="text-left"><span class="dot"></span></td>
-<td><p>GCNs are important for understanding other GNNs.</p></td>
-</tr>
-<tr class="row-odd even">
-<td class="text-left"><span class="dot"></span></td>
-<td><p>A GCN layer is a way to “communicate” between a node and its neighbors.</p></td>
-</tr>
-<tr class="row-even odd">
-<td class="text-left"><span class="dot"></span></td>
-<td><p>The output for node i will depend only on its *immediate* neighbors.</p></td>
-</tr>
-<tr class="row-odd even">
-<td class="text-left"><span class="dot"></span></td>
-<td><p>While only immediate neigbors is not enough for chemistry, you can stack multiple layers. If you have two layers, the output for node will include information about node’s neighbors’ neighbors.</p></td>
-</tr>
-<tr class="row-odd odd">
-<td class="text-left"><span class="dot"></span></td>
-<td><p>Another important detail to understand in GCNs is that the averaging procedure accomplishes two goals: a. it gives permutation equivariance by removing the effect of neighbor order and b. it prevents a change in magnitude in node features. A sum would accomplish (i) but would cause the magnitude of the node features to grow after each layer. Of course, you could ad-hoc put a batch normalization layer after each GCN layer to keep output magnitudes stable but averaging is easy.</p></td>
-</tr>
-</tbody>
-</table>
+<div id="tabset-3-1">
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)">
+<p>GCNs try to incorporate neighbor information into each node’s representation.</p>
 </div>
-<div id="tabset-2-2">
-<p>What does a single GCN layer do?</p>
-<p>A Graph Convolutional Network (GCN) layer updates each node by:</p>
-<p>“Looking at its immediate neighbors and mixing their information.”</p>
-<p>So after 1 layer:</p>
-<p>Each node knows about its 1-hop neighbors</p>
-<p>–</p>
-<p>🧱 What does stacking GCN layers mean?</p>
-<p>Stacking means:</p>
-<p>Applying multiple GCN layers one after another.</p>
-<p>So:</p>
-<p>Layer 1 → node sees 1-hop neighbors Layer 2 → node sees 2-hop neighbors Layer 3 → node sees 3-hop neighbors etc.</p>
-<p>🔥 Key intuition: “growing receptive field”</p>
-<p>Each layer expands how far information flows:</p>
-<p>Before any layers</p>
-<p>Each node only knows itself.</p>
-<p>After 1 layer</p>
-<p>Each node knows:</p>
-<p>itself + immediate neighbors After 2 layers</p>
-<p>Each node knows:</p>
-<p>neighbors of neighbors After k layers</p>
-<p>Each node knows:</p>
-<p>k-hop neighborhood structure</p>
-<p>🧪 Simple analogy</p>
-<p>Think of gossip in a social network:</p>
-<p>1 layer: you hear rumors from friends 2 layers: friends of friends 3 layers: friends of friends of friends</p>
-<p>Stacking layers = spreading information farther in the graph.</p>
-<p>⚠️ Why not just use one big layer?</p>
-<p>Because:</p>
+<div class="ddm-box">
+<ul>
+<li>Initially the output for node i will depend only on its <em>immediate</em> neighbors.</li>
+<li>While only immediate neigbors is not enough for chemistry, you can <span style="color:teal">stack multiple layers</span>. If you have two layers, the output for node will include information about node’s neighbors’ neighbors.</li>
+<li>The averaging process in GCNs accomplishes two goals:
+<ol type="a">
+<li>it gives permutation equivariance by removing the effect of neighbor order and</li>
+<li>it prevents a change in magnitude in node features. A sum would accomplish (i) but would cause the magnitude of the node features to grow after each layer. Of course, you could ad-hoc put a batch normalization layer after each GCN layer to keep output magnitudes stable but averaging is easy.</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)">
+<p>Why does stacking layers help?</p>
+</div>
+<div class="ddm-box">
+<ul>
+<li><p>What does a <span style="color:teal">single GCN layer</span> do? It updates each node by: &gt; “Looking at its immediate neighbors and mixing their information.”</p></li>
+<li><p>So after 1 layer:</p>
+<ul>
+<li>Each node knows about its 1-hop neighbors</li>
+</ul></li>
+<li><p>But we can ‘stack’ GCN layers. What does that mean? Simply that we can apply a GCN layer to the output of another GCN layer. So:</p>
+<p>Layer 1 → node sees 1-hop neighbors Layer 2 → node sees 2-hop neighbors Layer 3 → node sees 3-hop neighbors etc.</p></li>
+<li><p>Thus each layer expands how far information flows:</p>
+<ul>
+<li>Before any layers: Each node only knows itself.</li>
+<li>After 1 layer: Each node knows itself + immediate neighbors</li>
+<li>After 2 layers: Each node knows neighbors of neighbors</li>
+<li>After k layers: Each node knows: k-hop neighborhood structure</li>
+</ul></li>
+<li><p>Why not just use one big layer? Because:</p>
 <ol type="1">
 <li>Local structure matters first</li>
 </ol>
-<p>Graphs are naturally local:</p>
-<p>chemical bonds social connections protein interactions</p>
-<p>You don’t want to jump globally immediately.</p>
+<ul>
+<li>chemical bonds</li>
+<li>social connections</li>
+<li>protein interactions</li>
+</ul>
 <ol start="2" type="1">
-<li>Multi-hop structure is important</li>
+<li>Multi-hop structure is important too. Many properties depend on higher-order structure and these appear only after stacking layers.:</li>
 </ol>
-<p>Many properties depend on higher-order structure:</p>
-<p>molecular rings functional groups long-range interactions</p>
-<p>These appear only after stacking layers.</p>
+<ul>
+<li>molecular rings</li>
+<li>functional groups</li>
+<li>long-range interactions</li>
+</ul>
 <ol start="3" type="1">
-<li>Expressivity increases</li>
+<li>Expressivity increases. Each layer adds</li>
 </ol>
-<p>Each layer adds:</p>
-<p>nonlinear transformation (weights + activation) new feature mixing</p>
-<p>So deeper GCN = richer representations.</p>
+<ul>
+<li>nonlinear transformation (weights + activation)</li>
+<li>new feature mixing</li>
+</ul>
+<p>So deeper GCN = richer representations.</p></li>
+</ul>
 </div>
-<div id="tabset-2-3">
-<!-- <style>
-.math.inline, .math.display {
-  font-family: 'GS', serif;
-}
-</style> -->
+</div>
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)">
+<p>Procedure</p>
+</div>
+<div class="ddm-box">
 <p>The procedure for our GCN has two steps.</p>
 <div class="columns">
 <div class="column">
@@ -1267,7 +1269,9 @@ Oxygen = [0 1 0]
 </div>
 </div></div>
 </div>
-<div id="tabset-2-4">
+</div>
+</div>
+<div id="tabset-3-2">
 <p>Suppose you took an exam, you find out your score. You want to figure out how you did in relation to your peers.</p>
 <ul>
 <li>You start with your ‘own information’</li>
@@ -1292,7 +1296,7 @@ In one sentence
 <p><span class="highlight">mix its own features with an averaged, learnable summary of its neighbors, so it gradually learns its local environment.</span></p>
 </div>
 </div>
-<div id="tabset-2-5">
+<div id="tabset-3-3">
 <video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="vids/gcn.mp4"></video>
 </div>
 </div>
@@ -1300,9 +1304,9 @@ In one sentence
 </div>
 <div id="option31Content" class="content">
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">A</a></li><li><a href="#tabset-3-2">B</a></li></ul>
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">A</a></li><li><a href="#tabset-4-2">B</a></li></ul>
 <div class="tab-content">
-<div id="tabset-3-1">
+<div id="tabset-4-1">
 <div class="ddm">
 <div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;--underline-bg:none;:None">
 <p>We must put this code above into a new <span class="highlightlight">Module</span> subclass.</p>
@@ -1326,7 +1330,7 @@ In one sentence
 </div>
 </div>
 </div>
-<div id="tabset-3-2">
+<div id="tabset-4-2">
 <div class="ddm">
 <div class="ddm-head" onclick="toggleBox(this)">
 <p>Implementation as pytorch layer</p>
@@ -1348,9 +1352,9 @@ In one sentence
 <!-- option ends -->
 <div id="option32Content" class="content">
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Layer</a></li><li><a href="#tabset-4-2">Using layer</a></li></ul>
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Layer</a></li><li><a href="#tabset-5-2">Using layer</a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1">
+<div id="tabset-5-1">
 <p>We first create the ‘machine’ (think Coffee Maker). The code below might seem difficult but it’s not. We must tell:</p>
 <ul>
 <li>What pieces it must have. The <code>__init__</code> function</li>
@@ -1523,7 +1527,7 @@ In one sentence
 <p>is the GCN equation</p></li>
 </ul>
 </div>
-<div id="tabset-4-2">
+<div id="tabset-5-2">
 <p>We can now use our coffee machine.</p>
 <p>We give it the inputs (1) nodes and (2) the adjacency matrix.</p>
 <p>But remember the GCN layer only looks at ‘immediate neighbors’. Our gossip network should be bigger.</p>
@@ -1611,7 +1615,6 @@ In one sentence
 <p>sad</p>
 </div>
 </section></section>
-<section>
 <section id="what-do-we-have-so-far" class="title-slide slide level1 center">
 <h1>What do we have so far…</h1>
 <p>We know:</p>
@@ -1622,18 +1625,25 @@ In one sentence
 </ol>
 <p>We now want to ‘STACK’ multiple GCN layers. Think of this as gossip being updated every day.</p>
 </section>
+
+<section>
+<section id="real-world-example-a-solubility-model" class="title-slide slide level1 center">
+<h1>Real World Example: A Solubility Model</h1>
+<p>We have all the building blocks and now we want to see how we can use GCNs to predict a real world property.</p>
+<p>‘Solubility’ is a property of a molecule that describes how well it dissolves in water. It is an important property for drug discovery and other applications.</p>
+</section>
 <section id="real-world-example-solubility-model" class="slide level2 scrollable">
 <h2>Real World Example: Solubility Model</h2>
 <div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Overview</a></li><li><a href="#tabset-5-2">GR Layer</a></li><li><a href="#tabset-5-3">Complete Model</a></li><li><a href="#tabset-5-4">And now we run our model</a></li><li><a href="#tabset-5-5">Dataset Class</a></li><li><a href="#tabset-5-6">Training Time</a></li><li><a href="#tabset-5-7">Plotting time</a></li><li><a href="#tabset-5-8">Parity Plot</a></li></ul>
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Overview</a></li><li><a href="#tabset-6-2">GR Layer</a></li><li><a href="#tabset-6-3">Complete Model</a></li><li><a href="#tabset-6-4">And now we run our model</a></li><li><a href="#tabset-6-5">Dataset Class</a></li><li><a href="#tabset-6-6">Training Time</a></li><li><a href="#tabset-6-7">Plotting time</a></li><li><a href="#tabset-6-8">Parity Plot</a></li></ul>
 <div class="tab-content">
-<div id="tabset-5-1">
+<div id="tabset-6-1">
 <p>We’ll now revisit predicting solubility with GCNs. Remember before that we used the features included with the dataset. Now we can use the molecular structures directly.</p>
 <p>Our GCN layer outputs node-level features.</p>
 <p>To predict solubility, we need to get a graph-level feature.</p>
 <p>For now let’s just take the average over all node features after our GCN layers. This is simple, permutation invariant, and gets us from node-level to graph level.</p>
 </div>
-<div id="tabset-5-2">
+<div id="tabset-6-2">
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
 <pre><code>class GRLayer(nn.Module):
@@ -1652,7 +1662,7 @@ In one sentence
 </div>
 </div>
 </div>
-<div id="tabset-5-3">
+<div id="tabset-6-3">
 <p>To complete our deep solubility predictor, we can add some dense layers and make sure we have a single-output without activation since we’re doing regression. We’ll define a PyTorch module that combines the GCN layers, graph readout, and dense layers.</p>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
@@ -1715,14 +1725,14 @@ model = SolubilityModel()</code></pre>
 </div>
 </div>
 </div>
-<div id="tabset-5-4">
+<div id="tabset-6-4">
 <pre><code>nodes, adj = gen_smiles2graph("CO")
 nodes_t = torch.from_numpy(nodes[np.newaxis, ...]).float()
 adj_mat_t = torch.from_numpy(adj[np.newaxis, ...]).float()
 model(nodes_t, adj_mat_t)</code></pre>
 <p>???It outputs one number! That’s always nice to have. Now we need to do some work to get a trainable dataset. Our dataset is a little bit complex because our features are tuples of tensors( ) so that our dataset is a tuple of tuples: .</p>
 </div>
-<div id="tabset-5-5">
+<div id="tabset-6-5">
 <p>We use a PyTorch Dataset class, which requires implementing <strong>len</strong> and <strong>getitem</strong> methods:</p>
 <pre><code>from torch.utils.data import Dataset, DataLoader
 
@@ -1748,7 +1758,7 @@ class SolubilityDataset(Dataset):
 val_data = SolubilityDataset(soldata, 200, 400)
 train_data = SolubilityDataset(soldata, 400)</code></pre>
 </div>
-<div id="tabset-5-6">
+<div id="tabset-6-6">
 <pre><code>train_loader = DataLoader(train_data, batch_size=1, shuffle=True)
 val_loader = DataLoader(val_data, batch_size=1, shuffle=False)
 
@@ -1784,7 +1794,7 @@ for epoch in range(epochs):
     print(f"Epoch {epoch+1}/{epochs}, Train Loss: {train_loss:.4f}, Val Loss: {val_loss:.4f}")
 </code></pre>
 </div>
-<div id="tabset-5-7">
+<div id="tabset-6-7">
 <pre><code>plt.plot(history["loss"], label="training")
 plt.plot(history["val_loss"], label="validation")
 plt.legend()
@@ -1794,7 +1804,7 @@ plt.show()</code></pre>
 <p>Question: Is the data overfit or underfit?</p>
 <p>This model is definitely underfit. One reason is that our batch size is 1. This is a side-effect of making the number of atoms variable, because otherwise we have trouble batching together our data if there are two unknown dimensions. A standard trick is to group together multiple molecules into one graph, but making sure they are disconnected (no bonds between the molecules). That allows you to batch molecules without increasing the rank of your model/data.</p>
 </div>
-<div id="tabset-5-8">
+<div id="tabset-6-8">
 <pre><code>model.eval()
 yhat = []
 test_y = []
