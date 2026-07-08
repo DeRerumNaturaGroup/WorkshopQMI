@@ -1,14 +1,15 @@
+/* Quarto's panel tabset modification. */
 .panel-tabset-tabby {
   list-style-type: none;
-  margin: 0;
+  margin: 0 !important;
   padding: 0;
   overflow: hidden;
   background-color: white;
-  border-radius: 0px;
   font-weight: 100;
   font-size: 0.8em;
+  border-radius: 0px;
   border: none !important;
-
+  /* border-bottom: 3px solid #cd863f94 !important; */
 
 }
 
@@ -19,6 +20,7 @@
   margin: 0;
   border: none !important;
   background-color: none !important;
+  border-bottom: 3px solid #cd863f94 !important;
 
 }
 
@@ -33,11 +35,7 @@
   border-radius: 0.25em 0.25em 0.25em 0.25em;
   padding: 0.25em 0.25em 0.25em 0.25em;
   /* background-color: green !important; */
-
   border: none !important; 
-  /* border: blue solid 6px !important; */
-
-
 }
 
 
@@ -48,7 +46,10 @@ a[role="tab"] {
 }
 
 .panel-tabset-tabby [role="tab"] {
-  background-color: none !important;
+  /* Change this for the actual tab itself */
+  /* background-color: none !important; */
+  background-color: #f0f0f0 !important;
+  margin: 0px 0.5em;
   color: black !important;
   padding: 0.35em;
   border-color: none !important;
@@ -60,6 +61,7 @@ a[role="tab"] {
   color: black !important;
   padding: 0.35em; 
   border-color: none !important;
+
 }
 
 .panel-tabset-tabby [role="tab"]:active { 
@@ -69,7 +71,6 @@ a[role="tab"] {
   /* border: blue solid 6px !important; */
   
 } 
-
 
 .tab-content {
   padding: 0px;

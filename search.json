@@ -180,5 +180,12 @@
     "title": "Quantum Meets AI",
     "section": "",
     "text": "The End"
+  },
+  {
+    "objectID": "presentations/Day3/Session2/presentation-GNN/index.html#session-plan",
+    "href": "presentations/Day3/Session2/presentation-GNN/index.html#session-plan",
+    "title": "Quantum Meets AI",
+    "section": "Session Plan",
+    "text": "Session Plan\nOur task in this session is threefold:\n\nWe will first learn about how molecules can be represented as graphs.\nWe will then learn about Graph Neural Networks (GNNs) and how they can be used to predict properties of molecules.\n\nWe will learn in particular about Graph Convolution Networks (GCNs) and how they work.\n\nFinally, we will see how to use GNNs to predict the solubility of molecules.\n\nNote that these are slightly more advanced topics and we will not go into the details of the mathematics behind them. We will focus on the intuition and how to use them in practice."
   }
 ]
