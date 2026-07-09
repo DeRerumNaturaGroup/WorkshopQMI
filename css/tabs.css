@@ -1,7 +1,7 @@
 /* Quarto's panel tabset modification. */
 .panel-tabset-tabby {
   list-style-type: none;
-  margin: 0 !important;
+  margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: white;

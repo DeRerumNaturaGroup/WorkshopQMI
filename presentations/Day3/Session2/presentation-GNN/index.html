@@ -1177,7 +1177,7 @@ f_k = \sigma\left( \sum_i v_{ij}w_{ik}  \right)
 <li>The averaging process in GCNs accomplishes two goals:
 <ol type="a">
 <li>it gives permutation equivariance by removing the effect of neighbor order and</li>
-<li>it prevents a change in magnitude in node features. A sum would accomplish (i) but would cause the magnitude of the node features to grow after each layer. Of course, you could ad-hoc put a batch normalization layer after each GCN layer to keep output magnitudes stable but averaging is easy.</li>
+<li>it prevents a change in magnitude in node features. A sum would accomplish (a) but would cause the magnitude of the node features to grow after each layer. - You could also perform a batch normalization layer after each GCN layer to keep output magnitudes stable but averaging is easy.</li>
 </ol></li>
 </ul>
 </div>
@@ -1193,16 +1193,14 @@ f_k = \sigma\left( \sum_i v_{ij}w_{ik}  \right)
 <ul>
 <li>Each node knows about its 1-hop neighbors</li>
 </ul></li>
-<li><p>But we can ‘stack’ GCN layers. What does that mean? Simply that we can apply a GCN layer to the output of another GCN layer. So:</p>
-<p>Layer 1 → node sees 1-hop neighbors Layer 2 → node sees 2-hop neighbors Layer 3 → node sees 3-hop neighbors etc.</p></li>
-<li><p>Thus each layer expands how far information flows:</p>
+<li><p>But we can ‘stack’ GCN layers. Stacking simply means that we can apply a GCN layer to the output of another GCN layer. Thus each layer expands how far information flows:</p>
 <ul>
 <li>Before any layers: Each node only knows itself.</li>
 <li>After 1 layer: Each node knows itself + immediate neighbors</li>
 <li>After 2 layers: Each node knows neighbors of neighbors</li>
 <li>After k layers: Each node knows: k-hop neighborhood structure</li>
 </ul></li>
-<li><p>Why not just use one big layer? Because:</p>
+<li><p>Why not just use one big layer that can broadcast its information? Because:</p>
 <ol type="1">
 <li>Local structure matters first</li>
 </ol>
@@ -1285,29 +1283,102 @@ Oxygen = [0 1 0]
 </div>
 </div>
 <div id="tabset-3-2">
-<p>Suppose you took an exam, you find out your score. You want to figure out how you did in relation to your peers.</p>
+<div class="columns">
+<div class="column">
 <ul>
-<li>You start with your ‘own information’</li>
-<li>You go to your neighbors and gather their information (ethically of course)</li>
-<li>You now have a guess as to how the exam went, but wait…</li>
-<li>Your friends have been gathering information in their networks too.</li>
-<li>When they update their information, you realize that you have to update yours too.</li>
+<li>Suppose you took an exam, you find out your score. You want to figure out</li>
 </ul>
-<div class="template1" style="width:80%; margin-left:20%">
-<h3>
-But simple averaging is too dumb
-</h3>
-<p>Some neighbors are more important. So we add learning:</p>
-<p><span class="highlight">Before averaging, we multiply each neighbor’s info by a trainable matrix</span></p>
-<p>These weights are what we have to ‘learn’.</p>
+<ol type="1">
+<li>How did you do in relation to your peers.</li>
+<li>what was the overall average score</li>
+</ol>
+</div><div class="column">
+<div>
+<p><span class="badge rounded-pill question-pill"> <span class="badge rounded-pill keyword-pill">Q</span> Which of these problems is local and which is global? </span></p>
 </div>
-<div class="template1">
-<h3>
-In one sentence
-</h3>
-<p>A GCN lets each node repeatedly:</p>
-<p><span class="highlight">mix its own features with an averaged, learnable summary of its neighbors, so it gradually learns its local environment.</span></p>
+</div></div>
+<ul>
+<li>To answer these you:</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 477.82 66.60" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(0 66.6)">
+<title>MessagePassing</title>
+<polygon fill="white" stroke="transparent" points="0,0 0,-66.6 477.82,-66.6 477.82,0 0,0"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<path fill="none" stroke="black" d="M58.75,-41.4C58.75,-41.4 12.08,-41.4 12.08,-41.4 6.08,-41.4 0.08,-35.4 0.08,-29.4 0.08,-29.4 0.08,-12.2 0.08,-12.2 0.08,-6.2 6.08,-0.2 12.08,-0.2 12.08,-0.2 58.75,-0.2 58.75,-0.2 64.75,-0.2 70.75,-6.2 70.75,-12.2 70.75,-12.2 70.75,-29.4 70.75,-29.4 70.75,-35.4 64.75,-41.4 58.75,-41.4"></path>
+<text text-anchor="middle" x="35.42" y="-25" font-family="Times,serif" font-size="14.00">Start with</text>
+<text text-anchor="middle" x="35.42" y="-8.2" font-family="Times,serif" font-size="14.00">your info</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<path fill="none" stroke="black" d="M183.51,-41.4C183.51,-41.4 107.94,-41.4 107.94,-41.4 101.94,-41.4 95.94,-35.4 95.94,-29.4 95.94,-29.4 95.94,-12.2 95.94,-12.2 95.94,-6.2 101.94,-0.2 107.94,-0.2 107.94,-0.2 183.51,-0.2 183.51,-0.2 189.51,-0.2 195.51,-6.2 195.51,-12.2 195.51,-12.2 195.51,-29.4 195.51,-29.4 195.51,-35.4 189.51,-41.4 183.51,-41.4"></path>
+<text text-anchor="middle" x="145.73" y="-25" font-family="Times,serif" font-size="14.00">Gather your</text>
+<text text-anchor="middle" x="145.73" y="-8.2" font-family="Times,serif" font-size="14.00">neighbors' info</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M70.98,-20.8C75.69,-20.8 80.62,-20.8 85.61,-20.8"></path>
+<polygon fill="black" stroke="black" points="85.88,-24.3 95.88,-20.8 85.88,-17.3 85.88,-24.3"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<path fill="none" stroke="black" d="M281.23,-66.4C281.23,-66.4 232.75,-66.4 232.75,-66.4 226.75,-66.4 220.75,-60.4 220.75,-54.4 220.75,-54.4 220.75,-37.2 220.75,-37.2 220.75,-31.2 226.75,-25.2 232.75,-25.2 232.75,-25.2 281.23,-25.2 281.23,-25.2 287.23,-25.2 293.23,-31.2 293.23,-37.2 293.23,-37.2 293.23,-54.4 293.23,-54.4 293.23,-60.4 287.23,-66.4 281.23,-66.4"></path>
+<text text-anchor="middle" x="256.99" y="-50" font-family="Times,serif" font-size="14.00">Combine</text>
+<text text-anchor="middle" x="256.99" y="-33.2" font-family="Times,serif" font-size="14.00">(Average)</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M195.6,-31.98C200.6,-33.13 205.66,-34.28 210.61,-35.42"></path>
+<polygon fill="black" stroke="black" points="210.05,-38.88 220.57,-37.7 211.61,-32.05 210.05,-38.88"></polygon>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<path fill="none" stroke="black" d="M466.05,-41.4C466.05,-41.4 330.13,-41.4 330.13,-41.4 324.13,-41.4 318.13,-35.4 318.13,-29.4 318.13,-29.4 318.13,-12.2 318.13,-12.2 318.13,-6.2 324.13,-0.2 330.13,-0.2 330.13,-0.2 466.05,-0.2 466.05,-0.2 472.05,-0.2 478.05,-6.2 478.05,-12.2 478.05,-12.2 478.05,-29.4 478.05,-29.4 478.05,-35.4 472.05,-41.4 466.05,-41.4"></path>
+<text text-anchor="middle" x="398.09" y="-25" font-family="Times,serif" font-size="14.00">Update your info as</text>
+<text text-anchor="middle" x="398.09" y="-8.2" font-family="Times,serif" font-size="14.00">your friends update theirs</text>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>C-&gt;D</title>
+<path fill="none" stroke="black" d="M293.45,-39.43C298.16,-38.58 303.14,-37.68 308.28,-36.76"></path>
+<polygon fill="black" stroke="black" points="309.09,-40.17 318.32,-34.96 307.85,-33.28 309.09,-40.17"></polygon>
+</g>
+<!-- D&#45;&gt;B -->
+<g id="edge4" class="edge">
+<title>D-&gt;B</title>
+<path fill="none" stroke="black" d="M318.02,-16.47C287.57,-15.35 252.48,-14.72 220.62,-15.8 215.81,-15.96 210.83,-16.18 205.83,-16.44"></path>
+<polygon fill="black" stroke="black" points="205.38,-12.96 195.59,-17.03 205.77,-19.95 205.38,-12.96"></polygon>
+</g>
+</g>
+</svg>
 </div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<ul>
+<li><p>So far it’s like the game we played. But simple averaging is too dumb. Some neighbors are more important. And by trial and error we want to <code>learn</code> which neighbor’s information is most trustworthy.</p>
+<ul>
+<li>Academically bright and poor students are likely to stand far from the average. So you will give them <span style="color:teal">less weight</span>. This is where learning comes in.</li>
+</ul></li>
+<li><p>Therefore, before averaging, we multiply each neighbor’s info by a trainable matrix. It is these trainable matrix <span style="color:teal">weights</span> that we have to ‘learn’.</p></li>
+<li><p>In one sentence a GCN lets each node repeatedly:</p>
+<blockquote>
+<p>mix its own features with an averaged, learnable summary of its neighbors, so it gradually learns its local environment.</p>
+</blockquote></li>
+</ul>
 </div>
 <div id="tabset-3-3">
 <video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="vids/gcn.mp4"></video>
