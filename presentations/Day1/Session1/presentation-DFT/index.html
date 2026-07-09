@@ -593,6 +593,15 @@ Electron Density
 <h1>Hands-On</h1>
 
 </section>
+<section id="dft-overview" class="slide level2 scrollable">
+<h2>DFT Overview</h2>
+<figure style="text-align:center;">
+<img src="_figs/dftoverview.png" style="width:1536px; height:auto;">
+<figcaption style="font-size:0.7em; margin-top:10px;">
+Different Methods of Simulations
+</figcaption>
+</figure>
+</section>
 <section id="dft-steps" class="slide level2 scrollable">
 <h2>DFT Steps</h2>
 <div class="fragment fade-in">
@@ -679,46 +688,6 @@ Electron Density
 </div>
 <div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
 <p>The final DFT electronic structure serves as the foundation for calculating various material properties, including band structures, density of states, optical absorption spectra, dielectric response, thermoelectric transport coefficients, adsorption energies, and catalytic reaction energetics.</p>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Bands</a></li><li><a href="#tabset-1-2">DOS/PDOS</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<div class="r-stack">
-<div class="fragment" style="position:absolute;">
-<p><img src="_figs/atomstobands.png" width="1500px" height="auto"></p>
-</div>
-<div class="fragment" style="position:absolute; top:760px; left: 50px">
-<p><img src="_figs/vbcb.png" width="1500px" height="auto"></p>
-</div>
-<div class="fragment" style="position:absolute; top:850px; left: 115px">
-<p><img src="_figs/plainrect.png" width="1500px" height="auto"></p>
-</div>
-<div class="fragment" style="position:absolute; top:850px; left: 85px">
-<p><img src="_figs/bandenergies.png" width="1500px" height="auto"></p>
-</div>
-<div class="fragment" style="position:absolute; top:920px; left: 115px">
-<p><img src="_figs/dummybands.png" width="1500px" height="auto"></p>
-</div>
-<div class="fragment" style="position:absolute; top:990px; left: 135px">
-<p><img src="_figs/hspbands.png" width="1500px" height="auto"></p>
-</div>
-</div>
-</div>
-<div id="tabset-1-2">
-<div class="r-stack">
-<div class="fragment" style="position:absolute;">
-<p><img src="_figs/dummydos.png" width="1500px" height="auto"></p>
-</div>
-<div class="fragment" style="position:absolute; top:770px; left: 40px">
-<p><img src="_figs/plainrect.png" width="1500px" height="1500"></p>
-</div>
-<div class="fragment" style="position:absolute; top:760px; left: 50px">
-<p><img src="_figs/dummypdos.png" width="1500px" height="auto"></p>
-</div>
-</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -792,66 +761,77 @@ Electron Density
 <div class="ddm-box" style="font-family:GS_L;border-color:transparent">
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb1" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb1-2"><a></a><span class="op">&amp;</span>CONTROL</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1" data-startfrom="1" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="op">&amp;</span>CONTROL</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="ddc-box">
-<p>calculation = ‘scf’ ! Type of calculation: self-consistent field (ground-state charge density)</p>
-<p>restart_mode = ‘from_scratch’ ! Start a new calculation instead of restarting a previous one</p>
-<p>pseudo_dir = ‘../pseudo/’ ! Directory containing pseudopotential files (.UPF)</p>
-<p>outdir = ‘../tmp/’ ! Directory where temporary files and wavefunctions are stored</p>
-<p>prefix = ‘gr’ ! Prefix used to name all output files</p>
-<p>/</p>
-</div>
-</div>
-<div class="ddc">
-<div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb2" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb2-2"><a></a><span class="op">&amp;</span>SYSTEM</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="ddc-box">
-<p>ibrav = 4 ! Hexagonal Bravais lattice (graphene unit cell)</p>
-<p>a = 2.4623 ! Lattice parameter a in Angstrom</p>
-<p>c = 10 ! Cell height in Angstrom (includes vacuum along z-direction)</p>
-<p>nat = 2 ! Number of atoms in the unit cell</p>
-<p>ntyp = 1 ! Number of atomic species (only carbon)</p>
-<p>occupations = ‘smearing’ ! Occupation method; useful for metals and semi-metals</p>
-<p>smearing = ‘mv’ ! Marzari-Vanderbilt (cold) smearing scheme</p>
-<p>degauss = 0.02 ! Smearing width in Ry</p>
-<p>ecutwfc = 60 ! Plane-wave kinetic energy cutoff in Ry</p>
-<p>/</p>
+<div class="ddc-box" style="background-color:gray">
+<div class="sourceCode" id="cb2" data-startfrom="1" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>  calculation   <span class="op">=</span> <span class="st">'scf'</span>,          <span class="op">!</span> Perform a <span class="va">self</span><span class="op">-</span>consistent field (SCF) calculation</span>
+<span id="cb2-2"><a></a>  prefix        <span class="op">=</span> <span class="st">'MoS2'</span>,         <span class="op">!</span> Prefix used to name <span class="bu">all</span> output files</span>
+<span id="cb2-3"><a></a>  pseudo_dir    <span class="op">=</span> <span class="st">'./../pseudo'</span>,  <span class="op">!</span> Directory containing pseudopotential (.UPF) files</span>
+<span id="cb2-4"><a></a>  outdir        <span class="op">=</span> <span class="st">'./../tmp/'</span>,    <span class="op">!</span> Directory <span class="cf">for</span> temporary files <span class="kw">and</span> wavefunctions</span>
+<span id="cb2-5"><a></a>  verbosity     <span class="op">=</span> <span class="st">'high'</span>,         <span class="op">!</span> Print detailed information during the calculation</span>
+<span id="cb2-6"><a></a><span class="op">/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb3" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb3-2"><a></a><span class="op">&amp;</span>ELECTRONS </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb3-2"><a></a><span class="op">&amp;</span>SYSTEM</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
-<p>mixing_beta = 0.7 ! Charge-density mixing factor used during SCF convergence</p>
-<p>/</p>
+<div class="sourceCode" id="cb4" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb4-2"><a></a>  ibrav         <span class="op">=</span> <span class="dv">0</span>,              <span class="op">!</span> Crystal structure <span class="kw">is</span> defined manually using CELL_PARAMETERS</span>
+<span id="cb4-3"><a></a>  nat           <span class="op">=</span> <span class="dv">3</span>,              <span class="op">!</span> Total number of atoms <span class="kw">in</span> the unit cell</span>
+<span id="cb4-4"><a></a>  ntyp          <span class="op">=</span> <span class="dv">2</span>,              <span class="op">!</span> Number of different atomic species (Mo <span class="kw">and</span> S)</span>
+<span id="cb4-5"><a></a>  ecutwfc       <span class="op">=</span> <span class="dv">80</span>,             <span class="op">!</span> Plane<span class="op">-</span>wave kinetic energy cutoff (Ry)</span>
+<span id="cb4-6"><a></a>  ecutrho       <span class="op">=</span> <span class="dv">350</span>,            <span class="op">!</span> Charge density cutoff (Ry), typically <span class="dv">4</span>–<span class="dv">12</span>× ecutwfc</span>
+<span id="cb4-7"><a></a>  occupation    <span class="op">=</span> <span class="st">'smearing'</span>,     <span class="op">!</span> Use smearing <span class="cf">for</span> electronic occupations</span>
+<span id="cb4-8"><a></a>  smearing      <span class="op">=</span> <span class="st">'mv'</span>,           <span class="op">!</span> Marzari<span class="op">-</span>Vanderbilt (cold) smearing method</span>
+<span id="cb4-9"><a></a>  degauss       <span class="op">=</span> <span class="fl">0.005</span>,          <span class="op">!</span> Smearing width (Ry)</span>
+<span id="cb4-10"><a></a><span class="op">/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb4" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb4-2"><a></a>ATOMIC_SPECIES</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb5-2"><a></a><span class="op">&amp;</span>ELECTRONS </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
-<p>C 12.0107 C.pbe-n-rrkjus_psl.0.1.UPF ! Element, atomic mass, and pseudopotential file</p>
+<div class="sourceCode" id="cb6" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb6-2"><a></a>  conv_thr      <span class="op">=</span> <span class="fl">1.0</span><span class="er">d</span><span class="op">-</span><span class="dv">8</span>,         <span class="op">!</span> Convergence threshold <span class="cf">for</span> the SCF cycle</span>
+<span id="cb6-3"><a></a><span class="op">/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb5" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb5-2"><a></a>ATOMIC_POSITIONS (crystal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb7-2"><a></a>ATOMIC_SPECIES</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
-<p>C 0.333333333 0.666666666 0.500000000 ! Carbon atom 1 in fractional (crystal) coordinates</p>
-<p>C 0.666666666 0.333333333 0.500000000 ! Carbon atom 2 in fractional (crystal) coordinates</p>
+<div class="sourceCode" id="cb8" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb8-2"><a></a>Mo     <span class="fl">95.95000</span>  Mo_ONCV_PBE_sr.upf   <span class="op">!</span> Molybdenum: atomic mass <span class="kw">and</span> pseudopotential <span class="bu">file</span></span>
+<span id="cb8-3"><a></a>S      <span class="fl">32.06500</span>  S_ONCV_PBE_sr.upf    <span class="op">!</span> Sulfur: atomic mass <span class="kw">and</span> pseudopotential <span class="bu">file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb6" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb6-2"><a></a>K_POINTS (automatic) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb9-2"><a></a>CELL_PARAMETERS {angstrom}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
-<p>12 12 1 0 0 0 ! 12×12×1 Monkhorst-Pack k-point mesh with no shifts</p>
+<div class="sourceCode" id="cb10" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb10-2"><a></a>  <span class="fl">3.185300</span>   <span class="fl">0.000000</span>   <span class="fl">0.000000</span>      <span class="op">!</span> First lattice vector (Å)</span>
+<span id="cb10-3"><a></a> <span class="op">-</span><span class="fl">1.592650</span>   <span class="fl">2.758551</span>   <span class="fl">0.000000</span>      <span class="op">!</span> Second lattice vector (Å)</span>
+<span id="cb10-4"><a></a>  <span class="fl">0.000000</span>   <span class="fl">0.000000</span>  <span class="fl">20.270000</span>      <span class="op">!</span> Third lattice vector (Å)<span class="op">;</span> includes vacuum <span class="cf">for</span> <span class="dv">2</span><span class="er">D</span> material</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="ddc">
+<div class="ddc-head" onclick="toggleBox(this)">
+<div class="sourceCode" id="cb11" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb11-2"><a></a>ATOMIC_POSITIONS (crystal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="ddc-box">
+<div class="sourceCode" id="cb12" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb12-2"><a></a>Mo  <span class="fl">0.6666664225</span>  <span class="fl">0.3333322010</span>  <span class="fl">0.1678139380</span>   <span class="op">!</span> Fractional coordinates of Mo atom</span>
+<span id="cb12-3"><a></a>S   <span class="fl">0.3333334793</span>  <span class="fl">0.6666672224</span>  <span class="fl">0.0906557537</span>   <span class="op">!</span> Fractional coordinates of first S atom</span>
+<span id="cb12-4"><a></a>S   <span class="fl">0.3333334312</span>  <span class="fl">0.6666672436</span>  <span class="fl">0.2449733083</span>   <span class="op">!</span> Fractional coordinates of second S atom</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="ddc">
+<div class="ddc-head" onclick="toggleBox(this)">
+<div class="sourceCode" id="cb13" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb13-2"><a></a>K_POINTS (automatic) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="ddc-box">
+<div class="sourceCode" id="cb14" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb14-2"><a></a><span class="dv">6</span> <span class="dv">6</span> <span class="dv">1</span>  <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span>                           <span class="op">!</span> <span class="dv">6</span>×<span class="dv">6</span>×<span class="dv">1</span> Monkhorst<span class="op">-</span>Pack k<span class="op">-</span>point mesh (no shift)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -867,15 +847,38 @@ Electron Density
 <ol type="1">
 <li>Open the <strong>QECalcs</strong> folder.</li>
 <li>Open the <strong>bt3_convergence</strong> folder.</li>
-<li>Open the <strong>ecut</strong> folder.</li>
 </ol>
-<ul>
-<li>Perform multiple SCF calculations at different ecutwfc values.</li>
-<li>Perform multiple SCF calculations at different k-point values.</li>
-<li>Plot energy vs ecutefc and energy vs k-points.</li>
-<li>Plot them</li>
-<li>Check converged value</li>
-</ul>
+<h3 id="ecutoff-covergence">Ecutoff covergence</h3>
+<ol start="3" type="1">
+<li>Open the <strong>ecut_conv</strong> folder.</li>
+<li>Perform multiple SCF calculations (for each .in file in the folder) at different ecutwfc values using the command:</li>
+</ol>
+<div class="ddc">
+<div class="ddc-head" onclick="toggleBox(this)">
+<div class="sourceCode" id="cb15" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i ecut.x.<span class="kw">in</span> <span class="op">&gt;</span> ecut.x.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="ddc-box">
+
+</div>
+</div>
+<h3 id="k-points-convergence">k-points convergence</h3>
+<ol type="1">
+<li>Open the <strong>kpoints_conv</strong> folder.</li>
+<li>Perform multiple SCF calculations (for each .in file in the folder) at different k-points using the command:</li>
+</ol>
+<div class="ddc">
+<div class="ddc-head" onclick="toggleBox(this)">
+<div class="sourceCode" id="cb16" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i kpoint.x.<span class="kw">in</span> <span class="op">&gt;</span> kpoint.x.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="ddc-box">
+
+</div>
+</div>
+<h3 id="plotting">Plotting</h3>
+<ol type="1">
+<li>Make .dat files (column1: ecut/kpoints values, column2: corresponding energy values).</li>
+<li>Plot using the pytho function.</li>
+</ol>
 </div>
 <div id="optiont4Content" class="content">
 <div style="text-align:center">
@@ -896,7 +899,7 @@ Electron Density
 </ol>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb7" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i vc<span class="op">-</span>relax.<span class="kw">in</span> <span class="op">&gt;</span> vcrelax.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i vc<span class="op">-</span>relax.<span class="kw">in</span> <span class="op">&gt;</span> vcrelax.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
@@ -921,7 +924,7 @@ Electron Density
 </ul>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb8" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i scf.<span class="kw">in</span> <span class="op">&gt;</span> scf.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i scf.<span class="kw">in</span> <span class="op">&gt;</span> scf.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
@@ -932,13 +935,35 @@ Electron Density
 <section id="advanced-tasks" class="slide level2 scrollable">
 <h2>Advanced Tasks</h2>
 <div class="navbar">
-<p><span class="nav-option" data-option="optiont6" onclick="showContent(this)">Eelctronic Properties</span> <span class="nav-option" data-option="optiont8" onclick="showContent(this)">Optical Properties</span> <span class="nav-option" data-option="optiont8" onclick="showContent(this)">Catalysis</span></p>
+<p><span class="nav-option" data-option="optiont6" onclick="showContent(this)">Band Structure</span> <span class="nav-option" data-option="optiont7" onclick="showContent(this)">Non Self Consistent Field</span> <span class="nav-option" data-option="optiont8" onclick="showContent(this)">Density of States</span></p>
 </div>
 <div id="optiont6Content" class="content">
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Bands</a></li><li><a href="#tabset-2-2">NSCF</a></li><li><a href="#tabset-2-3">DOS/PDOS</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Theory</a></li><li><a href="#tabset-1-2">Practical</a></li></ul>
 <div class="tab-content">
-<div id="tabset-2-1">
+<div id="tabset-1-1">
+<div class="r-stack">
+<div class="fragment" style="position:absolute;">
+<p><img src="_figs/atomstobands.png" width="1500px" height="auto"></p>
+</div>
+<div class="fragment" style="position:absolute; top:760px; left: 50px">
+<p><img src="_figs/vbcb.png" width="1500px" height="auto"></p>
+</div>
+<div class="fragment" style="position:absolute; top:850px; left: 115px">
+<p><img src="_figs/plainrect.png" width="1500px" height="auto"></p>
+</div>
+<div class="fragment" style="position:absolute; top:850px; left: 85px">
+<p><img src="_figs/bandenergies.png" width="1500px" height="auto"></p>
+</div>
+<div class="fragment" style="position:absolute; top:920px; left: 115px">
+<p><img src="_figs/dummybands.png" width="1500px" height="auto"></p>
+</div>
+<div class="fragment" style="position:absolute; top:990px; left: 135px">
+<p><img src="_figs/hspbands.png" width="1500px" height="auto"></p>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
 <p><strong>Band Structure Calculation</strong></p>
 <p>It is a 2 step process.</p>
 <ol type="1">
@@ -956,7 +981,7 @@ Electron Density
 </ol>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb9" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i bands.<span class="kw">in</span> <span class="op">&gt;</span> bands.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i bands.<span class="kw">in</span> <span class="op">&gt;</span> bands.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
@@ -971,14 +996,17 @@ Electron Density
 </ol>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb10" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> bands.x <span class="op">-</span>i bandspp.<span class="kw">in</span> <span class="op">&gt;</span> bandspp.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> bands.x <span class="op">-</span>i bandspp.<span class="kw">in</span> <span class="op">&gt;</span> bandspp.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
 </div>
 </div>
 </div>
-<div id="tabset-2-2">
+</div>
+</div>
+</div>
+<div id="optiont7Content" class="content">
 <p><strong>Non Self Consistent (NSCF) Calculation</strong></p>
 <p>An NSCF calculation is performed using a fixed charge density obtained from a previously converged SCF calculation to calculate the eigen values and wavefunctions at a chosen set of dense k-points without updating the charge density to perform post-processing tasks such as density of states (DOS) or band structure calculations.</p>
 <div style="color:FireBrick; text-align:left">
@@ -992,75 +1020,7 @@ Electron Density
 </ol>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb11" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i nscf.<span class="kw">in</span> <span class="op">&gt;</span> nscf.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="ddc-box">
-
-</div>
-</div>
-</div>
-<div id="tabset-2-3">
-<p><strong>Density of States (DOS) and Projected DOS (PDOS)</strong></p>
-<div style="color:FireBrick; text-align:left">
-<p>Steps to Follow:</p>
-</div>
-<ol type="1">
-<li>Open the <strong>QECalcs</strong> folder.</li>
-<li>Open the <strong>ep3_dos_pdos</strong> folder.</li>
-<li>Open the <strong>bands.in</strong> file.</li>
-<li>Run the calculation on the terminal:</li>
-</ol>
-<div class="ddc">
-<div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb12" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> projwfc.x <span class="op">-</span>i projwfc.<span class="kw">in</span> <span class="op">&gt;</span> projwfc.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="ddc-box">
-
-</div>
-</div>
-<ul>
-<li>For only DOS, run the command:</li>
-</ul>
-<div class="ddc">
-<div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb13" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> dos.x <span class="op">-</span>i dos.<span class="kw">in</span> <span class="op">&gt;</span> dos.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="ddc-box">
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="optiont7Content" class="content">
-<div style="text-align:center">
-<p><strong>Optical Properties</strong></p>
-</div>
-<p><strong>Density of States (DOS) and Projected DOS (PDOS)</strong></p>
-<div style="color:FireBrick; text-align:left">
-<p>Steps to Follow:</p>
-</div>
-<ol type="1">
-<li>Open the <strong>QECalcs</strong> folder.</li>
-<li>Open the <strong>ep3_dos_pdos</strong> folder.</li>
-<li>Open the <strong>bands.in</strong> file.</li>
-<li>Run the calculation on the terminal:</li>
-</ol>
-<div class="ddc">
-<div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb14" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> projwfc.x <span class="op">-</span>i projwfc.<span class="kw">in</span> <span class="op">&gt;</span> projwfc.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="ddc-box">
-
-</div>
-</div>
-<ul>
-<li>For only DOS, run the command:</li>
-</ul>
-<div class="ddc">
-<div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb15" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> dos.x <span class="op">-</span>i dos.<span class="kw">in</span> <span class="op">&gt;</span> dos.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i nscf.<span class="kw">in</span> <span class="op">&gt;</span> nscf.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
@@ -1068,9 +1028,23 @@ Electron Density
 </div>
 </div>
 <div id="optiont8Content" class="content">
-<div style="text-align:center">
-<p><strong>Catalysis</strong></p>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Theory</a></li><li><a href="#tabset-2-2">Practical</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="r-stack">
+<div class="fragment" style="position:absolute;">
+<p><img src="_figs/dummydos.png" width="1500px" height="auto"></p>
 </div>
+<div class="fragment" style="position:absolute; top:770px; left: 40px">
+<p><img src="_figs/plainrect.png" width="1500px" height="1500"></p>
+</div>
+<div class="fragment" style="position:absolute; top:760px; left: 50px">
+<p><img src="_figs/dummypdos.png" width="1500px" height="auto"></p>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
 <p><strong>Density of States (DOS) and Projected DOS (PDOS)</strong></p>
 <div style="color:FireBrick; text-align:left">
 <p>Steps to Follow:</p>
@@ -1083,7 +1057,7 @@ Electron Density
 </ol>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb16" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> projwfc.x <span class="op">-</span>i projwfc.<span class="kw">in</span> <span class="op">&gt;</span> projwfc.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> projwfc.x <span class="op">-</span>i projwfc.<span class="kw">in</span> <span class="op">&gt;</span> projwfc.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
@@ -1094,10 +1068,13 @@ Electron Density
 </ul>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb17" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> dos.x <span class="op">-</span>i dos.<span class="kw">in</span> <span class="op">&gt;</span> dos.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> dos.x <span class="op">-</span>i dos.<span class="kw">in</span> <span class="op">&gt;</span> dos.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
