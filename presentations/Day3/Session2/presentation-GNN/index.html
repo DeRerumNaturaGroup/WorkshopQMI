@@ -341,16 +341,20 @@
 </section>
 <section id="session-plan" class="slide level2">
 <h2>Session Plan</h2>
-<p>Our task in this session is threefold:</p>
-<ul>
-<li>We will first learn about how molecules can be represented as graphs.</li>
-<li>We will then learn about Graph Neural Networks (GNNs) and how they can be used to predict properties of molecules.
-<ul>
-<li>We will learn in particular about Graph Convolution Networks (GCNs) and how they work.</li>
-</ul></li>
-<li>Finally, we will see how to use GNNs to predict the solubility of molecules.</li>
-</ul>
-<p>Note that these are slightly more advanced topics and we will not go into the details of the mathematics behind them. We will focus on the intuition and how to use them in practice.</p>
+<p>Our task in this session is threefold. We will learn:</p>
+<div style="margin-top:1.0em">
+<p><span class="badge rounded-pill keyword-pill">1</span> About how molecules can be represented as graphs.</p>
+</div>
+<div style="margin-top:1.0em">
+<p><span class="badge rounded-pill keyword-pill">2</span> About Graph Neural Networks (GNNs) and how they can predict properties of molecules, with particular emphasis on Graph Convolution Networks (GCNs).</p>
+</div>
+<div style="margin-top:1.0em">
+<p><span class="badge rounded-pill keyword-pill">3</span> Finally, we will see how to use GNNs to predict the solubility of molecules.</p>
+</div>
+<div style="margin:2em">
+
+</div>
+<p><span class="badge rounded-pill warning-pill">Note</span> These are slightly more advanced topics. It is fine not to understand them completely in the first go. We will not go too deeply into mathematical rigor in favor of intuition and practical utility.</p>
 </section></section>
 <section>
 <section id="background-molecules-as-graphs" class="title-slide slide level1 center">
@@ -886,19 +890,20 @@ column-gap:0.5rem;
 </div>
 </div>
 <div id="option24Content" class="content">
-<ul>
-<li>Graphs are collections of connections (edges) between vertices (nodes).</li>
-<li>Graphs can be represented in multiple ways.</li>
-<li>For our present purposes supplying a node list and an adjacency matrix is a good way to provide a graph.</li>
-</ul>
+<p>So far we have learned that:</p>
+<div style="margin-top:1.0em">
+<p><span class="badge rounded-pill keyword-pill">1</span> Graphs are collections of connections (edges) between vertices (nodes).</p>
 </div>
-<!-- ##
-We will cover the following topics:
-- What are GNNs?
-- Why are GNNs useful for materials science?
-- How do GNNs work?
-- Examples of GNNs in materials science -->
-<!-- {{< include _fingerprints_examples.qmd >}} -->
+<div style="margin-top:1.0em">
+<p><span class="badge rounded-pill keyword-pill">2</span> Graphs can be represented in multiple ways.</p>
+</div>
+<div style="margin-top:1.0em">
+<p><span class="badge rounded-pill keyword-pill">3</span> For our present purposes supplying a node list and an adjacency matrix is a good way to provide a graph.</p>
+</div>
+<div style="margin:2em">
+
+</div>
+</div>
 </section></section>
 <section>
 <section id="background-graph-neural-networks-gnns" class="title-slide slide level1 center">
@@ -908,7 +913,7 @@ We will cover the following topics:
 <section id="section-4" class="slide level2 scrollable">
 <h2></h2>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">What are GNNs?</a></li><li><a href="#tabset-2-2">ELI5 - A game</a></li><li><a href="#tabset-2-3">Our First GNN (Layer)</a></li><li><a href="#tabset-2-4">🟣 Summary</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">What are GNNs?</a></li><li><a href="#tabset-2-2">An Example</a></li><li><a href="#tabset-2-3">Our First GNN (Layer)</a></li><li><a href="#tabset-2-4">🟣 Summary</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
 <p><span style="color:teal">Graph Neural Networks (GNNs)</span> are a class of deep learning models that operate on graph-structured data.</p>
@@ -926,7 +931,7 @@ We will cover the following topics:
 </div>
 <div class="ddm">
 <div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;--underline-bg:none;">
-<p><span class="badge rounded-pill keyword-pill">Jargon Alert</span> <span style="color:teal">Permutation Equivariance</span> is a fancy way of saying: If you shuffle the inputs, the output should get shuffled in the same way.</p>
+<p><span class="badge rounded-pill warning-pill">Jargon</span> <span style="color:sienna">Permutation Equivariance</span> is a fancy way of saying: If you shuffle the inputs, the output should get shuffled in the same way.</p>
 </div>
 <div class="ddm-box" style="font-family:GS">
 <p><span style="font-size:0.8em">⭕</span> In the methanol example, we could have made the carbon be atom 1 instead of 4. The adjacency matrix would change.</p>
@@ -940,7 +945,7 @@ We will cover the following topics:
 </div>
 <div id="tabset-2-2">
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Setup</a></li><li><a href="#tabset-1-2">(1) Message Passing</a></li><li><a href="#tabset-1-3">(2) Update Your State</a></li><li><a href="#tabset-1-4">(3) Repeat</a></li><li><a href="#tabset-1-5">Result?</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Setup</a></li><li><a href="#tabset-1-2">❶ Message Passing</a></li><li><a href="#tabset-1-3">❷ Update Your State</a></li><li><a href="#tabset-1-4">❸ Repeat</a></li><li><a href="#tabset-1-5">Result?</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <p>To understand GNNs, let’s consider a simple game. We have a group of participants, each with a secret number. The goal is to find out what the group is <strong>thinking</strong> without ever leaving the seat.</p>
@@ -1141,6 +1146,7 @@ f_k = \sigma\left( \sum_i v_{ij}w_{ik}  \right)
 </div>
 </div>
 <div id="tabset-2-4">
+<p>We have just had an introduction to GNNs. To implement a GNN really means to develop layers which can input and output graphs.</p>
 <p>These simple examples differ from real GNNs in two important ways:</p>
 <ol type="i">
 <li>They give a single feature vector output, which throws away per-node information,</li>
@@ -1159,13 +1165,9 @@ f_k = \sigma\left( \sum_i v_{ij}w_{ik}  \right)
 <section id="graph-convolution-networks" class="slide level2 scrollable">
 <h2>Graph Convolution Networks</h2>
 <div class="navbar">
-<p><span class="nav-option" data-option="option30" onclick="showContent(this)">How they work</span> <span class="nav-option" data-option="option31" onclick="showContent(this)">Graph Convolution</span> <span class="nav-option" data-option="option32" onclick="showContent(this)">Code</span> <span class="nav-option" data-option="option33" onclick="showContent(this)">Materials to Model</span> <span class="nav-option" data-option="option34" onclick="showContent(this)">Projects</span></p>
+<p><span class="nav-option" data-option="option30" onclick="showContent(this)">How they work</span> <span class="nav-option" data-option="option31" onclick="showContent(this)">By Analogy</span> <span class="nav-option" data-option="option32" onclick="showContent(this)">Animation</span> <span class="nav-option" data-option="option33" onclick="showContent(this)">Code</span></p>
 </div>
 <div id="option30Content" class="content">
-<div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">🟤 Overview</a></li><li><a href="#tabset-3-2">🟣 By Analogy</a></li><li><a href="#tabset-3-3">🟢 Animation</a></li></ul>
-<div class="tab-content">
-<div id="tabset-3-1">
 <div class="ddm">
 <div class="ddm-head" onclick="toggleBox(this)">
 <p>GCNs try to incorporate neighbor information into each node’s representation.</p>
@@ -1282,33 +1284,31 @@ Oxygen = [0 1 0]
 </div>
 </div>
 </div>
-<div id="tabset-3-2">
-<div class="columns">
-<div class="column">
+<div id="option31Content" class="content">
 <ul>
 <li>Suppose you took an exam, you find out your score. You want to figure out</li>
 </ul>
-<ol type="1">
-<li>How did you do in relation to your peers.</li>
-<li>what was the overall average score</li>
-</ol>
+<div class="columns">
+<div class="column">
+<p><span style="color:sienna">1. How did you do in relation to your peers.</span></p>
 </div><div class="column">
+<p><span style="color:sienna">2. What was the overall average score</span></p>
+</div></div>
 <div>
 <p><span class="badge rounded-pill question-pill"> <span class="badge rounded-pill keyword-pill">Q</span> Which of these problems is local and which is global? </span></p>
 </div>
-</div></div>
 <ul>
 <li>To answer these you:</li>
 </ul>
-<div class="cell" data-layout-align="default">
+<div class="cell" data-fig-width="12" data-fig-height="2" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class=""><p></p>
 <div>
-<svg width="960" height="480" viewbox="0.00 0.00 477.82 66.60" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<svg width="1152" height="192" viewbox="0.00 0.00 513.20 66.60" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(0 66.6)">
 <title>MessagePassing</title>
-<polygon fill="white" stroke="transparent" points="0,0 0,-66.6 477.82,-66.6 477.82,0 0,0"></polygon>
+<polygon fill="white" stroke="transparent" points="0,0 0,-66.6 513.2,-66.6 513.2,0 0,0"></polygon>
 <!-- A -->
 <g id="node1" class="node">
 <title>A</title>
@@ -1345,20 +1345,20 @@ Oxygen = [0 1 0]
 <!-- D -->
 <g id="node4" class="node">
 <title>D</title>
-<path fill="none" stroke="black" d="M466.05,-41.4C466.05,-41.4 330.13,-41.4 330.13,-41.4 324.13,-41.4 318.13,-35.4 318.13,-29.4 318.13,-29.4 318.13,-12.2 318.13,-12.2 318.13,-6.2 324.13,-0.2 330.13,-0.2 330.13,-0.2 466.05,-0.2 466.05,-0.2 472.05,-0.2 478.05,-6.2 478.05,-12.2 478.05,-12.2 478.05,-29.4 478.05,-29.4 478.05,-35.4 472.05,-41.4 466.05,-41.4"></path>
-<text text-anchor="middle" x="398.09" y="-25" font-family="Times,serif" font-size="14.00">Update your info as</text>
-<text text-anchor="middle" x="398.09" y="-8.2" font-family="Times,serif" font-size="14.00">your friends update theirs</text>
+<path fill="none" stroke="black" d="M501.12,-41.4C501.12,-41.4 330.44,-41.4 330.44,-41.4 324.44,-41.4 318.44,-35.4 318.44,-29.4 318.44,-29.4 318.44,-12.2 318.44,-12.2 318.44,-6.2 324.44,-0.2 330.44,-0.2 330.44,-0.2 501.12,-0.2 501.12,-0.2 507.12,-0.2 513.12,-6.2 513.12,-12.2 513.12,-12.2 513.12,-29.4 513.12,-29.4 513.12,-35.4 507.12,-41.4 501.12,-41.4"></path>
+<text text-anchor="middle" x="415.78" y="-25" font-family="Times,serif" font-size="14.00">Update your info asyour friends</text>
+<text text-anchor="middle" x="415.78" y="-8.2" font-family="Times,serif" font-size="14.00"> update theirs till convergence</text>
 </g>
 <!-- C&#45;&gt;D -->
 <g id="edge3" class="edge">
 <title>C-&gt;D</title>
-<path fill="none" stroke="black" d="M293.45,-39.43C298.16,-38.58 303.14,-37.68 308.28,-36.76"></path>
-<polygon fill="black" stroke="black" points="309.09,-40.17 318.32,-34.96 307.85,-33.28 309.09,-40.17"></polygon>
+<path fill="none" stroke="black" d="M293.57,-40.13C298.19,-39.39 303.1,-38.61 308.2,-37.79"></path>
+<polygon fill="black" stroke="black" points="308.87,-41.23 318.19,-36.2 307.77,-34.32 308.87,-41.23"></polygon>
 </g>
 <!-- D&#45;&gt;B -->
 <g id="edge4" class="edge">
 <title>D-&gt;B</title>
-<path fill="none" stroke="black" d="M318.02,-16.47C287.57,-15.35 252.48,-14.72 220.62,-15.8 215.81,-15.96 210.83,-16.18 205.83,-16.44"></path>
+<path fill="none" stroke="black" d="M317.98,-16.04C286.89,-15.12 252.3,-14.73 220.62,-15.8 215.81,-15.96 210.83,-16.18 205.83,-16.44"></path>
 <polygon fill="black" stroke="black" points="205.38,-12.96 195.59,-17.03 205.77,-19.95 205.38,-12.96"></polygon>
 </g>
 </g>
@@ -1369,76 +1369,24 @@ Oxygen = [0 1 0]
 </div>
 </div>
 <ul>
-<li><p>So far it’s like the game we played. But simple averaging is too dumb. Some neighbors are more important. And by trial and error we want to <code>learn</code> which neighbor’s information is most trustworthy.</p>
-<ul>
-<li>Academically bright and poor students are likely to stand far from the average. So you will give them <span style="color:teal">less weight</span>. This is where learning comes in.</li>
-</ul></li>
-<li><p>Therefore, before averaging, we multiply each neighbor’s info by a trainable matrix. It is these trainable matrix <span style="color:teal">weights</span> that we have to ‘learn’.</p></li>
+<li><p>So far it’s like the game we played. But simple averaging is too dumb. From past experience you might have <code>learned</code> that some neighbors (or neighbors of neighbors) are going to be closer to the average (than say someone academically smart, or wildly inconsistent).</p></li>
+<li><p>Therefore, before averaging, we multiply each neighbor’s info by a trainable matrix.</p></li>
+<li><p>It is these trainable matrix <span style="color:teal">weights</span> that we have to ‘learn’ i.e.&nbsp;we want to know, what importance we need to give to someone.</p></li>
 <li><p>In one sentence a GCN lets each node repeatedly:</p>
 <blockquote>
 <p>mix its own features with an averaged, learnable summary of its neighbors, so it gradually learns its local environment.</p>
 </blockquote></li>
 </ul>
 </div>
-<div id="tabset-3-3">
-<video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="vids/gcn.mp4"></video>
-</div>
-</div>
-</div>
-</div>
-<div id="option31Content" class="content">
-<div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">A</a></li><li><a href="#tabset-4-2">B</a></li></ul>
-<div class="tab-content">
-<div id="tabset-4-1">
-<div class="ddm">
-<div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;--underline-bg:none;:None">
-<p>We must put this code above into a new <span class="highlightlight">Module</span> subclass.</p>
-</div>
-<div class="ddm-box" style="font-family:GS">
-<p><span style="font-size:0.8em">⭕</span> Remember module…</p>
-</div>
-</div>
-<!--  -->
-<div class="ddm">
-<div class="ddm-head" onclick="toggleBox(this)" style="color:black;font-weight:500;font-family:GS;--underline-bg:none;:None">
-<p>The three main changes are that we:</p>
-<ul>
-<li>create trainable parameters self.w and use them in the torch.einsum,</li>
-<li>we use an activation,</li>
-<li>and we output both our new node features and the adjacency matrix.</li>
-</ul>
-</div>
-<div class="ddm-box" style="font-family:GS">
-<p><span style="font-size:0.8em">⭕</span> The reason to output the adjacency matrix is so that we can <span class="highlightlight">stack multiple GCN layers</span> without having to pass the adjacency matrix each time.</p>
-</div>
-</div>
-</div>
-<div id="tabset-4-2">
-<div class="ddm">
-<div class="ddm-head" onclick="toggleBox(this)">
-<p>Implementation as pytorch layer</p>
-</div>
-<div class="ddm-box">
-<p>cu</p>
-<div class="columns">
-<div class="column">
-<p>ab</p>
-</div><div class="column">
-<p>cd</p>
-</div></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 <!-- option ends -->
 <div id="option32Content" class="content">
+<video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="vids/gcn.mp4"></video>
+</div>
+<div id="option33Content" class="content">
 <div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Layer</a></li><li><a href="#tabset-5-2">Using layer</a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Layer</a></li><li><a href="#tabset-3-2">Using layer</a></li></ul>
 <div class="tab-content">
-<div id="tabset-5-1">
+<div id="tabset-3-1">
 <p>We first create the ‘machine’ (think Coffee Maker). The code below might seem difficult but it’s not. We must tell:</p>
 <ul>
 <li>What pieces it must have. The <code>__init__</code> function</li>
@@ -1611,7 +1559,7 @@ Oxygen = [0 1 0]
 <p>is the GCN equation</p></li>
 </ul>
 </div>
-<div id="tabset-5-2">
+<div id="tabset-3-2">
 <p>We can now use our coffee machine.</p>
 <p>We give it the inputs (1) nodes and (2) the adjacency matrix.</p>
 <p>But remember the GCN layer only looks at ‘immediate neighbors’. Our gossip network should be bigger.</p>
@@ -1692,22 +1640,15 @@ Oxygen = [0 1 0]
 </div>
 </div>
 </div>
-<div id="option33Content" class="content">
-<p>sdfs</p>
-</div>
-<div id="option34Content" class="content">
-<p>sad</p>
-</div>
 </section></section>
 <section id="what-do-we-have-so-far" class="title-slide slide level1 center">
 <h1>What do we have so far…</h1>
 <p>We know:</p>
 <ol type="1">
-<li>Graph neural networks are important because we don’t have to specify descriptors. They take molecules and crystals as inputs.</li>
+<li>GNNs are important because we don’t have to specify descriptors. They take molecules and crystals as inputs.</li>
 <li>Graph convolution networks are a type of GNNs which works by taking the neighbor’s information.</li>
 <li>We can create a GCN layers which do this.</li>
 </ol>
-<p>We now want to ‘STACK’ multiple GCN layers. Think of this as gossip being updated every day.</p>
 </section>
 
 <section>
@@ -1719,15 +1660,15 @@ Oxygen = [0 1 0]
 <section id="real-world-example-solubility-model" class="slide level2 scrollable">
 <h2>Real World Example: Solubility Model</h2>
 <div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Overview</a></li><li><a href="#tabset-6-2">GR Layer</a></li><li><a href="#tabset-6-3">Complete Model</a></li><li><a href="#tabset-6-4">And now we run our model</a></li><li><a href="#tabset-6-5">Dataset Class</a></li><li><a href="#tabset-6-6">Training Time</a></li><li><a href="#tabset-6-7">Plotting time</a></li><li><a href="#tabset-6-8">Parity Plot</a></li></ul>
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Overview</a></li><li><a href="#tabset-4-2">GR Layer</a></li><li><a href="#tabset-4-3">Complete Model</a></li><li><a href="#tabset-4-4">And now we run our model</a></li><li><a href="#tabset-4-5">Dataset Class</a></li><li><a href="#tabset-4-6">Training Time</a></li><li><a href="#tabset-4-7">Plotting time</a></li><li><a href="#tabset-4-8">Parity Plot</a></li></ul>
 <div class="tab-content">
-<div id="tabset-6-1">
+<div id="tabset-4-1">
 <p>We’ll now revisit predicting solubility with GCNs. Remember before that we used the features included with the dataset. Now we can use the molecular structures directly.</p>
 <p>Our GCN layer outputs node-level features.</p>
 <p>To predict solubility, we need to get a graph-level feature.</p>
 <p>For now let’s just take the average over all node features after our GCN layers. This is simple, permutation invariant, and gets us from node-level to graph level.</p>
 </div>
-<div id="tabset-6-2">
+<div id="tabset-4-2">
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
 <pre><code>class GRLayer(nn.Module):
@@ -1746,7 +1687,7 @@ Oxygen = [0 1 0]
 </div>
 </div>
 </div>
-<div id="tabset-6-3">
+<div id="tabset-4-3">
 <p>To complete our deep solubility predictor, we can add some dense layers and make sure we have a single-output without activation since we’re doing regression. We’ll define a PyTorch module that combines the GCN layers, graph readout, and dense layers.</p>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
@@ -1809,14 +1750,14 @@ model = SolubilityModel()</code></pre>
 </div>
 </div>
 </div>
-<div id="tabset-6-4">
+<div id="tabset-4-4">
 <pre><code>nodes, adj = gen_smiles2graph("CO")
 nodes_t = torch.from_numpy(nodes[np.newaxis, ...]).float()
 adj_mat_t = torch.from_numpy(adj[np.newaxis, ...]).float()
 model(nodes_t, adj_mat_t)</code></pre>
 <p>???It outputs one number! That’s always nice to have. Now we need to do some work to get a trainable dataset. Our dataset is a little bit complex because our features are tuples of tensors( ) so that our dataset is a tuple of tuples: .</p>
 </div>
-<div id="tabset-6-5">
+<div id="tabset-4-5">
 <p>We use a PyTorch Dataset class, which requires implementing <strong>len</strong> and <strong>getitem</strong> methods:</p>
 <pre><code>from torch.utils.data import Dataset, DataLoader
 
@@ -1842,7 +1783,7 @@ class SolubilityDataset(Dataset):
 val_data = SolubilityDataset(soldata, 200, 400)
 train_data = SolubilityDataset(soldata, 400)</code></pre>
 </div>
-<div id="tabset-6-6">
+<div id="tabset-4-6">
 <pre><code>train_loader = DataLoader(train_data, batch_size=1, shuffle=True)
 val_loader = DataLoader(val_data, batch_size=1, shuffle=False)
 
@@ -1878,7 +1819,7 @@ for epoch in range(epochs):
     print(f"Epoch {epoch+1}/{epochs}, Train Loss: {train_loss:.4f}, Val Loss: {val_loss:.4f}")
 </code></pre>
 </div>
-<div id="tabset-6-7">
+<div id="tabset-4-7">
 <pre><code>plt.plot(history["loss"], label="training")
 plt.plot(history["val_loss"], label="validation")
 plt.legend()
@@ -1888,7 +1829,7 @@ plt.show()</code></pre>
 <p>Question: Is the data overfit or underfit?</p>
 <p>This model is definitely underfit. One reason is that our batch size is 1. This is a side-effect of making the number of atoms variable, because otherwise we have trouble batching together our data if there are two unknown dimensions. A standard trick is to group together multiple molecules into one graph, but making sure they are disconnected (no bonds between the molecules). That allows you to batch molecules without increasing the rank of your model/data.</p>
 </div>
-<div id="tabset-6-8">
+<div id="tabset-4-8">
 <pre><code>model.eval()
 yhat = []
 test_y = []

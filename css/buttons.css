@@ -29,11 +29,22 @@
     border-radius: 999px;
 }
 .question-pill {
-    background-color: #dcfffd; /* teal */
+    background-color: #D3D9D4; /* teal */
     color: #001616;
     font-weight: 500;
     font-size: 0.85em;
     padding: 0em 0.5em 0em 0em;
+    margin-right: 0.4em;
+    /* margin-bottom: 0.4em; */
+    display: inline-block;
+    border-radius: 999px;
+}
+.warning-pill {
+    background-color: sienna; /* teal */
+    color: white;
+    font-weight: 500;
+    font-size: 0.85em;
+    padding: 0em 0.5em 0em 0.5em;
     margin-right: 0.4em;
     /* margin-bottom: 0.4em; */
     display: inline-block;
