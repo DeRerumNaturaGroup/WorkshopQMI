@@ -201,161 +201,83 @@
     }
   </style>
   <script src="../../../../scripts/jquery-3.6.4.min.js"></script>
-
   <script src="../../../../scripts/LeaderLine/leader-line.min.js"></script>
 
-  
-
   <script>
-
   function toggleBox(header) {
-
       $(header).next('.dd-box, .ddm-box, .ddp-box, .ddc-box').slideToggle("slow");
-
   }
-
   </script> 
 
-  
-
-  
 
   <script>
-
   function toggleDesc(header) {
-
       $(header).next('p').slideToggle("slow");
-
   }
-
   </script>
 
-  
-
-  
 
   <script>
-
       function showContent(clickedElement) {
-
           // Hide all content divs
-
           var allContents = document.getElementsByClassName('content');
-
           for (var i = 0; i < allContents.length; i++) {
-
               allContents[i].style.display = 'none';
-
           }
-
-  
 
           // Deactivate all nav options
-
           var allNavOptions = document.getElementsByClassName('nav-option');
-
           for (var i = 0; i < allNavOptions.length; i++) {
-
               allNavOptions[i].classList.remove('active');
-
           }
 
-  
-
           // Show the selected content
-
           var option = clickedElement.getAttribute('data-option');
-
           document.getElementById(option + 'Content').style.display = 'block';
 
-  
-
           // Activate the selected nav option
-
           clickedElement.classList.add('active');
-
       }
-
   </script>
 
-  
 
-  
-
-  
 
   <script>
-
    Switch between drawing and un-drawing
-
   setInterval(() => {
-
     const borderEl = document.querySelector('#border')
-
     borderEl.classList.toggle('is-undrawn')
-
     borderEl.classList.toggle('is-drawn')
-
   }, 3000)
-
   </script>
 
-  
-
-  
 
   <script>
-
   // ACCORDION
-
   document.addEventListener("click", function(e) {
-
     const header = e.target.closest(".accordion-header");
-
     if (!header) return;
 
-  
-
     const content = header.nextElementSibling;
-
     content.classList.toggle("open");
-
   });
-
   </script>
 
-  
 
-  
-
-  
 
   <script>
-
   // TABLE CELL HIGHLIGHT OPTION
-
   document.addEventListener("DOMContentLoaded", function () {
-
     document.querySelectorAll(".booktabs").forEach(table => {
-
       table.addEventListener("click", function (e) {
-
         const cell = e.target.closest("td");
-
         if (!cell) return;
 
-  
-
         cell.classList.toggle("selected");
-
       });
-
     });
-
   });
-
   </script>
-
 </head>
 <body class="quarto-light">
   <div class="reveal">
