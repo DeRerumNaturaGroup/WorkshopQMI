@@ -201,90 +201,188 @@
     }
   </style>
   <script src="../../../../scripts/jquery-3.6.4.min.js"></script>
+
   <script src="../../../../scripts/LeaderLine/leader-line.min.js"></script>
 
+  
+
   <script>
+
   function toggleBox(header) {
+
       $(header).next('.dd-box, .ddm-box, .ddp-box, .ddc-box').slideToggle("slow");
+
   }
+
   </script> 
 
+  
+
+  
 
   <script>
+
   function toggleDesc(header) {
+
       $(header).next('p').slideToggle("slow");
+
   }
+
   </script>
 
+  
+
+  
 
   <script>
+
       function showContent(clickedElement) {
+
           // Hide all content divs
+
           var allContents = document.getElementsByClassName('content');
+
           for (var i = 0; i < allContents.length; i++) {
+
               allContents[i].style.display = 'none';
+
           }
+
+  
 
           // Deactivate all nav options
+
           var allNavOptions = document.getElementsByClassName('nav-option');
+
           for (var i = 0; i < allNavOptions.length; i++) {
+
               allNavOptions[i].classList.remove('active');
+
           }
 
+  
+
           // Show the selected content
+
           var option = clickedElement.getAttribute('data-option');
+
           document.getElementById(option + 'Content').style.display = 'block';
 
+  
+
           // Activate the selected nav option
+
           clickedElement.classList.add('active');
+
       }
+
   </script>
 
+  
 
+  
+
+  
 
   <script>
+
    Switch between drawing and un-drawing
+
   setInterval(() => {
+
     const borderEl = document.querySelector('#border')
+
     borderEl.classList.toggle('is-undrawn')
+
     borderEl.classList.toggle('is-drawn')
+
   }, 3000)
+
   </script>
 
+  
+
+  
 
   <script>
+
   // ACCORDION
+
   document.addEventListener("click", function(e) {
+
     const header = e.target.closest(".accordion-header");
+
     if (!header) return;
 
+  
+
     const content = header.nextElementSibling;
+
     content.classList.toggle("open");
+
   });
+
   </script>
 
+  
 
+  
+
+  
 
   <script>
+
   // TABLE CELL HIGHLIGHT OPTION
+
   document.addEventListener("DOMContentLoaded", function () {
+
     document.querySelectorAll(".booktabs").forEach(table => {
+
       table.addEventListener("click", function (e) {
+
         const cell = e.target.closest("td");
+
         if (!cell) return;
 
+  
+
         cell.classList.toggle("selected");
+
       });
+
     });
+
   });
+
   </script>
+
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 
-<section id="section" class="slide level2 center">
+<section id="section" class="slide level2">
+<h2></h2>
+<h3 class="center" style="text-align:center;color:#B22222; font-size:1.2em" id="information">Information</h3>
+<p>Welcome to the workshop on DFT and AI, part of <em>Quantum Meets AI 2026</em>, organized by the <strong><a href="https://dererumnaturagroup.github.io/">De Rerum Natura (DRN) Group</a></strong> at the GIK Institute, Pakistan.</p>
+<div style="height:5rem;">
+
+</div>
+<h3 class="center" style="text-align:center;color:#B22222; font-size:1.2em" id="navigation">Navigation</h3>
+<ul>
+<li><p><strong>Desktop:</strong></p>
+<p>Use the arrow keys (<strong>← → ↑ ↓</strong>) to navigate.</p>
+<p><code>Ctrl + →</code> and <code>Ctrl + ←</code> to jump between sections.</p>
+<p><code>Ctrl + Click</code> to zoom in on a slide. <code>Ctrl + Click</code> again to zoom out.</p></li>
+<li><p><strong>Mobile:</strong> Swipe or scroll between slides.</p></li>
+<li><p>Many slides include expandable sections with additional details.</p></li>
+</ul>
+<div style="margin-top:2em; text-align:center;">
+<p><a href="../../../../index.html" class="btn btn-primary btn-lg"> ← Return to Workshop Home </a></p>
+</div>
+</section>
+<section id="section-1" class="slide level2 center">
 <h2></h2>
 <!-- ![](_figs/treelogo.png){width="1%"} -->
 <div class="columns">
@@ -297,7 +395,10 @@
 <strong>Instructors</strong>
 </p>
 <p style="margin-left: 50px;">
-Misbah Shaheen, Rao Uzair
+Dr.&nbsp;Sheharyar Pervez
+</p>
+<p style="margin-left: 50px;">
+Ms.&nbsp;Misbah Shaheen
 </p>
 <p style="margin-left: 50px; color:gray;">
 <em>DRN Group</em>
@@ -498,6 +599,61 @@ Electron Density
 </div>
 </div>
 </div>
+</section>
+<section id="glossary" class="slide level2 scrollable">
+<h2>Glossary</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>Many-Body Problem</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<p>The quantum mechanical problem of describing a system containing many interacting electrons and nuclei. Since every electron interacts with every other electron through Coulomb forces, solving the Schrödinger equation exactly becomes computationally intractable for all but the smallest systems.</p>
+</div>
+</div>
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>Exchange–Correlation (XC) Functional</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<p>A mathematical approximation that accounts for the quantum mechanical exchange and electron correlation effects not described exactly in the Kohn–Sham equations. The choice of XC functional largely determines the accuracy of a DFT calculation.</p>
+</div>
+</div>
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>Correlation Energy</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<p>The energy associated with the correlated motion of electrons due to their mutual Coulomb repulsion, beyond the mean-field approximation.</p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>Electron Density</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<p>The probability density of finding electrons at different positions in space. In Density Functional Theory, the electron density replaces the many-electron wavefunction as the central quantity used to determine the properties of a system.</p>
+</div>
+</div>
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>Exchange Energy</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<p>The contribution to the total energy arising from the antisymmetric nature of the electronic wavefunction required by the Pauli exclusion principle.</p>
+</div>
+</div>
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>Pseudopotential</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<p>An effective potential that replaces the nucleus and tightly bound core electrons, allowing only the chemically active valence electrons to be treated explicitly. This significantly reduces computational cost while maintaining good accuracy.</p>
+</div>
+</div>
+</div></div>
 <!-- ## Background {.scrollable}
 
 {{< include subslides/_DFTbackground.qmd >}} -->
@@ -520,9 +676,30 @@ Electron Density
 <figure style="text-align:center;">
 <img src="_figs/dftoverview.png" style="width:1536px; height:auto;">
 <figcaption style="font-size:0.7em; margin-top:10px;">
-Different Methods of Simulations
 </figcaption>
 </figure>
+</section>
+<section id="software" class="slide level2 scrollable">
+<h2>Software</h2>
+<h3 id="quantum-espresso">Quantum Espresso</h3>
+<ul>
+<li>Free and open source — anyone can install and use it without a license.</li>
+<li>Widely used in academia — trusted by thousands of researchers worldwide.</li>
+<li>Excellent documentation and active community — lots of tutorials and support.</li>
+<li>Plane-wave + pseudopotential approach — a standard framework for solid-state materials. -Scalable — runs efficiently from laptops to high-performance computing clusters.</li>
+<li>Rich ecosystem — interfaces with tools such as Wannier90, Phonopy, ASE, doped, pymatgen, and AiiDA.</li>
+</ul>
+<div class="fade-in fragment">
+<h3 id="installation">Installation</h3>
+</div>
+<div class="fade-in fragment">
+<h3 id="input-of-qe">Input of QE</h3>
+<figure style="text-align:center;">
+<img src="_figs/inputgen.png" style="width:1536px; height:auto;">
+<figcaption style="font-size:0.7em; margin-top:10px;">
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="dft-steps" class="slide level2 scrollable">
 <h2>DFT Steps</h2>
@@ -1089,7 +1266,7 @@ Different Methods of Simulations
 - Journal of Materials Chemistry A (2015). Title of the Paper. J. Mater. Chem. A 2015, 3, 5226–5240. DOI: 10.1039/C4TA05226A -->
 <p>–&gt;</p>
 </section>
-<section id="section-1" class="slide level2 center">
+<section id="section-2" class="slide level2 center">
 <h2></h2>
 <pre><p style="margin-left: 5em;font-family: GS_L; font-variant: small-caps; font-size:1.5em"><b>The End</b></p></pre><b>
 </b>
