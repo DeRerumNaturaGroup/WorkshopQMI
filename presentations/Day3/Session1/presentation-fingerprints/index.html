@@ -6,8 +6,8 @@
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="">
   <title>Quantum Meets AI – index</title>
@@ -95,7 +95,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-d69cbdaf94968a425c46ae18fb1ec76d.css">
+  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-b91f775d15bf35f15b8d41349cd02ff1.css">
   <link rel="stylesheet" href="../../../../css/style.css">
   <link rel="stylesheet" href="../../../../css/fonts.css">
   <link rel="stylesheet" href="../../../../css/buttons.css">
@@ -417,7 +417,7 @@
 <div id="tabset-2-1">
 <ul>
 <li><p><span style="color:teal">Question 1: How do we represent a molecule/crystal?</span></p>
-<p>In school we were taught to write formulas (CO2, C3H8 etc) and draw Lewis structures. These are idealizations.</p>
+<p>In school we were taught to write formulas (CO<span class="math inline">\(_2\)</span>, C<span class="math inline">\(_3\)</span>H<span class="math inline">\(_8\)</span> etc) and draw Lewis structures. These are idealizations.</p>
 <p>A molecule is neither a string of letters, nor a picture (just as a person is neither a name nor a picture). A molecule is a collection of atoms in 3D space.</p></li>
 <li><p><span style="color:teal">Question 2: How do we represent a molecule/crystal for a computer?</span></p>
 <p>We can do that using a Crystallographic Information Framework (CIF) file for instance.</p></li>
@@ -624,27 +624,208 @@ is a chemical property in which a molecule has a cyclic structure with alternati
 </div>
 </div>
 <div id="tabset-3-3">
-<p>A branch from a chain is specified by placing the SMILES symbol(s) for the branch between parenthesis. The string in parentheses is placed directly after the symbol for the atom to which it is connected. If it is connected by a double or triple bond, the bond symbol immediately follows the left parenthesis. Some examples:</p>
-<pre><code>    CC(O)C  2-Propanol
-    CC(=O)C     2-Propanone
-    CC(CC)C     2-Methylbutane
-    CC(C)CC(=O)     2-Methylbutanal
-    c1c(N(=O)=O)cccc1   Nitrobenzene
-    CC(C)(C)CC  2,2-Dimethylbutane</code></pre>
+<p>A branch from a chain is specified by placing the SMILES symbol(s) for the branch between parenthesis.</p>
+<p>The string in parentheses is placed directly after the symbol for the atom to which it is connected.</p>
+<p>If it is connected by a double or triple bond, the bond symbol immediately follows the left parenthesis.</p>
+<table class="booktabs compact">
+<thead>
+<tr>
+<th style="text-align:center">
+Molecule
+</th>
+<th style="text-align:left">
+Smiles
+</th>
+<th style="text-align:left">
+Structure
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even">
+<td style="text-align:center">
+<p>
+2-Propanol
+</p>
+</td>
+<td class="text-right">
+<p>
+CC(O)C
+</p>
+</td>
+<td>
+<img src="figs/2propanol.png" width="375">
+</td>
+</tr>
+<tr class="row-odd">
+<td style="text-align:center">
+<p>
+2-Propanone
+</p>
+</td>
+<td class="text-right">
+<p>
+CC(=O)C
+</p>
+</td>
+<td>
+<img src="figs/2propanone.png" width="375">
+</td>
+</tr>
+<tr class="row-even">
+<td style="text-align:center">
+<p>
+2-Methylbutane
+</p>
+</td>
+<td class="text-right">
+<p>
+CC(CC)C
+</p>
+</td>
+<td>
+<img src="figs/2methylbutane.png" width="375">
+</td>
+</tr>
+<tr class="row-odd">
+<td style="text-align:center">
+<p>
+2,2-Dimethylbutane
+</p>
+</td>
+<td class="text-right">
+<p>
+CC(C)(C)CC
+</p>
+</td>
+<td>
+<img src="figs/22dimethylbutane.jpg" width="375">
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="tabset-3-4">
 <p>SMILES allows a user to identify ring structures by using numbers to identify the opening and closing ring atom. For example, in C1CCCCC1, the first carbon has a number ‘1’ which connects by a single bond with the last carbon which also has a number ‘1’. The resulting structure is cyclohexane. Chemicals that have multiple rings may be identified by using different numbers for each ring. If a double, single, or aromatic bond is used for the ring closure, the bond symbol is placed before the ring closure number. Some examples:</p>
-<pre><code>    or  C=1CCCCC1   Cyclohexene
-    C*1*C*C*C*C*C1  
-    c1ccccc1    Benzene
-    C1OC1CC     Ethyloxirane
-    c1cc2ccccc2cc1  Naphthalene</code></pre>
+<table class="booktabs compact">
+<thead>
+<tr>
+<th style="text-align:center">
+Molecule
+</th>
+<th style="text-align:left">
+Smiles
+</th>
+<th style="text-align:left">
+Structure
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even">
+<td style="text-align:center">
+<p>
+Cyclohexene
+</p>
+</td>
+<td class="text-right">
+<p>
+C=1CCCCC1
+</p>
+</td>
+<td>
+<img src="figs/cyclohexene.png" width="300">
+</td>
+</tr>
+<tr class="row-odd">
+<td style="text-align:center">
+<p>
+Cyclohexane
+</p>
+</td>
+<td class="text-right">
+<p>
+C<em>1</em>C<em>C</em>C<em>C</em>C1
+</p>
+</td>
+<td>
+<img src="figs/cyclohexane.png" width="300">
+</td>
+</tr>
+<tr class="row-even">
+<td style="text-align:center">
+<p>
+Benzene
+</p>
+</td>
+<td class="text-right">
+<p>
+c1ccccc1
+</p>
+</td>
+<td>
+<img src="figs/benzene.png" width="300">
+</td>
+</tr>
+<tr class="row-odd">
+<td style="text-align:center">
+<p>
+Naphthalene
+</p>
+</td>
+<td class="text-right">
+<p>
+c1cc2ccccc2cc1
+</p>
+</td>
+<td>
+<img src="figs/naphthalene.png" width="300">
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="tabset-3-5">
-<p>Charges on an atom can be used to override the knowledge regarding valence that is built into SMILES software. The format for identifying a charged atom consists of the atom followed by brackets which enclose the charge on the atom. The number of charges may be explicitly stated ({-1}) or not ({-}). For example:</p>
-<pre><code>    or  CCC(=O)O{-1}    Ionized form of propanoic acid
-    CCC(=O)O{-}     
-    c1ccccn{+1}1CC(=O)O     1-Carboxylmethyl pyridinium</code></pre>
+<p>Charges on an atom can be used to override the knowledge regarding valence built into SMILES system.</p>
+<p>The charged atom is followed by brackets which enclose the charge on the atom. The number of charges may be explicitly stated ({-1}) or not ({-}).</p>
+<table class="booktabs compact">
+<thead>
+<tr>
+<th style="text-align:center">
+Molecule
+</th>
+<th style="text-align:left">
+Smiles
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even">
+<td style="text-align:center">
+<p>
+Ionized propanoic acid
+</p>
+</td>
+<td class="text-right">
+<p>
+CCC(=O)O{-1}
+</p>
+</td>
+</tr>
+<tr class="row-odd">
+<td style="text-align:center">
+<p>
+1-Carboxylmethyl pyridinium
+</p>
+</td>
+<td class="text-right">
+<p>
+c1ccccn{+1}1CC(=O)O
+</p>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -656,8 +837,8 @@ is a chemical property in which a molecule has a cyclic structure with alternati
 <div id="tabset-4-1">
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb4" data-startfrom="1" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>methane <span class="op">=</span> Chem.MolFromSmiles(<span class="st">"C"</span>)</span>
-<span id="cb4-2"><a></a>methane</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-startfrom="1" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>methane <span class="op">=</span> Chem.MolFromSmiles(<span class="st">"C"</span>)</span>
+<span id="cb1-2"><a></a>methane</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 
@@ -674,9 +855,9 @@ is a chemical property in which a molecule has a cyclic structure with alternati
 <div id="tabset-4-2">
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb5" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb5-2"><a></a><span class="co"># this phenylalanine uses canonical smiles (no stereochemistry information)</span></span>
-<span id="cb5-3"><a></a>phenylalanine <span class="op">=</span> Chem.MolFromSmiles(<span class="st">"C1=CC=C(C=C1)CC(C(=O)O)N"</span>)</span>
-<span id="cb5-4"><a></a>phenylalanine</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb2-2"><a></a><span class="co"># this phenylalanine uses canonical smiles (no stereochemistry information)</span></span>
+<span id="cb2-3"><a></a>phenylalanine <span class="op">=</span> Chem.MolFromSmiles(<span class="st">"C1=CC=C(C=C1)CC(C(=O)O)N"</span>)</span>
+<span id="cb2-4"><a></a>phenylalanine</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <p>Insert image…</p>
@@ -685,8 +866,8 @@ is a chemical property in which a molecule has a cyclic structure with alternati
 <p><br></p>
 <div class="ddc" style="margin:0">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb6" data-startfrom="3" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 2;"><span id="cb6-3"><a></a>benzene <span class="op">=</span> Chem.MolFromSmiles(<span class="st">"c1ccccc1"</span>)</span>
-<span id="cb6-4"><a></a>benzene</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-startfrom="3" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 2;"><span id="cb3-3"><a></a>benzene <span class="op">=</span> Chem.MolFromSmiles(<span class="st">"c1ccccc1"</span>)</span>
+<span id="cb3-4"><a></a>benzene</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <p>Insert image…</p>
@@ -716,8 +897,8 @@ Calculate the number of aromatic bonds.</code></pre>
 <p>RDKit will allow us to access information about our molecule. For example, we can have RDKit tell us the number of atoms in our molecule.</p>
 <div class="ddc" style="margin:0">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb8" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb8-4"><a></a>num_methane <span class="op">=</span> methane.GetNumAtoms()</span>
-<span id="cb8-5"><a></a><span class="bu">print</span>(<span class="ss">f"The number of atoms in methane is </span><span class="sc">{</span>num_methane<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb5-4"><a></a>num_methane <span class="op">=</span> methane.GetNumAtoms()</span>
+<span id="cb5-5"><a></a><span class="bu">print</span>(<span class="ss">f"The number of atoms in methane is </span><span class="sc">{</span>num_methane<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <ul>
@@ -745,11 +926,11 @@ Number of aromatic rings (NumAromaticRings) And many others!</code></pre>
 <pre><code>Descriptors.DescriptorName(molecule_variable)</code></pre>
 <div class="ddc" style="margin:0">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb11" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb11-4"><a></a><span class="im">from</span> rdkit.Chem <span class="im">import</span> Descriptors</span>
-<span id="cb11-5"><a></a></span>
-<span id="cb11-6"><a></a><span class="bu">print</span>(<span class="st">"Printing info for benzene:"</span>)</span>
-<span id="cb11-7"><a></a><span class="bu">print</span>(<span class="ss">f"The molecular weight is </span><span class="sc">{</span>Descriptors<span class="sc">.</span>MolWt(benzene)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb11-8"><a></a><span class="bu">print</span>(<span class="ss">f"The number of aromatic rings is </span><span class="sc">{</span>Descriptors<span class="sc">.</span>NumAromaticRings(benzene)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb8-4"><a></a><span class="im">from</span> rdkit.Chem <span class="im">import</span> Descriptors</span>
+<span id="cb8-5"><a></a></span>
+<span id="cb8-6"><a></a><span class="bu">print</span>(<span class="st">"Printing info for benzene:"</span>)</span>
+<span id="cb8-7"><a></a><span class="bu">print</span>(<span class="ss">f"The molecular weight is </span><span class="sc">{</span>Descriptors<span class="sc">.</span>MolWt(benzene)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb8-8"><a></a><span class="bu">print</span>(<span class="ss">f"The number of aromatic rings is </span><span class="sc">{</span>Descriptors<span class="sc">.</span>NumAromaticRings(benzene)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 
@@ -763,8 +944,8 @@ Number of aromatic rings (NumAromaticRings) And many others!</code></pre>
 <p>One amazing thing about RDKit is its ability to do substructure search. You can identify when molecules contain other molecules. Let’s try this with benzene and phenylalanine.</p>
 <div class="ddc" style="margin:0">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb12" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb12-4"><a></a>matches <span class="op">=</span> phenylalanine.GetSubstructMatches(benzene)</span>
-<span id="cb12-5"><a></a>phenylalanine</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb9-4"><a></a>matches <span class="op">=</span> phenylalanine.GetSubstructMatches(benzene)</span>
+<span id="cb9-5"><a></a>phenylalanine</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <p>The returned value is a tuple of atom indices which represent the match(es) found.</p>
@@ -800,7 +981,7 @@ There are many types of molecular fingerprints, but some of the most common ones
 - **Topological fingerprints**: A fingerprint that is generated by encoding the topological structure of the molecule, such as the presence of rings, branches, and functional groups. -->
 <div class="navbar">
 <p><span class="nav-option" data-option="option20" onclick="showContent(this)">What are they?</span></p>
-<p><span class="nav-option" data-option="option21" onclick="showContent(this)">MACCS</span> <span class="nav-option" data-option="option22" onclick="showContent(this)">Skills Required</span> <span class="nav-option" data-option="option23" onclick="showContent(this)"></span> <span class="nav-option" data-option="option24" onclick="showContent(this)"></span></p>
+<p><span class="nav-option" data-option="option21" onclick="showContent(this)">MACCS</span> <span class="nav-option" data-option="option22" onclick="showContent(this)">ECFP</span> <span class="nav-option" data-option="option23" onclick="showContent(this)"></span> <span class="nav-option" data-option="option24" onclick="showContent(this)"></span></p>
 </div>
 <div id="option20Content" class="content">
 <p>Deep learning models almost always take arrays of numbers as their inputs. But <span style="color:sienna">how can we turn a molecule into numbers.</span></p>
@@ -834,7 +1015,7 @@ There are many types of molecular fingerprints, but some of the most common ones
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figs/maccs.webp"></p>
-<figcaption>MACCS keys for …</figcaption>
+<figcaption>MACCS keys identifying different features.</figcaption>
 </figure>
 </div>
 </div></div>
@@ -850,6 +1031,36 @@ There are many types of molecular fingerprints, but some of the most common ones
 </div>
 <div id="option22Content" class="content">
 <!-- {{< include _skills.qmd >}} -->
+<div class="columns">
+<div class="column">
+<p><span style="color:teal">Extended Connectivity FingerPrinting (ECFP)</span> basically proceed as follows <a href="https://chemicbook.com/2021/03/25/a-beginners-guide-for-understanding-extended-connectivity-fingerprints.html">(Source)</a> . For EACH atom:</p>
+</div><div class="column">
+<p>Benzamide molecule with atom 6 being featurized.</p>
+<p><img data-src="figs/ECFP/1.svg"> <img data-src="figs/ECFP/2.png"></p>
+</div></div>
+<div class="columns">
+<div class="column">
+<p><span style="color:teal">Step 1 - Initial Stage:</span> The atom in the molecule is assigned a unique integer identifier, is generated by hashing a combination of properties (atomic numbers, atomic mass, etc.)</p>
+</div><div class="column">
+<p><img data-src="figs/ECFP/iteration-0-ecfp.jpg"></p>
+</div></div>
+<div class="columns">
+<div class="column">
+<p><span style="color:teal">Step 2 - Update:</span> Each atom collects its identifier and the identifiers of its immediately neighboring atoms, into an array. A hash function is applied to reduce this array back into a new, single-integer identifier. This step is done to capture the neighborhood of the atom(an atom’s behavior is also influenced by the type of atoms that surrounds it).</p>
+<p>Once all atoms have generated their new identifiers, the old identifiers are replaced with the new ones.</p>
+</div><div class="column">
+<p><img data-src="figs/ECFP/iteration-1-ecfp.jpg"> <img data-src="figs/ECFP/iteration-2-ecfp.jpg"></p>
+</div></div>
+<p><span style="color:teal">Step 3 - De-duplication Stage:</span> The third stage removes the duplicate features from our generated feature list (Beyond our present scope. See link above).</p>
+<p><span style="color:teal">Step 4 - Forming the bit array:</span> Once all the identifiers are calculated for a specified number of iterations, the final step is to reduce these identifiers into a bit array (Again beyond scope).</p>
+<details>
+<summary>
+And we have our bit array:
+</summary>
+<p>
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+</p>
+</details>
 </div>
 <div id="option23Content" class="content">
 <!-- {{< include _materials.qmd >}} -->
@@ -863,8 +1074,8 @@ There are many types of molecular fingerprints, but some of the most common ones
 <h1>Molecular Similarity</h1>
 
 </section>
-<section id="molecular-similariy" class="slide level2 scrollable">
-<h2>Molecular Similariy</h2>
+<section id="molecular-similarity-1" class="slide level2 scrollable">
+<h2>Molecular Similarity</h2>
 <div class="navbar">
 <p><span class="nav-option" data-option="option40" onclick="showContent(this)">Overview</span> <span class="nav-option" data-option="option41" onclick="showContent(this)">Tanimoto</span> <span class="nav-option" data-option="option42" onclick="showContent(this)">Code</span> <!-- [Materials to Model]{.nav-option data-option="option43" onclick="showContent(this)"}
 [Projects]{.nav-option data-option="option44"           onclick="showContent(this)"} --></p>
@@ -916,9 +1127,14 @@ Fingerprint similarity is a common way to measure the similarity between two mol
 ## Task IV - NN bridge
 Can you predict the solubility of a molecule based on its fingerprint?
 
-##  {.center}
+-->
+</section>
+<section id="section-5" class="slide level2 center">
+<h2></h2>
+<pre><p style="margin-left: 5em;font-family: GS_L; font-variant: small-caps; font-size:1.5em"><b>The End</b></p></pre><b>
+</b>
+<p></p>
 
-{{< include /_theend.qmd >}} -->
 
 
 </section></section>
@@ -1112,7 +1328,7 @@ Can you predict the solubility of a molecule based on its fingerprint?
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1186,13 +1402,14 @@ Can you predict the solubility of a molecule based on its fingerprint?
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

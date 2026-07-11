@@ -6,10 +6,10 @@
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../site_libs/quarto-contrib/videojs/video.min.js"></script>
 <link href="../../../../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+  <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="">
   <title>Quantum Meets AI – index</title>
@@ -97,7 +97,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-d69cbdaf94968a425c46ae18fb1ec76d.css">
+  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-b91f775d15bf35f15b8d41349cd02ff1.css">
   <link rel="stylesheet" href="../../../../css/style.css">
   <link rel="stylesheet" href="../../../../css/fonts.css">
   <link rel="stylesheet" href="../../../../css/buttons.css">
@@ -910,7 +910,7 @@ column-gap:0.5rem;
 <h1>Background: Graph Neural Networks (GNNs)</h1>
 
 </section>
-<section id="section-4" class="slide level2 scrollable">
+<section id="section-4" class="slide level2 scrollable smaller">
 <h2></h2>
 <div class="panel-tabset">
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">What are GNNs?</a></li><li><a href="#tabset-2-2">An Example</a></li><li><a href="#tabset-2-3">Our First GNN (Layer)</a></li><li><a href="#tabset-2-4">🟣 Summary</a></li></ul>
@@ -1369,7 +1369,7 @@ Oxygen = [0 1 0]
 </div>
 </div>
 <ul>
-<li><p>So far it’s like the game we played. But simple averaging is too dumb. From past experience you might have <code>learned</code> that some neighbors (or neighbors of neighbors) are going to be closer to the average (than say someone academically smart, or wildly inconsistent).</p></li>
+<li><p>So far it’s like the game we played. But simple averaging is too dumb. From past experience you might have <code>learned</code> that some neighbors (or neighbors of neighbors) are better indicators of what the average is (than say someone whose grades are wildly inconsistent).</p></li>
 <li><p>Therefore, before averaging, we multiply each neighbor’s info by a trainable matrix.</p></li>
 <li><p>It is these trainable matrix <span style="color:teal">weights</span> that we have to ‘learn’ i.e.&nbsp;we want to know, what importance we need to give to someone.</p></li>
 <li><p>In one sentence a GCN lets each node repeatedly:</p>
@@ -1387,15 +1387,15 @@ Oxygen = [0 1 0]
 <ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Layer</a></li><li><a href="#tabset-3-2">Using layer</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
-<p>We first create the ‘machine’ (think Coffee Maker). The code below might seem difficult but it’s not. We must tell:</p>
+<p>We first create the ‘machine’: a layer that takes in and spits out a graph:</p>
 <ul>
-<li>What pieces it must have. The <code>__init__</code> function</li>
-<li>And how does it handle information. The <code>forward</code> method.</li>
+<li>The <code>__init__</code> function tells the basic components of the machine</li>
+<li>The <code>forward</code> method tells how the machine handles information.</li>
 </ul>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb1" data-startfrom="1" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">class</span> GCNLayer(nn.Module):</span>
-<span id="cb1-2"><a></a>    <span class="co">"""Implementation of GCN as layer"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-startfrom="1" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">class</span> GCNLayer(nn.Module):</span>
+<span id="cb1-2"><a></a>    <span class="co">"""Implementation of GCN as layer"""</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <p>Define a new neural-network layer called <code>GCNLayer</code>.</p>
@@ -1407,7 +1407,7 @@ Oxygen = [0 1 0]
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb2" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb2-4"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, in_features, out_features, activation<span class="op">=</span><span class="va">None</span>):</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb2-4"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, in_features, out_features, activation<span class="op">=</span><span class="va">None</span>):</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <p>Constructor for the layer.</p>
@@ -1421,7 +1421,7 @@ Oxygen = [0 1 0]
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb3" data-startfrom="5" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 4;"><span id="cb3-5"><a></a>        <span class="bu">super</span>(GCNLayer, <span class="va">self</span>).<span class="fu">__init__</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-startfrom="5" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 4;"><span id="cb3-5"><a></a>        <span class="bu">super</span>(GCNLayer, <span class="va">self</span>).<span class="fu">__init__</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <p>Initialize the parent <code>nn.Module</code> class.</p>
@@ -1430,7 +1430,7 @@ Oxygen = [0 1 0]
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb4" data-startfrom="6" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 5;"><span id="cb4-6"><a></a>        <span class="va">self</span>.w <span class="op">=</span> nn.Parameter(torch.empty(in_features, out_features))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-startfrom="6" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 5;"><span id="cb4-6"><a></a>        <span class="va">self</span>.w <span class="op">=</span> nn.Parameter(torch.empty(in_features, out_features))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <p>Create the trainable weight matrix.</p>
@@ -1442,7 +1442,7 @@ Oxygen = [0 1 0]
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb6" data-startfrom="7" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 6;"><span id="cb6-7"><a></a>        nn.init.xavier_uniform_(<span class="va">self</span>.w)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-startfrom="7" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 6;"><span id="cb6-7"><a></a>        nn.init.xavier_uniform_(<span class="va">self</span>.w)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <p>Initialize the weight matrix using Xavier (Glorot) initialization.</p>
@@ -1451,7 +1451,7 @@ Oxygen = [0 1 0]
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb7" data-startfrom="8" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 7;"><span id="cb7-8"><a></a>        <span class="va">self</span>.activation <span class="op">=</span> activation</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-startfrom="8" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 7;"><span id="cb7-8"><a></a>        <span class="va">self</span>.activation <span class="op">=</span> activation</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <p>Store the activation function.</p>
@@ -1466,7 +1466,7 @@ Oxygen = [0 1 0]
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb8" data-startfrom="10" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 9;"><span id="cb8-10"><a></a>    <span class="kw">def</span> forward(<span class="va">self</span>, nodes, adj):</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-startfrom="10" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 9;"><span id="cb8-10"><a></a>    <span class="kw">def</span> forward(<span class="va">self</span>, nodes, adj):</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <p>Define how data flows through the layer.</p>
@@ -1480,7 +1480,7 @@ Oxygen = [0 1 0]
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb9" data-startfrom="11" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 10;"><span id="cb9-11"><a></a>        degree <span class="op">=</span> torch.<span class="bu">sum</span>(adj, dim<span class="op">=-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-startfrom="11" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 10;"><span id="cb9-11"><a></a>        degree <span class="op">=</span> torch.<span class="bu">sum</span>(adj, dim<span class="op">=-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <p>Compute the degree of each node.</p>
@@ -1493,13 +1493,13 @@ Oxygen = [0 1 0]
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb12" data-startfrom="12" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 11;"><span id="cb12-12"><a></a>        new_nodes <span class="op">=</span> torch.einsum(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" data-startfrom="12" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 11;"><span id="cb12-12"><a></a>        new_nodes <span class="op">=</span> torch.einsum(</span>
 <span id="cb12-13"><a></a>            <span class="st">"bi,bij,bjk,kl-&gt;bil"</span>,</span>
 <span id="cb12-14"><a></a>            <span class="dv">1</span> <span class="op">/</span> degree,</span>
 <span id="cb12-15"><a></a>            adj,</span>
 <span id="cb12-16"><a></a>            nodes,</span>
 <span id="cb12-17"><a></a>            <span class="va">self</span>.w</span>
-<span id="cb12-18"><a></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-18"><a></a>        )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <p>Perform the graph convolution.</p>
@@ -1511,7 +1511,7 @@ Oxygen = [0 1 0]
 <li>Transform features using the learnable weight matrix <code>self.w</code>.</li>
 </ol>
 <p>The Einstein summation notation:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="co">"bi,bij,bjk,kl-&gt;bil"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="co">"bi,bij,bjk,kl-&gt;bil"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>specifies how the tensors should be multiplied and summed.</p>
 <p>Output shape:</p>
 <pre><code>(batch_size, num_nodes, out_features)</code></pre>
@@ -1520,7 +1520,7 @@ Oxygen = [0 1 0]
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb15" data-startfrom="13" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 12;"><span id="cb15-13"><a></a>        <span class="cf">if</span> <span class="va">self</span>.activation <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15" data-startfrom="13" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 12;"><span id="cb15-13"><a></a>        <span class="cf">if</span> <span class="va">self</span>.activation <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <p>Check whether an activation function was supplied.</p>
@@ -1529,18 +1529,18 @@ Oxygen = [0 1 0]
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb16" data-startfrom="14" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 13;"><span id="cb16-14"><a></a>            new_nodes <span class="op">=</span> <span class="va">self</span>.activation(new_nodes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16" data-startfrom="14" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 13;"><span id="cb16-14"><a></a>            new_nodes <span class="op">=</span> <span class="va">self</span>.activation(new_nodes)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <p>Apply the activation function element-wise to every output feature.</p>
 <p>For example, if <code>activation=F.relu</code>:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>ReLU(x) <span class="op">=</span> <span class="bu">max</span>(<span class="dv">0</span>, x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>ReLU(x) <span class="op">=</span> <span class="bu">max</span>(<span class="dv">0</span>, x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Negative values become zero while positive values remain unchanged.</p>
 </div>
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb18" data-startfrom="15" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 14;"><span id="cb18-15"><a></a>        <span class="cf">return</span> new_nodes, adj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18" data-startfrom="15" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 14;"><span id="cb18-15"><a></a>        <span class="cf">return</span> new_nodes, adj</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <p>Return the updated graph representation.</p>
@@ -1566,7 +1566,7 @@ Oxygen = [0 1 0]
 <p>If we can stack up layers</p>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb19" data-startfrom="1" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>gcnlayer <span class="op">=</span> GCNLayer(<span class="dv">3</span>, <span class="dv">3</span>, activation<span class="op">=</span>F.relu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19" data-startfrom="1" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>gcnlayer <span class="op">=</span> GCNLayer(<span class="dv">3</span>, <span class="dv">3</span>, activation<span class="op">=</span>F.relu)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <p>Create a Graph Convolutional Network (GCN) layer.</p>
@@ -1579,7 +1579,7 @@ Oxygen = [0 1 0]
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb20" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb20-2"><a></a>nodes_t <span class="op">=</span> torch.from_numpy(nodes[np.newaxis, ...]).<span class="bu">float</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb20-2"><a></a>nodes_t <span class="op">=</span> torch.from_numpy(nodes[np.newaxis, ...]).<span class="bu">float</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <p>Convert the NumPy node-feature matrix to a PyTorch tensor.</p>
@@ -1589,7 +1589,7 @@ Oxygen = [0 1 0]
 </div>
 <div class="ddc" style="margin:0">
 <div class="ddc-head" onclick="toggleBox(this)" style="margin:0">
-<div class="sourceCode" id="cb21" data-startfrom="3" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 2;"><span id="cb21-3"><a></a>adj_mat_t <span class="op">=</span> torch.from_numpy(adj_mat[np.newaxis, ...]).<span class="bu">float</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21" data-startfrom="3" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 2;"><span id="cb21-3"><a></a>adj_mat_t <span class="op">=</span> torch.from_numpy(adj_mat[np.newaxis, ...]).<span class="bu">float</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <ul>
@@ -1601,7 +1601,7 @@ Oxygen = [0 1 0]
 </div>
 <div class="ddc" style="margin:0">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb22" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb22-4"><a></a>gcnlayer(nodes_t, adj_mat_t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb22-4"><a></a>gcnlayer(nodes_t, adj_mat_t)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <ul>
@@ -1660,207 +1660,267 @@ Oxygen = [0 1 0]
 <section id="real-world-example-solubility-model" class="slide level2 scrollable">
 <h2>Real World Example: Solubility Model</h2>
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Overview</a></li><li><a href="#tabset-4-2">GR Layer</a></li><li><a href="#tabset-4-3">Complete Model</a></li><li><a href="#tabset-4-4">And now we run our model</a></li><li><a href="#tabset-4-5">Dataset Class</a></li><li><a href="#tabset-4-6">Training Time</a></li><li><a href="#tabset-4-7">Plotting time</a></li><li><a href="#tabset-4-8">Parity Plot</a></li></ul>
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Data Preprocessing</a></li><li><a href="#tabset-6-2">Model Architecture</a></li><li><a href="#tabset-6-3">Training</a></li><li><a href="#tabset-6-4">Plots</a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1">
-<p>We’ll now revisit predicting solubility with GCNs. Remember before that we used the features included with the dataset. Now we can use the molecular structures directly.</p>
-<p>Our GCN layer outputs node-level features.</p>
-<p>To predict solubility, we need to get a graph-level feature.</p>
-<p>For now let’s just take the average over all node features after our GCN layers. This is simple, permutation invariant, and gets us from node-level to graph level.</p>
-</div>
-<div id="tabset-4-2">
+<div id="tabset-6-1">
+<ul>
+<li><p>Solubility is a molecular (or graph level) property but our GCN layer outputs <span style="color:black">node-level features</span>.</p></li>
+<li><p>For that we can take the average over all node features after our GCN layers. This is simple, permutation invariant, and gets us from node-level to graph level.</p></li>
+</ul>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<pre><code>class GRLayer(nn.Module):
-    """A GNN layer that computes average over all node features"""
-
-    def __init__(self):
-        super(GRLayer, self).__init__()
-
-    def forward(self, nodes, adj):
-        reduction = torch.mean(nodes, dim=1)
-        return reduction</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a><span class="kw">class</span> GRLayer(nn.Module):</span>
+<span id="cb25-2"><a></a>    <span class="co">"""A GNN layer that computes average over all node features"""</span></span>
+<span id="cb25-3"><a></a></span>
+<span id="cb25-4"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb25-5"><a></a>        <span class="bu">super</span>(GRLayer, <span class="va">self</span>).<span class="fu">__init__</span>()</span>
+<span id="cb25-6"><a></a></span>
+<span id="cb25-7"><a></a>    <span class="kw">def</span> forward(<span class="va">self</span>, nodes, adj):</span>
+<span id="cb25-8"><a></a>        reduction <span class="op">=</span> torch.mean(nodes, dim<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb25-9"><a></a>        <span class="cf">return</span> reduction</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
 <p>The key line in that code is to just to compute the mean over the nodes (dim=1):</p>
+<blockquote>
 <p>reduction = torch.mean(nodes, dim=1)</p>
+</blockquote>
 </div>
 </div>
 </div>
-<div id="tabset-4-3">
-<p>To complete our deep solubility predictor, we can add some dense layers and make sure we have a single-output without activation since we’re doing regression. We’ll define a PyTorch module that combines the GCN layers, graph readout, and dense layers.</p>
+<div id="tabset-6-2">
+<ul>
+<li>Let’s try this model out for our solubility predictor in pytorch:</li>
+</ul>
+<!-- ![](figs/model.jpg) -->
+<p><img data-src="figs/model2.png"></p>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<pre><code>class SolubilityModel(nn.Module):
-    def __init__(self, node_features=100):
-        super(SolubilityModel, self).__init__()
-        self.gcn1 = GCNLayer(node_features, node_features, activation=F.relu)
-        self.gcn2 = GCNLayer(node_features, node_features, activation=F.relu)
-        self.gcn3 = GCNLayer(node_features, node_features, activation=F.relu)
-        self.gcn4 = GCNLayer(node_features, node_features, activation=F.relu)
-        self.gr = GRLayer()
-        self.fc1 = nn.Linear(node_features, 16)
-        self.fc2 = nn.Linear(16, 1)
-    
-    def forward(self, nodes, adj):
-        x, adj = self.gcn1(nodes, adj)
-        x, adj = self.gcn2(x, adj)
-        x, adj = self.gcn3(x, adj)
-        x, adj = self.gcn4(x, adj)
-        x = self.gr(x, adj)
-        x = torch.relu(self.fc1(x))
-        x = self.fc2(x)
-        return x
-
-model = SolubilityModel()</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a><span class="kw">class</span> SolubilityModel(nn.Module):</span>
+<span id="cb26-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, node_features<span class="op">=</span><span class="dv">100</span>):</span>
+<span id="cb26-3"><a></a>        <span class="bu">super</span>(SolubilityModel, <span class="va">self</span>).<span class="fu">__init__</span>()</span>
+<span id="cb26-4"><a></a>        <span class="va">self</span>.gcn1 <span class="op">=</span> GCNLayer(node_features, node_features, activation<span class="op">=</span>F.relu)</span>
+<span id="cb26-5"><a></a>        <span class="va">self</span>.gcn2 <span class="op">=</span> GCNLayer(node_features, node_features, activation<span class="op">=</span>F.relu)</span>
+<span id="cb26-6"><a></a>        <span class="va">self</span>.gcn3 <span class="op">=</span> GCNLayer(node_features, node_features, activation<span class="op">=</span>F.relu)</span>
+<span id="cb26-7"><a></a>        <span class="va">self</span>.gcn4 <span class="op">=</span> GCNLayer(node_features, node_features, activation<span class="op">=</span>F.relu)</span>
+<span id="cb26-8"><a></a>        <span class="va">self</span>.gr <span class="op">=</span> GRLayer()</span>
+<span id="cb26-9"><a></a>        <span class="va">self</span>.fc1 <span class="op">=</span> nn.Linear(node_features, <span class="dv">16</span>)</span>
+<span id="cb26-10"><a></a>        <span class="va">self</span>.fc2 <span class="op">=</span> nn.Linear(<span class="dv">16</span>, <span class="dv">1</span>)</span>
+<span id="cb26-11"><a></a>    </span>
+<span id="cb26-12"><a></a>    <span class="kw">def</span> forward(<span class="va">self</span>, nodes, adj):</span>
+<span id="cb26-13"><a></a>        x, adj <span class="op">=</span> <span class="va">self</span>.gcn1(nodes, adj)</span>
+<span id="cb26-14"><a></a>        x, adj <span class="op">=</span> <span class="va">self</span>.gcn2(x, adj)</span>
+<span id="cb26-15"><a></a>        x, adj <span class="op">=</span> <span class="va">self</span>.gcn3(x, adj)</span>
+<span id="cb26-16"><a></a>        x, adj <span class="op">=</span> <span class="va">self</span>.gcn4(x, adj)</span>
+<span id="cb26-17"><a></a>        x <span class="op">=</span> <span class="va">self</span>.gr(x, adj)</span>
+<span id="cb26-18"><a></a>        x <span class="op">=</span> torch.relu(<span class="va">self</span>.fc1(x))</span>
+<span id="cb26-19"><a></a>        x <span class="op">=</span> <span class="va">self</span>.fc2(x)</span>
+<span id="cb26-20"><a></a>        <span class="cf">return</span> x</span>
+<span id="cb26-21"><a></a></span>
+<span id="cb26-22"><a></a>model <span class="op">=</span> SolubilityModel()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="ddc-box">
-<p>Where does the 100 come from? Well, this dataset has lots of elements so we cannot use our size 3 one-hot encodings because we’ll have more than 3 unique elements. We previously only had C, H and O.</p>
-<p>This is a good time to update our smiles2graph function to deal with this.</p>
-<pre><code>def gen_smiles2graph(sml):
-    """Argument for the RD2NX function should be a valid SMILES sequence
-    returns: the graph
-    """
-    m = rdkit.Chem.MolFromSmiles(sml)
-    m = rdkit.Chem.AddHs(m)
-    order_string = {
-        rdkit.Chem.rdchem.BondType.SINGLE: 1,
-        rdkit.Chem.rdchem.BondType.DOUBLE: 2,
-        rdkit.Chem.rdchem.BondType.TRIPLE: 3,
-        rdkit.Chem.rdchem.BondType.AROMATIC: 4,
-    }
-    N = len(list(m.GetAtoms()))
-    nodes = np.zeros((N, 100))
-    for i in m.GetAtoms():
-        nodes[i.GetIdx(), i.GetAtomicNum()] = 1
-
-    adj = np.zeros((N, N))
-    for j in m.GetBonds():
-        u = min(j.GetBeginAtomIdx(), j.GetEndAtomIdx())
-        v = max(j.GetBeginAtomIdx(), j.GetEndAtomIdx())
-        order = j.GetBondType()
-        if order in order_string:
-            order = order_string[order]
-        else:
-            raise Warning("Ignoring bond order" + order)
-        adj[u, v] = 1
-        adj[v, u] = 1
-    adj += np.eye(N)
-    return nodes, adj</code></pre>
+<p>We can also update our smiles2graph function to handle so many elements.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a><span class="kw">def</span> gen_smiles2graph(sml):</span>
+<span id="cb27-2"><a></a>    <span class="co">"""Argument for the RD2NX function should be a valid SMILES sequence</span></span>
+<span id="cb27-3"><a></a><span class="co">    returns: the graph</span></span>
+<span id="cb27-4"><a></a><span class="co">    """</span></span>
+<span id="cb27-5"><a></a>    m <span class="op">=</span> rdkit.Chem.MolFromSmiles(sml)</span>
+<span id="cb27-6"><a></a>    m <span class="op">=</span> rdkit.Chem.AddHs(m)</span>
+<span id="cb27-7"><a></a>    order_string <span class="op">=</span> {</span>
+<span id="cb27-8"><a></a>        rdkit.Chem.rdchem.BondType.SINGLE: <span class="dv">1</span>,</span>
+<span id="cb27-9"><a></a>        rdkit.Chem.rdchem.BondType.DOUBLE: <span class="dv">2</span>,</span>
+<span id="cb27-10"><a></a>        rdkit.Chem.rdchem.BondType.TRIPLE: <span class="dv">3</span>,</span>
+<span id="cb27-11"><a></a>        rdkit.Chem.rdchem.BondType.AROMATIC: <span class="dv">4</span>,</span>
+<span id="cb27-12"><a></a>    }</span>
+<span id="cb27-13"><a></a>    N <span class="op">=</span> <span class="bu">len</span>(<span class="bu">list</span>(m.GetAtoms()))</span>
+<span id="cb27-14"><a></a>    nodes <span class="op">=</span> np.zeros((N, <span class="dv">100</span>))</span>
+<span id="cb27-15"><a></a>    <span class="cf">for</span> i <span class="kw">in</span> m.GetAtoms():</span>
+<span id="cb27-16"><a></a>        nodes[i.GetIdx(), i.GetAtomicNum()] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb27-17"><a></a></span>
+<span id="cb27-18"><a></a>    adj <span class="op">=</span> np.zeros((N, N))</span>
+<span id="cb27-19"><a></a>    <span class="cf">for</span> j <span class="kw">in</span> m.GetBonds():</span>
+<span id="cb27-20"><a></a>        u <span class="op">=</span> <span class="bu">min</span>(j.GetBeginAtomIdx(), j.GetEndAtomIdx())</span>
+<span id="cb27-21"><a></a>        v <span class="op">=</span> <span class="bu">max</span>(j.GetBeginAtomIdx(), j.GetEndAtomIdx())</span>
+<span id="cb27-22"><a></a>        order <span class="op">=</span> j.GetBondType()</span>
+<span id="cb27-23"><a></a>        <span class="cf">if</span> order <span class="kw">in</span> order_string:</span>
+<span id="cb27-24"><a></a>            order <span class="op">=</span> order_string[order]</span>
+<span id="cb27-25"><a></a>        <span class="cf">else</span>:</span>
+<span id="cb27-26"><a></a>            <span class="cf">raise</span> <span class="pp">Warning</span>(<span class="st">"Ignoring bond order"</span> <span class="op">+</span> order)</span>
+<span id="cb27-27"><a></a>        adj[u, v] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb27-28"><a></a>        adj[v, u] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb27-29"><a></a>    adj <span class="op">+=</span> np.eye(N)</span>
+<span id="cb27-30"><a></a>    <span class="cf">return</span> nodes, adj</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
-<div id="tabset-4-4">
-<pre><code>nodes, adj = gen_smiles2graph("CO")
-nodes_t = torch.from_numpy(nodes[np.newaxis, ...]).float()
-adj_mat_t = torch.from_numpy(adj[np.newaxis, ...]).float()
-model(nodes_t, adj_mat_t)</code></pre>
-<p>???It outputs one number! That’s always nice to have. Now we need to do some work to get a trainable dataset. Our dataset is a little bit complex because our features are tuples of tensors( ) so that our dataset is a tuple of tuples: .</p>
+<div id="tabset-6-3">
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">On one molecule</a></li><li><a href="#tabset-4-2">Train/Test/Validation sets</a></li><li><a href="#tabset-4-3">Training</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<ul>
+<li>We can test it on a single molecule:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a></a>nodes, adj <span class="op">=</span> gen_smiles2graph(<span class="st">"CO"</span>)</span>
+<span id="cb28-2"><a></a>nodes_t <span class="op">=</span> torch.from_numpy(nodes[np.newaxis, ...]).<span class="bu">float</span>()</span>
+<span id="cb28-3"><a></a>adj_mat_t <span class="op">=</span> torch.from_numpy(adj[np.newaxis, ...]).<span class="bu">float</span>()</span>
+<span id="cb28-4"><a></a>model(nodes_t, adj_mat_t)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>???It outputs one number! Now we need to do some work to get a trainable dataset. Our dataset is a little bit complex because our features are tuples of tensors( ) so that our dataset is a tuple of tuples: .</p>
 </div>
-<div id="tabset-4-5">
-<p>We use a PyTorch Dataset class, which requires implementing <strong>len</strong> and <strong>getitem</strong> methods:</p>
-<pre><code>from torch.utils.data import Dataset, DataLoader
-
-class SolubilityDataset(Dataset):
-    def __init__(self, data, start_idx=0, end_idx=None):
-        self.data = data
-        self.start_idx = start_idx
-        self.end_idx = end_idx if end_idx is not None else len(data)
-    
-    def __len__(self):
-        return self.end_idx - self.start_idx
-    
-    def __getitem__(self, idx):
-        idx = idx + self.start_idx
-        nodes, adj = gen_smiles2graph(self.data.SMILES[idx])
-        sol = self.data.Solubility[idx]
-        # this time we do not batch - it will be done by dataloader
-        nodes_t = torch.from_numpy(nodes).float()
-        adj_t = torch.from_numpy(adj).float()
-        return (nodes_t, adj_t), torch.tensor(sol, dtype=torch.float32)</code></pre>
-<p>Now we can split our dataset into train, validation, and test sets. I just used 200/200 for testing and validation here.</p>
-<pre><code>test_data = SolubilityDataset(soldata, 0, 200)
-val_data = SolubilityDataset(soldata, 200, 400)
-train_data = SolubilityDataset(soldata, 400)</code></pre>
+<div id="tabset-4-2">
+<ul>
+<li>But to run it on an entire dataset, pytorch offers a <code>Dataset</code> class, which we can implement as follows:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a><span class="im">from</span> torch.utils.data <span class="im">import</span> Dataset, DataLoader</span>
+<span id="cb29-2"><a></a></span>
+<span id="cb29-3"><a></a><span class="kw">class</span> SolubilityDataset(Dataset):</span>
+<span id="cb29-4"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, data, start_idx<span class="op">=</span><span class="dv">0</span>, end_idx<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb29-5"><a></a>        <span class="va">self</span>.data <span class="op">=</span> data</span>
+<span id="cb29-6"><a></a>        <span class="va">self</span>.start_idx <span class="op">=</span> start_idx</span>
+<span id="cb29-7"><a></a>        <span class="va">self</span>.end_idx <span class="op">=</span> end_idx <span class="cf">if</span> end_idx <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="cf">else</span> <span class="bu">len</span>(data)</span>
+<span id="cb29-8"><a></a>    </span>
+<span id="cb29-9"><a></a>    <span class="kw">def</span> <span class="fu">__len__</span>(<span class="va">self</span>):</span>
+<span id="cb29-10"><a></a>        <span class="cf">return</span> <span class="va">self</span>.end_idx <span class="op">-</span> <span class="va">self</span>.start_idx</span>
+<span id="cb29-11"><a></a>    </span>
+<span id="cb29-12"><a></a>    <span class="kw">def</span> <span class="fu">__getitem__</span>(<span class="va">self</span>, idx):</span>
+<span id="cb29-13"><a></a>        idx <span class="op">=</span> idx <span class="op">+</span> <span class="va">self</span>.start_idx</span>
+<span id="cb29-14"><a></a>        nodes, adj <span class="op">=</span> gen_smiles2graph(<span class="va">self</span>.data.SMILES[idx])</span>
+<span id="cb29-15"><a></a>        sol <span class="op">=</span> <span class="va">self</span>.data.Solubility[idx]</span>
+<span id="cb29-16"><a></a>        <span class="co"># this time we do not batch - it will be done by dataloader</span></span>
+<span id="cb29-17"><a></a>        nodes_t <span class="op">=</span> torch.from_numpy(nodes).<span class="bu">float</span>()</span>
+<span id="cb29-18"><a></a>        adj_t <span class="op">=</span> torch.from_numpy(adj).<span class="bu">float</span>()</span>
+<span id="cb29-19"><a></a>        <span class="cf">return</span> (nodes_t, adj_t), torch.tensor(sol, dtype<span class="op">=</span>torch.float32)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Details are beyond our scope but this allows us to split our dataset into train, validation, and test sets. I just used 200/200 for testing and validation here.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a></a>test_data <span class="op">=</span> SolubilityDataset(soldata, <span class="dv">0</span>, <span class="dv">200</span>)</span>
+<span id="cb30-2"><a></a>val_data <span class="op">=</span> SolubilityDataset(soldata, <span class="dv">200</span>, <span class="dv">400</span>)</span>
+<span id="cb30-3"><a></a>train_data <span class="op">=</span> SolubilityDataset(soldata, <span class="dv">400</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="tabset-4-6">
-<pre><code>train_loader = DataLoader(train_data, batch_size=1, shuffle=True)
-val_loader = DataLoader(val_data, batch_size=1, shuffle=False)
-
-optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
-criterion = nn.MSELoss()
-
-history = {"loss": [], "val_loss": []}
-epochs = 10
-
-for epoch in range(epochs):
-    model.train()
-    train_loss = 0
-    for (nodes, adj), y in train_loader:
-        optimizer.zero_grad()
-        y_pred = model(nodes, adj)
-        loss = criterion(y_pred.squeeze(), y)
-        loss.backward()
-        optimizer.step()
-        train_loss += loss.item()
-    
-    model.eval()
-    val_loss = 0
-    with torch.no_grad():
-        for (nodes, adj), y in val_loader:
-            y_pred = model(nodes, adj)
-            loss = criterion(y_pred.squeeze(), y)
-            val_loss += loss.item()
-    
-    train_loss /= len(train_loader)
-    val_loss /= len(val_loader)
-    history["loss"].append(train_loss)
-    history["val_loss"].append(val_loss)
-    print(f"Epoch {epoch+1}/{epochs}, Train Loss: {train_loss:.4f}, Val Loss: {val_loss:.4f}")
-</code></pre>
-</div>
-<div id="tabset-4-7">
-<pre><code>plt.plot(history["loss"], label="training")
-plt.plot(history["val_loss"], label="validation")
-plt.legend()
-plt.xlabel("Epoch")
-plt.ylabel("Loss")
-plt.show()</code></pre>
-<p>Question: Is the data overfit or underfit?</p>
-<p>This model is definitely underfit. One reason is that our batch size is 1. This is a side-effect of making the number of atoms variable, because otherwise we have trouble batching together our data if there are two unknown dimensions. A standard trick is to group together multiple molecules into one graph, but making sure they are disconnected (no bonds between the molecules). That allows you to batch molecules without increasing the rank of your model/data.</p>
-</div>
-<div id="tabset-4-8">
-<pre><code>model.eval()
-yhat = []
-test_y = []
-test_loader = DataLoader(test_data, batch_size=1, shuffle=False)
-with torch.no_grad():
-    for (nodes, adj), y in test_loader:
-        pred = model(nodes, adj)
-        yhat.append(pred.squeeze().item())
-        test_y.append(y.item())
-
-plt.figure()
-plt.plot(test_y, test_y, "-")
-plt.plot(test_y, yhat, ".")
-plt.text(
-    min(test_y) + 1,
-    max(test_y) - 2,
-    f"correlation = {np.corrcoef(test_y, yhat)[0,1]:.3f}",
-)
-plt.text(
-    min(test_y) + 1,
-    max(test_y) - 3,
-    f"loss = {np.sqrt(np.mean((np.array(test_y) - np.array(yhat))**2)):.3f}",
-)
-plt.title("Testing Data")
-plt.show()</code></pre>
+<div id="tabset-4-3">
+<ul>
+<li>With the data separated, we can define an optimizer, and the loss function, and train the model:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a></a>train_loader <span class="op">=</span> DataLoader(train_data, batch_size<span class="op">=</span><span class="dv">1</span>, shuffle<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb31-2"><a></a>val_loader <span class="op">=</span> DataLoader(val_data, batch_size<span class="op">=</span><span class="dv">1</span>, shuffle<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb31-3"><a></a></span>
+<span id="cb31-4"><a></a>optimizer <span class="op">=</span> torch.optim.Adam(model.parameters(), lr<span class="op">=</span><span class="fl">0.001</span>)</span>
+<span id="cb31-5"><a></a>criterion <span class="op">=</span> nn.MSELoss()</span>
+<span id="cb31-6"><a></a></span>
+<span id="cb31-7"><a></a>history <span class="op">=</span> {<span class="st">"loss"</span>: [], <span class="st">"val_loss"</span>: []}</span>
+<span id="cb31-8"><a></a>epochs <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb31-9"><a></a></span>
+<span id="cb31-10"><a></a><span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(epochs):</span>
+<span id="cb31-11"><a></a>    model.train()</span>
+<span id="cb31-12"><a></a>    train_loss <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb31-13"><a></a>    <span class="cf">for</span> (nodes, adj), y <span class="kw">in</span> train_loader:</span>
+<span id="cb31-14"><a></a>        optimizer.zero_grad()</span>
+<span id="cb31-15"><a></a>        y_pred <span class="op">=</span> model(nodes, adj)</span>
+<span id="cb31-16"><a></a>        loss <span class="op">=</span> criterion(y_pred.squeeze(), y)</span>
+<span id="cb31-17"><a></a>        loss.backward()</span>
+<span id="cb31-18"><a></a>        optimizer.step()</span>
+<span id="cb31-19"><a></a>        train_loss <span class="op">+=</span> loss.item()</span>
+<span id="cb31-20"><a></a>    </span>
+<span id="cb31-21"><a></a>    model.<span class="bu">eval</span>()</span>
+<span id="cb31-22"><a></a>    val_loss <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb31-23"><a></a>    <span class="cf">with</span> torch.no_grad():</span>
+<span id="cb31-24"><a></a>        <span class="cf">for</span> (nodes, adj), y <span class="kw">in</span> val_loader:</span>
+<span id="cb31-25"><a></a>            y_pred <span class="op">=</span> model(nodes, adj)</span>
+<span id="cb31-26"><a></a>            loss <span class="op">=</span> criterion(y_pred.squeeze(), y)</span>
+<span id="cb31-27"><a></a>            val_loss <span class="op">+=</span> loss.item()</span>
+<span id="cb31-28"><a></a>    </span>
+<span id="cb31-29"><a></a>    train_loss <span class="op">/=</span> <span class="bu">len</span>(train_loader)</span>
+<span id="cb31-30"><a></a>    val_loss <span class="op">/=</span> <span class="bu">len</span>(val_loader)</span>
+<span id="cb31-31"><a></a>    history[<span class="st">"loss"</span>].append(train_loss)</span>
+<span id="cb31-32"><a></a>    history[<span class="st">"val_loss"</span>].append(val_loss)</span>
+<span id="cb31-33"><a></a>    <span class="bu">print</span>(<span class="ss">f"Epoch </span><span class="sc">{</span>epoch<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>epochs<span class="sc">}</span><span class="ss">, Train Loss: </span><span class="sc">{</span>train_loss<span class="sc">:.4f}</span><span class="ss">, Val Loss: </span><span class="sc">{</span>val_loss<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
+</div>
+<div id="tabset-6-4">
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Loss</a></li><li><a href="#tabset-5-2">Parity Plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<p>Now it’s just a matter of plotting the <code>training</code> and <code>validation</code> loss.</p>
+<div class="ddc">
+<div class="ddc-head" onclick="toggleBox(this)">
+<div class="columns">
+<div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/loss.png" width="550"></p>
+<figcaption><span style="color:#cccccc">Click for code</span></figcaption>
+</figure>
+</div>
+</div><div class="column" style="font-weight:normal">
+<p>This model is definitely underfit, partly because our batch size is 1. That’s because the number of atoms is variable, because otherwise we have trouble batching together our data if there are two unknown dimensions.</p>
+<p><span style="color:teal">Solution?</span> We could group together molecules into one graph, but keeping them disconnected (no bonds between them). That allows batching molecules without increasing the rank of the model/data.</p>
+</div></div>
+</div>
+<div class="ddc-box">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a>plt.plot(history[<span class="st">"loss"</span>], label<span class="op">=</span><span class="st">"training"</span>)</span>
+<span id="cb32-2"><a></a>plt.plot(history[<span class="st">"val_loss"</span>], label<span class="op">=</span><span class="st">"validation"</span>)</span>
+<span id="cb32-3"><a></a>plt.legend()</span>
+<span id="cb32-4"><a></a>plt.xlabel(<span class="st">"Epoch"</span>)</span>
+<span id="cb32-5"><a></a>plt.ylabel(<span class="st">"Loss"</span>)</span>
+<span id="cb32-6"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<div id="tabset-5-2">
+<div class="ddc">
+<div class="ddc-head" onclick="toggleBox(this)">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/parity.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+<div class="ddc-box">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a></a>model.<span class="bu">eval</span>()</span>
+<span id="cb33-2"><a></a>yhat <span class="op">=</span> []</span>
+<span id="cb33-3"><a></a>test_y <span class="op">=</span> []</span>
+<span id="cb33-4"><a></a>test_loader <span class="op">=</span> DataLoader(test_data, batch_size<span class="op">=</span><span class="dv">1</span>, shuffle<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb33-5"><a></a><span class="cf">with</span> torch.no_grad():</span>
+<span id="cb33-6"><a></a>    <span class="cf">for</span> (nodes, adj), y <span class="kw">in</span> test_loader:</span>
+<span id="cb33-7"><a></a>        pred <span class="op">=</span> model(nodes, adj)</span>
+<span id="cb33-8"><a></a>        yhat.append(pred.squeeze().item())</span>
+<span id="cb33-9"><a></a>        test_y.append(y.item())</span>
+<span id="cb33-10"><a></a></span>
+<span id="cb33-11"><a></a>plt.figure()</span>
+<span id="cb33-12"><a></a>plt.plot(test_y, test_y, <span class="st">"-"</span>)</span>
+<span id="cb33-13"><a></a>plt.plot(test_y, yhat, <span class="st">"."</span>)</span>
+<span id="cb33-14"><a></a>plt.text(</span>
+<span id="cb33-15"><a></a>    <span class="bu">min</span>(test_y) <span class="op">+</span> <span class="dv">1</span>,</span>
+<span id="cb33-16"><a></a>    <span class="bu">max</span>(test_y) <span class="op">-</span> <span class="dv">2</span>,</span>
+<span id="cb33-17"><a></a>    <span class="ss">f"correlation = </span><span class="sc">{</span>np<span class="sc">.</span>corrcoef(test_y, yhat)[<span class="dv">0</span>,<span class="dv">1</span>]<span class="sc">:.3f}</span><span class="ss">"</span>,</span>
+<span id="cb33-18"><a></a>)</span>
+<span id="cb33-19"><a></a>plt.text(</span>
+<span id="cb33-20"><a></a>    <span class="bu">min</span>(test_y) <span class="op">+</span> <span class="dv">1</span>,</span>
+<span id="cb33-21"><a></a>    <span class="bu">max</span>(test_y) <span class="op">-</span> <span class="dv">3</span>,</span>
+<span id="cb33-22"><a></a>    <span class="ss">f"loss = </span><span class="sc">{</span>np<span class="sc">.</span>sqrt(np.mean((np.array(test_y) <span class="op">-</span> np.array(yhat))<span class="op">**</span><span class="dv">2</span>))<span class="sc">:.3f}</span><span class="ss">"</span>,</span>
+<span id="cb33-23"><a></a>)</span>
+<span id="cb33-24"><a></a>plt.title(<span class="st">"Testing Data"</span>)</span>
+<span id="cb33-25"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+<ul>
+<li><a href="https://dmol.pub/dl/gnn.html">Graph Neural Networks</a></li>
+</ul>
 </section></section>
-<section id="concluding" class="title-slide slide level1 center">
-<h1>Concluding</h1>
+<section id="concluding-remarks" class="title-slide slide level1 center">
+<h1>Concluding Remarks</h1>
 
 
 </section>
@@ -2054,7 +2114,7 @@ plt.show()</code></pre>
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -2128,13 +2188,14 @@ plt.show()</code></pre>
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
