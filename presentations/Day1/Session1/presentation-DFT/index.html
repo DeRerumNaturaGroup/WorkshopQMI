@@ -201,83 +201,161 @@
     }
   </style>
   <script src="../../../../scripts/jquery-3.6.4.min.js"></script>
+
   <script src="../../../../scripts/LeaderLine/leader-line.min.js"></script>
 
+  
+
   <script>
+
   function toggleBox(header) {
+
       $(header).next('.dd-box, .ddm-box, .ddp-box, .ddc-box').slideToggle("slow");
+
   }
+
   </script> 
 
+  
+
+  
 
   <script>
+
   function toggleDesc(header) {
+
       $(header).next('p').slideToggle("slow");
+
   }
+
   </script>
 
+  
+
+  
 
   <script>
+
       function showContent(clickedElement) {
+
           // Hide all content divs
+
           var allContents = document.getElementsByClassName('content');
+
           for (var i = 0; i < allContents.length; i++) {
+
               allContents[i].style.display = 'none';
+
           }
+
+  
 
           // Deactivate all nav options
+
           var allNavOptions = document.getElementsByClassName('nav-option');
+
           for (var i = 0; i < allNavOptions.length; i++) {
+
               allNavOptions[i].classList.remove('active');
+
           }
 
+  
+
           // Show the selected content
+
           var option = clickedElement.getAttribute('data-option');
+
           document.getElementById(option + 'Content').style.display = 'block';
 
+  
+
           // Activate the selected nav option
+
           clickedElement.classList.add('active');
+
       }
+
   </script>
 
+  
 
+  
+
+  
 
   <script>
+
    Switch between drawing and un-drawing
+
   setInterval(() => {
+
     const borderEl = document.querySelector('#border')
+
     borderEl.classList.toggle('is-undrawn')
+
     borderEl.classList.toggle('is-drawn')
+
   }, 3000)
+
   </script>
 
+  
+
+  
 
   <script>
+
   // ACCORDION
+
   document.addEventListener("click", function(e) {
+
     const header = e.target.closest(".accordion-header");
+
     if (!header) return;
 
+  
+
     const content = header.nextElementSibling;
+
     content.classList.toggle("open");
+
   });
+
   </script>
 
+  
 
+  
+
+  
 
   <script>
+
   // TABLE CELL HIGHLIGHT OPTION
+
   document.addEventListener("DOMContentLoaded", function () {
+
     document.querySelectorAll(".booktabs").forEach(table => {
+
       table.addEventListener("click", function (e) {
+
         const cell = e.target.closest("td");
+
         if (!cell) return;
 
+  
+
         cell.classList.toggle("selected");
+
       });
+
     });
+
   });
+
   </script>
+
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -611,16 +689,28 @@ Electron Density
 <li>Plane-wave + pseudopotential approach — a standard framework for solid-state materials. -Scalable — runs efficiently from laptops to high-performance computing clusters.</li>
 <li>Rich ecosystem — interfaces with tools such as Wannier90, Phonopy, ASE, doped, pymatgen, and AiiDA.</li>
 </ul>
-<div class="fade-in fragment">
-<h3 id="installation">Installation</h3>
+<h3 id="guide-to-qe">Guide to QE</h3>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Instalaltion</a></li><li><a href="#tabset-1-2">Executables</a></li><li><a href="#tabset-1-3">QE Input</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+
 </div>
-<div class="fade-in fragment">
-<h3 id="input-of-qe">Input of QE</h3>
+<div id="tabset-1-2">
+<figure style="text-align:center;">
+<img src="_figs/QEsuite.png" style="width:1536px; height:auto;">
+<figcaption style="font-size:0.7em; margin-top:10px;">
+</figcaption>
+</figure>
+</div>
+<div id="tabset-1-3">
 <figure style="text-align:center;">
 <img src="_figs/inputgen.png" style="width:1536px; height:auto;">
 <figcaption style="font-size:0.7em; margin-top:10px;">
 </figcaption>
 </figure>
+</div>
+</div>
 </div>
 </section>
 <section id="dft-steps" class="slide level2 scrollable">
@@ -960,31 +1050,46 @@ Electron Density
 </div>
 <div id="optiont6Content" class="content">
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Theory</a></li><li><a href="#tabset-1-2">Practical</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Theory</a></li><li><a href="#tabset-2-2">Practical</a></li></ul>
 <div class="tab-content">
-<div id="tabset-1-1">
-<div class="r-stack">
+<div id="tabset-2-1">
+<figure style="text-align:center; width: 0px, height: auto">
+<img src="_figs/bands.png">
+<figcaption style="font-size:0.7em; margin-top:10px;">
+</figcaption>
+</figure>
+<!-- :::{.r-stack}
+
 <div class="fragment" style="position:absolute;">
-<p><img src="_figs/atomstobands.png" width="1500px" height="auto"></p>
+  <img src="_figs/atomstobands.png" width= "1500px" height= "auto">
 </div>
+
 <div class="fragment" style="position:absolute; top:760px; left: 50px">
-<p><img src="_figs/vbcb.png" width="1500px" height="auto"></p>
+  <img src="_figs/vbcb.png" width= "1500px" height= "auto">
 </div>
+
+
 <div class="fragment" style="position:absolute; top:850px; left: 115px">
-<p><img src="_figs/plainrect.png" width="1500px" height="auto"></p>
+  <img src="_figs/plainrect.png" width= "1500px" height= "auto">
 </div>
+
 <div class="fragment" style="position:absolute; top:850px; left: 85px">
-<p><img src="_figs/bandenergies.png" width="1500px" height="auto"></p>
+  <img src="_figs/bandenergies.png" width= "1500px" height= "auto">
 </div>
+
+
+
+
 <div class="fragment" style="position:absolute; top:920px; left: 115px">
-<p><img src="_figs/dummybands.png" width="1500px" height="auto"></p>
+  <img src="_figs/dummybands.png" width= "1500px" height= "auto">
 </div>
+
 <div class="fragment" style="position:absolute; top:990px; left: 135px">
-<p><img src="_figs/hspbands.png" width="1500px" height="auto"></p>
+  <img src="_figs/hspbands.png" width= "1500px" height= "auto">
 </div>
+::: -->
 </div>
-</div>
-<div id="tabset-1-2">
+<div id="tabset-2-2">
 <p><strong>Band Structure Calculation</strong></p>
 <p>It is a 2 step process.</p>
 <ol type="1">
@@ -1050,22 +1155,16 @@ Electron Density
 </div>
 <div id="optiont8Content" class="content">
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Theory</a></li><li><a href="#tabset-2-2">Practical</a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Theory</a></li><li><a href="#tabset-3-2">Practical</a></li></ul>
 <div class="tab-content">
-<div id="tabset-2-1">
-<div class="r-stack">
-<div class="fragment" style="position:absolute;">
-<p><img src="_figs/dummydos.png" width="1500px" height="auto"></p>
+<div id="tabset-3-1">
+<figure style="text-align:center; width: 0px, height: auto">
+<img src="_figs/dummydos.png">
+<figcaption style="font-size:0.7em; margin-top:10px;">
+</figcaption>
+</figure>
 </div>
-<div class="fragment" style="position:absolute; top:770px; left: 40px">
-<p><img src="_figs/plainrect.png" width="1500px" height="1500"></p>
-</div>
-<div class="fragment" style="position:absolute; top:760px; left: 50px">
-<p><img src="_figs/dummypdos.png" width="1500px" height="auto"></p>
-</div>
-</div>
-</div>
-<div id="tabset-2-2">
+<div id="tabset-3-2">
 <p><strong>Density of States (DOS) and Projected DOS (PDOS)</strong></p>
 <div style="color:FireBrick; text-align:left">
 <p>Steps to Follow:</p>
