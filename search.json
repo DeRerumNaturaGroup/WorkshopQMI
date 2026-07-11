@@ -60,7 +60,7 @@
     "href": "presentations/Day1/Session1/presentation-DFT/index.html#software",
     "title": "Quantum Meets AI",
     "section": "Software",
-    "text": "Software\nQuantum Espresso\n\nFree and open source — anyone can install and use it without a license.\nWidely used in academia — trusted by thousands of researchers worldwide.\nExcellent documentation and active community — lots of tutorials and support.\nPlane-wave + pseudopotential approach — a standard framework for solid-state materials. -Scalable — runs efficiently from laptops to high-performance computing clusters.\nRich ecosystem — interfaces with tools such as Wannier90, Phonopy, ASE, doped, pymatgen, and AiiDA.\n\nGuide to QE\n\nInstalaltionExecutablesQE Input"
+    "text": "Software\nQuantum Espresso\n\nFree and open source — anyone can install and use it without a license.\nWidely used in academia — trusted by thousands of researchers worldwide.\nExcellent documentation and active community — lots of tutorials and support.\nPlane-wave + pseudopotential approach — a standard framework for solid-state materials. -Scalable — runs efficiently from laptops to high-performance computing clusters.\nRich ecosystem — interfaces with tools such as Wannier90, Phonopy, ASE, doped, pymatgen, and AiiDA.\n\nGuide to QE\n\nInstalaltionExecutablesQE Input\n\n\n\n\nsed -i 's/\\r$//' install_miniconda.sh\nsed -i 's/\\r$//' setup_qmai.sh\nchmod +x *.sh\n./install_miniconda.sh\nconda install -n base -c conda-forge mamba\n./setup_qmai.sh"
   },
   {
     "objectID": "presentations/Day1/Session1/presentation-DFT/index.html#dft-steps",
@@ -88,7 +88,7 @@
     "href": "presentations/Day1/Session1/presentation-DFT/index.html#some-useful-platforms",
     "title": "Quantum Meets AI",
     "section": "Some Useful Platforms",
-    "text": "Some Useful Platforms\n\n\n🧪 MAterials database\n\n\n\nMaterials Project\nMaterials Cloud\n\n\n\n\n\n▶️ Video Tutorials\n\n\n\nNickel and Copper Channel\n\n\n\n\n\n🕮 Books\n\n\n\nMartin\n\n\n\n\n\n💬Ask Questions\n\n\n\nQE mailing list\nMatter modeling\nQE archives\nResearch Gate\n\n\n\n\n\n\n\n–&gt;"
+    "text": "Some Useful Platforms\n\n\n🧪 Materials Database\n\n\n\nMaterials Project\nMaterials Cloud\n\n\n\n\n\n▶️ Video Tutorials\n\n\n\nFull Volume Life (For VESTA tutorials)\nQuantumNerd (For QE tutorials)\n\n\n\n\n\n🕮 Books\n\n\n\nElectronic Structure Base Theory and Pratical Methods by Richard Martin\nQuantum ESPRESSO Course for Solid-State Physics_ A Hands-On Guide by Riichiro Saito, Nguyen Tuan Hung, Ahmad R.T. Nugraha\nDensity functional theory_ A practical introduction by David Sholl, Janice A Steckel\n\n\n\n\n\n💬Ask Questions\n\n\n\nQE mailing list\nMatter modeling\nQE archives\nResearch Gate\n\n\n\n\n\n💬QE Documentation\n\n\n\npw.x\nbansd.x\nph.x\npp.x\nprojwfc.x"
   },
   {
     "objectID": "presentations/Day1/Session1/presentation-DFT/index.html#section-2",
@@ -208,5 +208,12 @@
     "title": "Quantum Meets AI",
     "section": "Boxes",
     "text": "Boxes\nBox 1\n\n\n\n\n\n1\n\n\nHello, DFT\n\n\n\n\n\n2\n\n\nHello, AI\n\n\n\n\n\n3\n\n\nDFT ❤️ AI"
+  },
+  {
+    "objectID": "presentations/Day1/Session1/presentation-DFT/index.html#the-computational-scientists-mindset",
+    "href": "presentations/Day1/Session1/presentation-DFT/index.html#the-computational-scientists-mindset",
+    "title": "Quantum Meets AI",
+    "section": "The Computational Scientist’s Mindset",
+    "text": "The Computational Scientist’s Mindset\n\n\n\n\nDon’t be afraid of the terminal\n\n\n“The terminal doesn’t know you’re a beginner—it simply follows your instructions.”\n\n\n\n\nErrors are normal\n\n\nEvery computational scientist sees errors every single day.\nAn error is not a failure.\nIt is simply the computer telling you what it didn’t understand.\n\n\n\n\nUnderstand what you paste\n\n\nInstead of memorizing commands, understand what they do, know why you’re running them. This is how everyone learns.\n\n\n\n\nDon’t try to memorize commands\n\n\nInstead, learn the workflow.\n\n\n\n\nAsk questions\n\n\nIf something isn’t clear,\nsomeone else is probably wondering the same thing.\nQuestions help everyone learn.\n\n\n\n\n\nGoogle (and ChatGPT) are part of the workflow\n\n\nNobody remembers every command.\nProfessional researchers constantly search\nLinux commands Python syntax Quantum ESPRESSO errors Slurm errors\nThe important skill isn’t memorizing everything—it’s knowing how to find reliable information.\n\n\n\n\nRead the error before asking for help\n\n\nMany beginners immediately say\n“It doesn’t work.”\nInstead, teach them to say\n“This command produced this error.”\nOften the last few lines of an error message tell you exactly what’s wrong.\n\n\n\n\nInstallation is usually the hardest part\n\n\nRunning calculations is often easier than setting up the software.\nSo don’t become discouraged if installation takes time.\nWe’ve all been there.\n\n\n\n\nKeep experimenting\n\n\nYou won’t break Quantum ESPRESSO by changing\nk-points cutoff energy smearing\nThat’s how computational research is done."
   }
 ]
