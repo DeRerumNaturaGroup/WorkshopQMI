@@ -1,0 +1,32 @@
+###-------------------------------------###
+###        Adsorption Energy            ###
+###-------------------------------------###
+
+ **** E_ads = E_slab+H - E_slab - 1/2E_H2 *****
+
+E_slab    = total enery of the supercell
+E_slab+H  = Total enery of H adsrobed on slab
+E_H2      = Total of H2 molecule
+
+###-------------------------------------###
+###        	Ry to eV            	###
+###-------------------------------------###
+
+     E_ads [eV] = E_ads [Ry] * 13.6057
+
+###-------------------------------------###
+###         	ΔG_H                  	###
+###-------------------------------------###
+
+    ΔG_H = E_ads [eV] + 0.08
+
+
+****************************************************
+
+Details: 
+
+    	ΔG_H = E_ads + ΔE_ZPE - T*ΔS_H
+
+
+   * ΔE_ZPE = Zero- point energy difference of hydrogen between the adsorbed state and the gas phase.
+   * ΔS_H   = Entropy difference of hydrogen between the adsorbed state and the gas phase.

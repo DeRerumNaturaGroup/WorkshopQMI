@@ -1,0 +1,15 @@
+&INPUTPP
+     calculation = 'eps'
+     outdir      = './../tmp/'
+     prefix      = 'MoS2'
+/
+
+&ENERGY_GRID
+    smeartype    = 'gauss'
+    intersmear   = 0.15
+    intrasmear   = 0.0
+    wmin         = 0.0
+    wmax         = 10.0
+    nw           = 500
+    shift        = 0.0
+/

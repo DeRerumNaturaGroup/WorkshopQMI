@@ -1,0 +1,3 @@
+relax_slab    = contains supercell files before relaxation. (Relaxation is to be done here)
+slabs         = contains the supercell scf files after relaxation
+adsorbed_slab = This folder contains 2 sub folders. one with H atom adsorbed before relaxation + Other with H atom adsorbed after relaxation 

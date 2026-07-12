@@ -1,0 +1,31 @@
+&CONTROL
+  calculation   = 'scf',
+  prefix        = 'mo_atom',
+  pseudo_dir    = './../pseudo',
+  outdir        = './../tmp/',
+/
+&SYSTEM
+  ibrav         = 1,
+  a             = 15,
+  nat           = 1,
+  ntyp          = 1,
+  ecutwfc       = 80,
+  ecutrho       = 350,
+  nspin         = 2,
+  tot_magnetization = 6.0,
+  occupations    = 'smearing',
+  smearing      = 'mv',
+  degauss       = 0.005,
+/
+&ELECTRONS
+  conv_thr      = 1.0d-6,
+  mixing_beta   = 0.4,
+/
+
+ATOMIC_SPECIES
+Mo     95.95000  Mo_ONCV_PBE_sr.upf
+
+ATOMIC_POSITIONS (crystal)
+Mo               7.500000        7.500000        7.500000
+
+K_POINTS {gamma}

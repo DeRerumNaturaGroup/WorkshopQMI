@@ -1,0 +1,14 @@
+#=================================================#
+#          Calculating Cohesive Energy            #
+#=================================================#
+
+
+E_cohesive = (E_MoS2 - N_Mo * E_Mo - N_S * E_S) / (N_Mo + N_S)
+
+
+E_MoS2 = Total enery of the MoS2 crystal
+E_Mo   = Single atom energy of Mo atom
+E_S    = Single atom energy of the S atom
+N_Mo and N_S = total number of Mo and S atoms in the structure
+
+#================================================#
