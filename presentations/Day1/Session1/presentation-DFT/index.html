@@ -201,83 +201,161 @@
     }
   </style>
   <script src="../../../../scripts/jquery-3.6.4.min.js"></script>
+
   <script src="../../../../scripts/LeaderLine/leader-line.min.js"></script>
 
+  
+
   <script>
+
   function toggleBox(header) {
+
       $(header).next('.dd-box, .ddm-box, .ddp-box, .ddc-box').slideToggle("slow");
+
   }
+
   </script> 
 
+  
+
+  
 
   <script>
+
   function toggleDesc(header) {
+
       $(header).next('p').slideToggle("slow");
+
   }
+
   </script>
 
+  
+
+  
 
   <script>
+
       function showContent(clickedElement) {
+
           // Hide all content divs
+
           var allContents = document.getElementsByClassName('content');
+
           for (var i = 0; i < allContents.length; i++) {
+
               allContents[i].style.display = 'none';
+
           }
+
+  
 
           // Deactivate all nav options
+
           var allNavOptions = document.getElementsByClassName('nav-option');
+
           for (var i = 0; i < allNavOptions.length; i++) {
+
               allNavOptions[i].classList.remove('active');
+
           }
 
+  
+
           // Show the selected content
+
           var option = clickedElement.getAttribute('data-option');
+
           document.getElementById(option + 'Content').style.display = 'block';
 
+  
+
           // Activate the selected nav option
+
           clickedElement.classList.add('active');
+
       }
+
   </script>
 
+  
 
+  
+
+  
 
   <script>
+
    Switch between drawing and un-drawing
+
   setInterval(() => {
+
     const borderEl = document.querySelector('#border')
+
     borderEl.classList.toggle('is-undrawn')
+
     borderEl.classList.toggle('is-drawn')
+
   }, 3000)
+
   </script>
 
+  
+
+  
 
   <script>
+
   // ACCORDION
+
   document.addEventListener("click", function(e) {
+
     const header = e.target.closest(".accordion-header");
+
     if (!header) return;
 
+  
+
     const content = header.nextElementSibling;
+
     content.classList.toggle("open");
+
   });
+
   </script>
 
+  
 
+  
+
+  
 
   <script>
+
   // TABLE CELL HIGHLIGHT OPTION
+
   document.addEventListener("DOMContentLoaded", function () {
+
     document.querySelectorAll(".booktabs").forEach(table => {
+
       table.addEventListener("click", function (e) {
+
         const cell = e.target.closest("td");
+
         if (!cell) return;
 
+  
+
         cell.classList.toggle("selected");
+
       });
+
     });
+
   });
+
   </script>
+
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -611,16 +689,40 @@ Electron Density
 <li>Plane-wave + pseudopotential approach — a standard framework for solid-state materials. -Scalable — runs efficiently from laptops to high-performance computing clusters.</li>
 <li>Rich ecosystem — interfaces with tools such as Wannier90, Phonopy, ASE, doped, pymatgen, and AiiDA.</li>
 </ul>
-<div class="fade-in fragment">
-<h3 id="installation">Installation</h3>
+<h3 id="guide-to-qe">Guide to QE</h3>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Instalaltion</a></li><li><a href="#tabset-1-2">Executables</a></li><li><a href="#tabset-1-3">QE Input</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="ddc">
+<div class="ddc-head" onclick="toggleBox(this)">
+<div class="sourceCode" id="cb1" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>sed <span class="op">-</span>i <span class="st">'s/</span><span class="ch">\r</span><span class="st">$//'</span> install_miniconda.sh</span>
+<span id="cb1-2"><a></a>sed <span class="op">-</span>i <span class="st">'s/</span><span class="ch">\r</span><span class="st">$//'</span> setup_qmai.sh</span>
+<span id="cb1-3"><a></a>chmod <span class="op">+</span>x <span class="op">*</span>.sh</span>
+<span id="cb1-4"><a></a>.<span class="op">/</span>install_miniconda.sh</span>
+<span id="cb1-5"><a></a>conda install <span class="op">-</span>n base <span class="op">-</span>c conda<span class="op">-</span>forge mamba</span>
+<span id="cb1-6"><a></a>.<span class="op">/</span>setup_qmai.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="fade-in fragment">
-<h3 id="input-of-qe">Input of QE</h3>
+<div class="ddc-box">
+
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<figure style="text-align:center;">
+<img src="_figs/QEsuite.png" style="width:1536px; height:auto;">
+<figcaption style="font-size:0.7em; margin-top:10px;">
+</figcaption>
+</figure>
+</div>
+<div id="tabset-1-3">
 <figure style="text-align:center;">
 <img src="_figs/inputgen.png" style="width:1536px; height:auto;">
 <figcaption style="font-size:0.7em; margin-top:10px;">
 </figcaption>
 </figure>
+</div>
+</div>
 </div>
 </section>
 <section id="dft-steps" class="slide level2 scrollable">
@@ -782,77 +884,77 @@ Electron Density
 <div class="ddm-box" style="font-family:GS_L;border-color:transparent">
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb1" data-startfrom="1" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="op">&amp;</span>CONTROL</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2" data-startfrom="1" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="op">&amp;</span>CONTROL</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box" style="background-color:gray">
-<div class="sourceCode" id="cb2" data-startfrom="1" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>  calculation   <span class="op">=</span> <span class="st">'scf'</span>,          <span class="op">!</span> Perform a <span class="va">self</span><span class="op">-</span>consistent field (SCF) calculation</span>
-<span id="cb2-2"><a></a>  prefix        <span class="op">=</span> <span class="st">'MoS2'</span>,         <span class="op">!</span> Prefix used to name <span class="bu">all</span> output files</span>
-<span id="cb2-3"><a></a>  pseudo_dir    <span class="op">=</span> <span class="st">'./../pseudo'</span>,  <span class="op">!</span> Directory containing pseudopotential (.UPF) files</span>
-<span id="cb2-4"><a></a>  outdir        <span class="op">=</span> <span class="st">'./../tmp/'</span>,    <span class="op">!</span> Directory <span class="cf">for</span> temporary files <span class="kw">and</span> wavefunctions</span>
-<span id="cb2-5"><a></a>  verbosity     <span class="op">=</span> <span class="st">'high'</span>,         <span class="op">!</span> Print detailed information during the calculation</span>
-<span id="cb2-6"><a></a><span class="op">/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb3-2"><a></a>  calculation   <span class="op">=</span> <span class="st">'scf'</span>,          <span class="op">!</span> Perform a <span class="va">self</span><span class="op">-</span>consistent field (SCF) calculation</span>
+<span id="cb3-3"><a></a>  prefix        <span class="op">=</span> <span class="st">'MoS2'</span>,         <span class="op">!</span> Prefix used to name <span class="bu">all</span> output files</span>
+<span id="cb3-4"><a></a>  pseudo_dir    <span class="op">=</span> <span class="st">'./../pseudo'</span>,  <span class="op">!</span> Directory containing pseudopotential (.UPF) files</span>
+<span id="cb3-5"><a></a>  outdir        <span class="op">=</span> <span class="st">'./../tmp/'</span>,    <span class="op">!</span> Directory <span class="cf">for</span> temporary files <span class="kw">and</span> wavefunctions</span>
+<span id="cb3-6"><a></a>  verbosity     <span class="op">=</span> <span class="st">'high'</span>,         <span class="op">!</span> Print detailed information during the calculation</span>
+<span id="cb3-7"><a></a><span class="op">/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb3" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb3-2"><a></a><span class="op">&amp;</span>SYSTEM</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4" data-startfrom="8" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 7;"><span id="cb4-8"><a></a><span class="op">&amp;</span>SYSTEM</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
-<div class="sourceCode" id="cb4" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb4-2"><a></a>  ibrav         <span class="op">=</span> <span class="dv">0</span>,              <span class="op">!</span> Crystal structure <span class="kw">is</span> defined manually using CELL_PARAMETERS</span>
-<span id="cb4-3"><a></a>  nat           <span class="op">=</span> <span class="dv">3</span>,              <span class="op">!</span> Total number of atoms <span class="kw">in</span> the unit cell</span>
-<span id="cb4-4"><a></a>  ntyp          <span class="op">=</span> <span class="dv">2</span>,              <span class="op">!</span> Number of different atomic species (Mo <span class="kw">and</span> S)</span>
-<span id="cb4-5"><a></a>  ecutwfc       <span class="op">=</span> <span class="dv">80</span>,             <span class="op">!</span> Plane<span class="op">-</span>wave kinetic energy cutoff (Ry)</span>
-<span id="cb4-6"><a></a>  ecutrho       <span class="op">=</span> <span class="dv">350</span>,            <span class="op">!</span> Charge density cutoff (Ry), typically <span class="dv">4</span>–<span class="dv">12</span>× ecutwfc</span>
-<span id="cb4-7"><a></a>  occupation    <span class="op">=</span> <span class="st">'smearing'</span>,     <span class="op">!</span> Use smearing <span class="cf">for</span> electronic occupations</span>
-<span id="cb4-8"><a></a>  smearing      <span class="op">=</span> <span class="st">'mv'</span>,           <span class="op">!</span> Marzari<span class="op">-</span>Vanderbilt (cold) smearing method</span>
-<span id="cb4-9"><a></a>  degauss       <span class="op">=</span> <span class="fl">0.005</span>,          <span class="op">!</span> Smearing width (Ry)</span>
-<span id="cb4-10"><a></a><span class="op">/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5" data-startfrom="9" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 8;"><span id="cb5-9"><a></a>  ibrav         <span class="op">=</span> <span class="dv">0</span>,              <span class="op">!</span> Crystal structure <span class="kw">is</span> defined manually using CELL_PARAMETERS</span>
+<span id="cb5-10"><a></a>  nat           <span class="op">=</span> <span class="dv">3</span>,              <span class="op">!</span> Total number of atoms <span class="kw">in</span> the unit cell</span>
+<span id="cb5-11"><a></a>  ntyp          <span class="op">=</span> <span class="dv">2</span>,              <span class="op">!</span> Number of different atomic species (Mo <span class="kw">and</span> S)</span>
+<span id="cb5-12"><a></a>  ecutwfc       <span class="op">=</span> <span class="dv">80</span>,             <span class="op">!</span> Plane<span class="op">-</span>wave kinetic energy cutoff (Ry)</span>
+<span id="cb5-13"><a></a>  ecutrho       <span class="op">=</span> <span class="dv">350</span>,            <span class="op">!</span> Charge density cutoff (Ry), typically <span class="dv">4</span>–<span class="dv">12</span>× ecutwfc</span>
+<span id="cb5-14"><a></a>  occupation    <span class="op">=</span> <span class="st">'smearing'</span>,     <span class="op">!</span> Use smearing <span class="cf">for</span> electronic occupations</span>
+<span id="cb5-15"><a></a>  smearing      <span class="op">=</span> <span class="st">'mv'</span>,           <span class="op">!</span> Marzari<span class="op">-</span>Vanderbilt (cold) smearing method</span>
+<span id="cb5-16"><a></a>  degauss       <span class="op">=</span> <span class="fl">0.005</span>,          <span class="op">!</span> Smearing width (Ry)</span>
+<span id="cb5-17"><a></a><span class="op">/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb5" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb5-2"><a></a><span class="op">&amp;</span>ELECTRONS </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6" data-startfrom="18" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 17;"><span id="cb6-18"><a></a><span class="op">&amp;</span>ELECTRONS </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
-<div class="sourceCode" id="cb6" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb6-2"><a></a>  conv_thr      <span class="op">=</span> <span class="fl">1.0</span><span class="er">d</span><span class="op">-</span><span class="dv">8</span>,         <span class="op">!</span> Convergence threshold <span class="cf">for</span> the SCF cycle</span>
-<span id="cb6-3"><a></a><span class="op">/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7" data-startfrom="19" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 18;"><span id="cb7-19"><a></a>  conv_thr      <span class="op">=</span> <span class="fl">1.0</span><span class="er">d</span><span class="op">-</span><span class="dv">8</span>,         <span class="op">!</span> Convergence threshold <span class="cf">for</span> the SCF cycle</span>
+<span id="cb7-20"><a></a><span class="op">/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb7" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb7-2"><a></a>ATOMIC_SPECIES</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8" data-startfrom="21" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 20;"><span id="cb8-21"><a></a>ATOMIC_SPECIES</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
-<div class="sourceCode" id="cb8" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb8-2"><a></a>Mo     <span class="fl">95.95000</span>  Mo_ONCV_PBE_sr.upf   <span class="op">!</span> Molybdenum: atomic mass <span class="kw">and</span> pseudopotential <span class="bu">file</span></span>
-<span id="cb8-3"><a></a>S      <span class="fl">32.06500</span>  S_ONCV_PBE_sr.upf    <span class="op">!</span> Sulfur: atomic mass <span class="kw">and</span> pseudopotential <span class="bu">file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9" data-startfrom="22" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 21;"><span id="cb9-22"><a></a>Mo     <span class="fl">95.95000</span>  Mo_ONCV_PBE_sr.upf   <span class="op">!</span> Molybdenum: atomic mass <span class="kw">and</span> pseudopotential <span class="bu">file</span></span>
+<span id="cb9-23"><a></a>S      <span class="fl">32.06500</span>  S_ONCV_PBE_sr.upf    <span class="op">!</span> Sulfur: atomic mass <span class="kw">and</span> pseudopotential <span class="bu">file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb9" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb9-2"><a></a>CELL_PARAMETERS {angstrom}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10" data-startfrom="24" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 23;"><span id="cb10-24"><a></a>CELL_PARAMETERS {angstrom}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
-<div class="sourceCode" id="cb10" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb10-2"><a></a>  <span class="fl">3.185300</span>   <span class="fl">0.000000</span>   <span class="fl">0.000000</span>      <span class="op">!</span> First lattice vector (Å)</span>
-<span id="cb10-3"><a></a> <span class="op">-</span><span class="fl">1.592650</span>   <span class="fl">2.758551</span>   <span class="fl">0.000000</span>      <span class="op">!</span> Second lattice vector (Å)</span>
-<span id="cb10-4"><a></a>  <span class="fl">0.000000</span>   <span class="fl">0.000000</span>  <span class="fl">20.270000</span>      <span class="op">!</span> Third lattice vector (Å)<span class="op">;</span> includes vacuum <span class="cf">for</span> <span class="dv">2</span><span class="er">D</span> material</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11" data-startfrom="25" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 24;"><span id="cb11-25"><a></a>  <span class="fl">3.185300</span>   <span class="fl">0.000000</span>   <span class="fl">0.000000</span>      <span class="op">!</span> First lattice vector (Å)</span>
+<span id="cb11-26"><a></a> <span class="op">-</span><span class="fl">1.592650</span>   <span class="fl">2.758551</span>   <span class="fl">0.000000</span>      <span class="op">!</span> Second lattice vector (Å)</span>
+<span id="cb11-27"><a></a>  <span class="fl">0.000000</span>   <span class="fl">0.000000</span>  <span class="fl">20.270000</span>      <span class="op">!</span> Third lattice vector (Å)<span class="op">;</span> includes vacuum <span class="cf">for</span> <span class="dv">2</span><span class="er">D</span> material</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb11" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb11-2"><a></a>ATOMIC_POSITIONS (crystal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12" data-startfrom="28" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 27;"><span id="cb12-28"><a></a>ATOMIC_POSITIONS (crystal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
-<div class="sourceCode" id="cb12" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb12-2"><a></a>Mo  <span class="fl">0.6666664225</span>  <span class="fl">0.3333322010</span>  <span class="fl">0.1678139380</span>   <span class="op">!</span> Fractional coordinates of Mo atom</span>
-<span id="cb12-3"><a></a>S   <span class="fl">0.3333334793</span>  <span class="fl">0.6666672224</span>  <span class="fl">0.0906557537</span>   <span class="op">!</span> Fractional coordinates of first S atom</span>
-<span id="cb12-4"><a></a>S   <span class="fl">0.3333334312</span>  <span class="fl">0.6666672436</span>  <span class="fl">0.2449733083</span>   <span class="op">!</span> Fractional coordinates of second S atom</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13" data-startfrom="29" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 28;"><span id="cb13-29"><a></a>Mo  <span class="fl">0.6666664225</span>  <span class="fl">0.3333322010</span>  <span class="fl">0.1678139380</span>   <span class="op">!</span> Fractional coordinates of Mo atom</span>
+<span id="cb13-30"><a></a>S   <span class="fl">0.3333334793</span>  <span class="fl">0.6666672224</span>  <span class="fl">0.0906557537</span>   <span class="op">!</span> Fractional coordinates of first S atom</span>
+<span id="cb13-31"><a></a>S   <span class="fl">0.3333334312</span>  <span class="fl">0.6666672436</span>  <span class="fl">0.2449733083</span>   <span class="op">!</span> Fractional coordinates of second S atom</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb13" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb13-2"><a></a>K_POINTS (automatic) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14" data-startfrom="32" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 31;"><span id="cb14-32"><a></a>K_POINTS (automatic) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
-<div class="sourceCode" id="cb14" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb14-2"><a></a><span class="dv">6</span> <span class="dv">6</span> <span class="dv">1</span>  <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span>                           <span class="op">!</span> <span class="dv">6</span>×<span class="dv">6</span>×<span class="dv">1</span> Monkhorst<span class="op">-</span>Pack k<span class="op">-</span>point mesh (no shift)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15" data-startfrom="33" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 32;"><span id="cb15-33"><a></a><span class="dv">6</span> <span class="dv">6</span> <span class="dv">1</span>  <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span>                           <span class="op">!</span> <span class="dv">6</span>×<span class="dv">6</span>×<span class="dv">1</span> Monkhorst<span class="op">-</span>Pack k<span class="op">-</span>point mesh (no shift)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -876,7 +978,7 @@ Electron Density
 </ol>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb15" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i ecut.x.<span class="kw">in</span> <span class="op">&gt;</span> ecut.x.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i ecut.x.<span class="kw">in</span> <span class="op">&gt;</span> ecut.x.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
@@ -889,7 +991,7 @@ Electron Density
 </ol>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb16" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i kpoint.x.<span class="kw">in</span> <span class="op">&gt;</span> kpoint.x.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i kpoint.x.<span class="kw">in</span> <span class="op">&gt;</span> kpoint.x.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
@@ -920,7 +1022,7 @@ Electron Density
 </ol>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb17" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i vc<span class="op">-</span>relax.<span class="kw">in</span> <span class="op">&gt;</span> vcrelax.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i vc<span class="op">-</span>relax.<span class="kw">in</span> <span class="op">&gt;</span> vcrelax.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
@@ -945,7 +1047,7 @@ Electron Density
 </ul>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb18" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i scf.<span class="kw">in</span> <span class="op">&gt;</span> scf.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i scf.<span class="kw">in</span> <span class="op">&gt;</span> scf.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
@@ -960,31 +1062,46 @@ Electron Density
 </div>
 <div id="optiont6Content" class="content">
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Theory</a></li><li><a href="#tabset-1-2">Practical</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Theory</a></li><li><a href="#tabset-2-2">Practical</a></li></ul>
 <div class="tab-content">
-<div id="tabset-1-1">
-<div class="r-stack">
+<div id="tabset-2-1">
+<figure style="text-align:center; width: 0px, height: auto">
+<img src="_figs/bands.png">
+<figcaption style="font-size:0.7em; margin-top:10px;">
+</figcaption>
+</figure>
+<!-- :::{.r-stack}
+
 <div class="fragment" style="position:absolute;">
-<p><img src="_figs/atomstobands.png" width="1500px" height="auto"></p>
+  <img src="_figs/atomstobands.png" width= "1500px" height= "auto">
 </div>
+
 <div class="fragment" style="position:absolute; top:760px; left: 50px">
-<p><img src="_figs/vbcb.png" width="1500px" height="auto"></p>
+  <img src="_figs/vbcb.png" width= "1500px" height= "auto">
 </div>
+
+
 <div class="fragment" style="position:absolute; top:850px; left: 115px">
-<p><img src="_figs/plainrect.png" width="1500px" height="auto"></p>
+  <img src="_figs/plainrect.png" width= "1500px" height= "auto">
 </div>
+
 <div class="fragment" style="position:absolute; top:850px; left: 85px">
-<p><img src="_figs/bandenergies.png" width="1500px" height="auto"></p>
+  <img src="_figs/bandenergies.png" width= "1500px" height= "auto">
 </div>
+
+
+
+
 <div class="fragment" style="position:absolute; top:920px; left: 115px">
-<p><img src="_figs/dummybands.png" width="1500px" height="auto"></p>
+  <img src="_figs/dummybands.png" width= "1500px" height= "auto">
 </div>
+
 <div class="fragment" style="position:absolute; top:990px; left: 135px">
-<p><img src="_figs/hspbands.png" width="1500px" height="auto"></p>
+  <img src="_figs/hspbands.png" width= "1500px" height= "auto">
 </div>
+::: -->
 </div>
-</div>
-<div id="tabset-1-2">
+<div id="tabset-2-2">
 <p><strong>Band Structure Calculation</strong></p>
 <p>It is a 2 step process.</p>
 <ol type="1">
@@ -1002,7 +1119,7 @@ Electron Density
 </ol>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb19" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i bands.<span class="kw">in</span> <span class="op">&gt;</span> bands.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i bands.<span class="kw">in</span> <span class="op">&gt;</span> bands.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
@@ -1017,7 +1134,7 @@ Electron Density
 </ol>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb20" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> bands.x <span class="op">-</span>i bandspp.<span class="kw">in</span> <span class="op">&gt;</span> bandspp.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> bands.x <span class="op">-</span>i bandspp.<span class="kw">in</span> <span class="op">&gt;</span> bandspp.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
@@ -1041,7 +1158,7 @@ Electron Density
 </ol>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb21" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i nscf.<span class="kw">in</span> <span class="op">&gt;</span> nscf.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> pw.x <span class="op">-</span>i nscf.<span class="kw">in</span> <span class="op">&gt;</span> nscf.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
@@ -1050,22 +1167,16 @@ Electron Density
 </div>
 <div id="optiont8Content" class="content">
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Theory</a></li><li><a href="#tabset-2-2">Practical</a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Theory</a></li><li><a href="#tabset-3-2">Practical</a></li></ul>
 <div class="tab-content">
-<div id="tabset-2-1">
-<div class="r-stack">
-<div class="fragment" style="position:absolute;">
-<p><img src="_figs/dummydos.png" width="1500px" height="auto"></p>
+<div id="tabset-3-1">
+<figure style="text-align:center; width: 0px, height: auto">
+<img src="_figs/dummydos.png">
+<figcaption style="font-size:0.7em; margin-top:10px;">
+</figcaption>
+</figure>
 </div>
-<div class="fragment" style="position:absolute; top:770px; left: 40px">
-<p><img src="_figs/plainrect.png" width="1500px" height="1500"></p>
-</div>
-<div class="fragment" style="position:absolute; top:760px; left: 50px">
-<p><img src="_figs/dummypdos.png" width="1500px" height="auto"></p>
-</div>
-</div>
-</div>
-<div id="tabset-2-2">
+<div id="tabset-3-2">
 <p><strong>Density of States (DOS) and Projected DOS (PDOS)</strong></p>
 <div style="color:FireBrick; text-align:left">
 <p>Steps to Follow:</p>
@@ -1078,7 +1189,7 @@ Electron Density
 </ol>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb22" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> projwfc.x <span class="op">-</span>i projwfc.<span class="kw">in</span> <span class="op">&gt;</span> projwfc.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> projwfc.x <span class="op">-</span>i projwfc.<span class="kw">in</span> <span class="op">&gt;</span> projwfc.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
@@ -1089,7 +1200,7 @@ Electron Density
 </ul>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb23" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> dos.x <span class="op">-</span>i dos.<span class="kw">in</span> <span class="op">&gt;</span> dos.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24" data-startfrom="" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a>mpirun <span class="op">-</span>np <span class="dv">2</span> dos.x <span class="op">-</span>i dos.<span class="kw">in</span> <span class="op">&gt;</span> dos.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
@@ -1100,11 +1211,105 @@ Electron Density
 </div>
 </div>
 </section>
+<section id="the-computational-scientists-mindset" class="slide level2">
+<h2>The Computational Scientist’s Mindset</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>Don’t be afraid of the terminal</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<p>“The terminal doesn’t know you’re a beginner—it simply follows your instructions.”</p>
+</div>
+</div>
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>Errors are normal</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<p>Every computational scientist sees errors every single day.</p>
+<p>An error is not a failure.</p>
+<p>It is simply the computer telling you what it didn’t understand.</p>
+</div>
+</div>
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>Understand what you paste</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<p>Instead of memorizing commands, understand what they do, know why you’re running them. This is how everyone learns.</p>
+</div>
+</div>
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>Don’t try to memorize commands</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<p>Instead, learn the workflow.</p>
+</div>
+</div>
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>Ask questions</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<p>If something isn’t clear,</p>
+<p>someone else is probably wondering the same thing.</p>
+<p>Questions help everyone learn.</p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>Google (and ChatGPT) are part of the workflow</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<p>Nobody remembers every command.</p>
+<p>Professional researchers constantly search</p>
+<p>Linux commands Python syntax Quantum ESPRESSO errors Slurm errors</p>
+<p>The important skill isn’t memorizing everything—it’s knowing how to find reliable information.</p>
+</div>
+</div>
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>Read the error before asking for help</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<p>Many beginners immediately say</p>
+<p>“It doesn’t work.”</p>
+<p>Instead, teach them to say</p>
+<p>“This command produced this error.”</p>
+<p>Often the last few lines of an error message tell you exactly what’s wrong.</p>
+</div>
+</div>
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>Installation is usually the hardest part</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<p>Running calculations is often easier than setting up the software.</p>
+<p>So don’t become discouraged if installation takes time.</p>
+<p>We’ve all been there.</p>
+</div>
+</div>
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>Keep experimenting</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<p>You won’t break Quantum ESPRESSO by changing</p>
+<p>k-points cutoff energy smearing</p>
+<p>That’s how computational research is done.</p>
+</div>
+</div>
+</div></div>
+</section>
 <section id="some-useful-platforms" class="slide level2 scrollable">
 <h2>Some Useful Platforms</h2>
 <div class="ddm" style="font-size:1em; line-height:0">
 <div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B; background-color: transparent">
-<p>🧪 <strong>MAterials database</strong></p>
+<p>🧪 <strong>Materials Database</strong></p>
 </div>
 <div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
 <ul>
@@ -1119,7 +1324,8 @@ Electron Density
 </div>
 <div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
 <ul>
-<li>Nickel and Copper Channel</li>
+<li>Full Volume Life (For VESTA tutorials)</li>
+<li>QuantumNerd (For QE tutorials)</li>
 </ul>
 </div>
 </div>
@@ -1129,7 +1335,9 @@ Electron Density
 </div>
 <div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
 <ul>
-<li>Martin</li>
+<li>Electronic Structure Base Theory and Pratical Methods by Richard Martin</li>
+<li>Quantum ESPRESSO Course for Solid-State Physics_ A Hands-On Guide by Riichiro Saito, Nguyen Tuan Hung, Ahmad R.T. Nugraha</li>
+<li>Density functional theory_ A practical introduction by David Sholl, Janice A Steckel</li>
 </ul>
 </div>
 </div>
@@ -1143,6 +1351,20 @@ Electron Density
 <li>Matter modeling</li>
 <li>QE archives</li>
 <li>Research Gate</li>
+</ul>
+</div>
+</div>
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B; background-color: transparent">
+<p>💬<strong>QE Documentation</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<ul>
+<li>pw.x</li>
+<li>bansd.x</li>
+<li>ph.x</li>
+<li>pp.x</li>
+<li>projwfc.x</li>
 </ul>
 </div>
 </div>
@@ -1180,13 +1402,6 @@ Electron Density
 <!-- # Methodology
 ## Strategy and Computational Details {.scrollable}
 {{< include subslides/_workflow.qmd >}} -->
-<!-- # References
-
-- RSC Advances (2024). Title of the Paper. RSC Adv. 2024, D4RA01640H. DOI: 10.1039/D4RA01640H
-- Science Advances (2021). Title of the Paper. Sci. Adv. 2021, 7, eabj5881. DOI: 10.1126/sciadv.abj5881
-- Nano Convergence (2024). Title of the Paper. Nano Convergence 2024, 11, 440-456. DOI: 10.1186/s40580-024-00440-7
-- Journal of Materials Chemistry A (2015). Title of the Paper. J. Mater. Chem. A 2015, 3, 5226–5240. DOI: 10.1039/C4TA05226A -->
-<p>–&gt;</p>
 </section>
 <section id="section-2" class="slide level2 center">
 <h2></h2>

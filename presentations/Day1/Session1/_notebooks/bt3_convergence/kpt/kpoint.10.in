@@ -1,0 +1,38 @@
+&CONTROL
+    calculation  = "scf"
+    outdir       = './tmp/',
+    prefix       = 'MoS2',
+    pseudo_dir   = './../../pseudo',
+    restart_mode = "from_scratch"
+/
+
+&SYSTEM
+  ibrav         = 0,
+  nat           = 3,
+  ntyp          = 2,
+  ecutwfc       = 80,
+  ecutrho       = 350,
+  occupations   = 'smearing'
+  smearing      = 'mv'
+  degauss       = 0.005,
+/
+
+&ELECTRONS
+  conv_thr      = 1.0d-8
+/
+
+ATOMIC_SPECIES
+Mo     95.95000  Mo_ONCV_PBE_sr.upf
+S      32.06500  S_ONCV_PBE_sr.upf
+
+CELL_PARAMETERS {angstrom}
+  3.185300   0.000000   0.000000
+ -1.592650   2.758551   0.000000
+  0.000000   0.000000  20.270000
+
+ATOMIC_POSITIONS (crystal)
+Mo               0.6666664225        0.3333322010        0.1678139380
+S                0.3333334793        0.6666672224        0.0906557537
+S                0.3333334312        0.6666672436        0.2449733083
+K_POINTS (automatic)
+10 10 1 0 0 0
