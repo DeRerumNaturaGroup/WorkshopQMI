@@ -1000,7 +1000,7 @@ Electron Density
 <h3 id="plotting">Plotting</h3>
 <ol type="1">
 <li>Make .dat files (column1: ecut/kpoints values, column2: corresponding energy values).</li>
-<li>Plot using the pytho function.</li>
+<li>Plot energy vs ecutwfc/kpoints using the pytho function.</li>
 </ol>
 </div>
 <div id="optiont4Content" class="content">
@@ -1039,8 +1039,8 @@ Electron Density
 <ol type="1">
 <li>Open the <strong>QECalcs</strong> folder.</li>
 <li>Open the <strong>bt5_scf</strong> folder.</li>
-<li>Locate the <strong>scf.in</strong> folder.</li>
-<li>Put the relaxed lattice parameters and atomic positions from relax.out file into scf.in file.</li>
+<li>Locate the <strong>scf.in</strong> file.</li>
+<li>Put the relaxed lattice parameters and atomic positions from vcrelax.out file into scf.in file.</li>
 </ol>
 <ul>
 <li>Run the command on terminal:</li>
@@ -1140,6 +1140,9 @@ Electron Density
 
 </div>
 </div>
+<ol start="6" type="1">
+<li>Plot bands using python code.</li>
+</ol>
 </div>
 </div>
 </div>
@@ -1153,7 +1156,7 @@ Electron Density
 <ol type="1">
 <li>Open the <strong>QECalcs</strong> folder.</li>
 <li>Open the <strong>ep2_nscf</strong> folder.</li>
-<li>Open the <strong>nscf.in</strong> file.</li>
+<li>Open the <strong>nscf.in</strong> file. Make sure to use the denser k-point grid for this calculation.</li>
 <li>Run the calculation on the terminal:</li>
 </ol>
 <div class="ddc">
@@ -1366,6 +1369,57 @@ Electron Density
 <li>pp.x</li>
 <li>projwfc.x</li>
 </ul>
+</div>
+</div>
+</section>
+<section id="glossary-1" class="slide level2 scrollable">
+<h2>Glossary</h2>
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>Reciprocal Space</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<figure style="text-align:center;">
+<img src="_figs/reciprocalspace.png">
+<figcaption style="font-size:0.7em; margin-top:10px;">
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>Bloch’s Theorem</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<figure style="text-align:center;">
+<img src="_figs/Blochtheorem.png">
+<figcaption style="font-size:0.7em; margin-top:10px;">
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>Hohenberg and Kohn Theorem</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<figure style="text-align:center;">
+<img src="_figs/HKtheorem.png">
+<figcaption style="font-size:0.7em; margin-top:10px;">
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="ddm" style="font-size:1em; line-height:0">
+<div class="ddm-head" onclick="toggleBox(this)" style="border-bottom: 5px solid white; text-align: left; font-family:GS_C-B">
+<p><strong>K points and High Symmetry Points</strong></p>
+</div>
+<div class="ddm-box" style="font-family:GS_L;border-color:transparent; background-color: transparent">
+<figure style="text-align:center;">
+<img src="_figs/kptsandhsp.png">
+<figcaption style="font-size:0.7em; margin-top:10px;">
+</figcaption>
+</figure>
 </div>
 </div>
 <!-- # Problem Statement 
