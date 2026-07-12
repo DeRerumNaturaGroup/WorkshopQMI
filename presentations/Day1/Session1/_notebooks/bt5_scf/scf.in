@@ -2,7 +2,7 @@
   calculation   = 'scf',
   prefix        = 'MoS2',
   pseudo_dir    = './../pseudo',
-  outdir        = './../tmp/',
+  outdir        = '../../../tmp/',
   verbosity     = 'high',
 /
 &SYSTEM
@@ -11,9 +11,10 @@
   ntyp          = 2,
   ecutwfc       = 80,
   ecutrho       = 350,
-  occupation    = 'smearing',
+  occupations    = 'smearing',
   smearing      = 'mv',
   degauss       = 0.005,
+ nosym = .true.
 /
 &ELECTRONS
   conv_thr      = 1.0d-8,
@@ -23,15 +24,15 @@ ATOMIC_SPECIES
 Mo     95.95000  Mo_ONCV_PBE_sr.upf
 S      32.06500  S_ONCV_PBE_sr.upf
 
-CELL_PARAMETERS {angstrom}
-  3.185300   0.000000   0.000000
- -1.592650   2.758551   0.000000
-  0.000000   0.000000  20.270000
+CELL_PARAMETERS (angstrom)
+   3.185296918  -0.000000000   0.000000000
+  -1.592648459   2.758548331   0.000000000
+   0.000000000   0.000000000  20.270000000
 
 ATOMIC_POSITIONS (crystal)
-Mo               0.6666664225        0.3333322010        0.1678139380
-S                0.3333334793        0.6666672224        0.0906557537
-S                0.3333334312        0.6666672436        0.2449733083
+Mo               0.6666664225        0.3333322010        0.1678140679
+S                0.3333334793        0.6666672224        0.0906516779
+S                0.3333334312        0.6666672436        0.2449772541
 
 K_POINTS (automatic)
-6 6 1  0 0 0
+12 12 1  0 0 0

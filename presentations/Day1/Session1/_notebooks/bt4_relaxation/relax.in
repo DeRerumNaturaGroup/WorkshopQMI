@@ -2,7 +2,7 @@
   calculation    = 'relax',
   prefix         = 'MoS2',
   pseudo_dir     = './../pseudo',
-  outdir         = './../tmp/',
+  outdir         = '../../../tmp/',
   etot_conv_thr  = 1.0d-6,
   forc_conv_thr  = 1.0d-4,
 /

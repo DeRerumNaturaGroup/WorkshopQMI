@@ -832,7 +832,7 @@ c1ccccn{+1}1CC(=O)O
 </div>
 <div id="option32Content" class="content">
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Molecules I</a></li><li><a href="#tabset-4-2">Molecules II</a></li><li><a href="#tabset-4-3">Working with Molecules</a></li><li><a href="#tabset-4-4">Molecular Descriptors</a></li><li><a href="#tabset-4-5">Stereochemistry</a></li><li><a href="#tabset-4-6">Substructure Search</a></li></ul>
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Molecules I</a></li><li><a href="#tabset-4-2">Working with Molecules</a></li><li><a href="#tabset-4-3">Molecular Descriptors</a></li><li><a href="#tabset-4-4">Stereochemistry</a></li><li><a href="#tabset-4-5">Substructure Search</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1">
 <div class="ddc">
@@ -841,36 +841,28 @@ c1ccccn{+1}1CC(=O)O
 <span id="cb1-2"><a></a>methane</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
-
+<p><img data-src="figs/methane_rdkit.png"></p>
 </div>
 </div>
-<p>Create RDKit molecules for the following molecules:</p>
-<ul>
-<li>Propane</li>
-<li>Ethene</li>
-<li>Cyclohexane</li>
-<li>A molecule of your choice.</li>
-</ul>
-</div>
-<div id="tabset-4-2">
+<p><br></p>
 <div class="ddc">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb2" data-startfrom="2" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 1;"><span id="cb2-2"><a></a><span class="co"># this phenylalanine uses canonical smiles (no stereochemistry information)</span></span>
-<span id="cb2-3"><a></a>phenylalanine <span class="op">=</span> Chem.MolFromSmiles(<span class="st">"C1=CC=C(C=C1)CC(C(=O)O)N"</span>)</span>
-<span id="cb2-4"><a></a>phenylalanine</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2" data-startfrom="1" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="co"># this phenylalanine uses canonical smiles (no stereochemistry information)</span></span>
+<span id="cb2-2"><a></a>phenylalanine <span class="op">=</span> Chem.MolFromSmiles(<span class="st">"C1=CC=C(C=C1)CC(C(=O)O)N"</span>)</span>
+<span id="cb2-3"><a></a>phenylalanine</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
-<p>Insert image…</p>
+<p><img data-src="figs/phenylalanine.png"></p>
 </div>
 </div>
 <p><br></p>
 <div class="ddc" style="margin:0">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb3" data-startfrom="3" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 2;"><span id="cb3-3"><a></a>benzene <span class="op">=</span> Chem.MolFromSmiles(<span class="st">"c1ccccc1"</span>)</span>
-<span id="cb3-4"><a></a>benzene</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3" data-startfrom="1" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>benzene <span class="op">=</span> Chem.MolFromSmiles(<span class="st">"c1ccccc1"</span>)</span>
+<span id="cb3-2"><a></a>benzene</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
-<p>Insert image…</p>
+<p><img data-src="figs/benzene_rdkit.png.png"></p>
 </div>
 </div>
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -882,23 +874,41 @@ c1ccccn{+1}1CC(=O)O
 <p><strong>Task</strong></p>
 </div>
 <div class="callout-content">
-<p>Buckminsterfullerene, with chemical formula C60, is made up entirely of five membered and six-membered rings.</p>
-<p>For this exercise, you should</p>
-<pre><code>Create a molecule representing buckminsterfullerene (Find the SMILES on PubChem).
-
-Perform a substructure search to find the number of benzenes in the molecule.
-
-Calculate the number of aromatic bonds.</code></pre>
+<p>Create RDKit molecules for the following molecules (you can goole the formulas but not the SMILES string.):</p>
+<ul>
+<li>Propane</li>
+<li>Ethene</li>
+<li>Cyclohexane</li>
+<li>A molecule of your choice.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Task</strong></p>
+</div>
+<div class="callout-content">
+<p>Buckminsterfullerene, with chemical formula C60, is made up entirely of five membered and six-membered rings. For this exercise, you should</p>
+<ul>
+<li>Create a molecule representing Buckminsterfullerene <span class="highlightlight">(Find the SMILES on PubChem)</span>.</li>
+<li>Perform a substructure search to find the number of benzenes in the molecule.</li>
+<li>Calculate the number of aromatic bonds.</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
-<div id="tabset-4-3">
+<div id="tabset-4-2">
 <p>RDKit will allow us to access information about our molecule. For example, we can have RDKit tell us the number of atoms in our molecule.</p>
 <div class="ddc" style="margin:0">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb5" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb5-4"><a></a>num_methane <span class="op">=</span> methane.GetNumAtoms()</span>
-<span id="cb5-5"><a></a><span class="bu">print</span>(<span class="ss">f"The number of atoms in methane is </span><span class="sc">{</span>num_methane<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb4-4"><a></a>num_methane <span class="op">=</span> methane.GetNumAtoms()</span>
+<span id="cb4-5"><a></a><span class="bu">print</span>(<span class="ss">f"The number of atoms in methane is </span><span class="sc">{</span>num_methane<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 <ul>
@@ -908,44 +918,42 @@ Calculate the number of aromatic bonds.</code></pre>
 </div>
 </div>
 </div>
-<div id="tabset-4-4">
+<div id="tabset-4-3">
 <p>Molecular descriptors are properties of molecules which can be analyzed using statistical methods to make predictions about molecular properties. You can see a full list of RDKit descriptors or see the module documentation. RDKit has a module which can be used to retrieve and calculate molecular descriptors.</p>
 <p>Some molecular descriptors we might be interested in are:</p>
-<pre><code>Heavy Atom Count (HeavyAtomCount)
-
-Number of hydrogen bond acceptrs (NumHAcceptors)
-
-Number of hydrogen bond donors (NumHDonors)
-
-Number of valence electrons (NumValenceElectrons)
-
-Molecular weight (MolWt)
-
-Number of aromatic rings (NumAromaticRings) And many others!</code></pre>
+<ul>
+<li>Heavy Atom Count (HeavyAtomCount)</li>
+<li>Number of hydrogen bond acceptrs (NumHAcceptors)</li>
+<li>Number of hydrogen bond donors (NumHDonors)</li>
+<li>Number of valence electrons (NumValenceElectrons)</li>
+<li>Molecular weight (MolWt)</li>
+<li>Number of aromatic rings (NumAromaticRings)</li>
+<li>And many others!</li>
+</ul>
 <p>To get the descritpor you’re interested in, the syntax is</p>
 <pre><code>Descriptors.DescriptorName(molecule_variable)</code></pre>
 <div class="ddc" style="margin:0">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb8" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb8-4"><a></a><span class="im">from</span> rdkit.Chem <span class="im">import</span> Descriptors</span>
-<span id="cb8-5"><a></a></span>
-<span id="cb8-6"><a></a><span class="bu">print</span>(<span class="st">"Printing info for benzene:"</span>)</span>
-<span id="cb8-7"><a></a><span class="bu">print</span>(<span class="ss">f"The molecular weight is </span><span class="sc">{</span>Descriptors<span class="sc">.</span>MolWt(benzene)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb8-8"><a></a><span class="bu">print</span>(<span class="ss">f"The number of aromatic rings is </span><span class="sc">{</span>Descriptors<span class="sc">.</span>NumAromaticRings(benzene)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb6-4"><a></a><span class="im">from</span> rdkit.Chem <span class="im">import</span> Descriptors</span>
+<span id="cb6-5"><a></a></span>
+<span id="cb6-6"><a></a><span class="bu">print</span>(<span class="st">"Printing info for benzene:"</span>)</span>
+<span id="cb6-7"><a></a><span class="bu">print</span>(<span class="ss">f"The molecular weight is </span><span class="sc">{</span>Descriptors<span class="sc">.</span>MolWt(benzene)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-8"><a></a><span class="bu">print</span>(<span class="ss">f"The number of aromatic rings is </span><span class="sc">{</span>Descriptors<span class="sc">.</span>NumAromaticRings(benzene)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 
 </div>
 </div>
 </div>
-<div id="tabset-4-5">
+<div id="tabset-4-4">
 
 </div>
-<div id="tabset-4-6">
+<div id="tabset-4-5">
 <p>One amazing thing about RDKit is its ability to do substructure search. You can identify when molecules contain other molecules. Let’s try this with benzene and phenylalanine.</p>
 <div class="ddc" style="margin:0">
 <div class="ddc-head" onclick="toggleBox(this)">
-<div class="sourceCode" id="cb9" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb9-4"><a></a>matches <span class="op">=</span> phenylalanine.GetSubstructMatches(benzene)</span>
-<span id="cb9-5"><a></a>phenylalanine</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7" data-startfrom="4" data-code-line-numbers="1-100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 3;"><span id="cb7-4"><a></a>matches <span class="op">=</span> phenylalanine.GetSubstructMatches(benzene)</span>
+<span id="cb7-5"><a></a>phenylalanine</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="ddc-box">
 <p>The returned value is a tuple of atom indices which represent the match(es) found.</p>

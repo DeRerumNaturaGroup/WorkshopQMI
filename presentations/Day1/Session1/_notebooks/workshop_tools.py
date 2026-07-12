@@ -4,7 +4,7 @@ import re
 import numpy as np
 import matplotlib.pyplot as plt
 
-def analyze_qe(filepath, plot, e_fermi=0.0, x_label="Cutoff Energy (Ry)", xlim=None, ylim=None, k_nodes=None, k_labels=None, save_as=None, c_supercell=None, t_effective=None):
+def analyze_qe(filepath, plot, e_fermi=0.0, x_label="Cutoff Energy (Ry)", xlim=None, ylim=None, k_nodes=None, k_labels=None, save_as=None, gap_window=None, c_supercell=None, t_effective=None):
     """
     The main function students will call.
     Note: For PDOS and Optics, 'filepath' acts as the file prefix (e.g., 'crsi2n4' or 'MoS2').
@@ -13,6 +13,17 @@ def analyze_qe(filepath, plot, e_fermi=0.0, x_label="Cutoff Energy (Ry)", xlim=N
     
     if plot == "bands":
         _plot_qe_bands(filepath, e_fermi, xlim, ylim, k_nodes, k_labels, save_as)
+    elif plot == "bandsnew":
+        _plot_qe_bands_new(
+            filepath=filepath,
+            e_fermi=e_fermi,
+            xlim=xlim,
+            ylim=ylim,
+            k_nodes=k_nodes,
+            k_labels=k_labels,
+            gap_window=gap_window,
+            save_as=save_as
+        )
     elif plot == "dos":
         _plot_qe_dos(filepath, e_fermi, xlim, ylim, save_as)
     elif plot == "pdos":
@@ -356,3 +367,172 @@ def _plot_convergence(filepath, x_label, xlim, ylim, save_as=None):
         print(f"Error: Could not find '{filepath}'.")
     except Exception as e:
         print(f"An error occurred while plotting convergence: {e}")
+        
+        
+        
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+def _plot_qe_bands_new(filepath, e_fermi, xlim=None, ylim=None,
+                   k_nodes=None, k_labels=None,
+                   save_as=None, gap_window=None):
+    """
+    Plot a Quantum ESPRESSO band structure from a .dat.gnu file.
+
+    Parameters
+    ----------
+    filepath : str
+        Path to the QE .dat.gnu file.
+    e_fermi : float
+        Fermi energy (eV).
+    xlim : tuple, optional
+        x-axis limits.
+    ylim : tuple, optional
+        y-axis limits.
+    k_nodes : list, optional
+        High-symmetry k-point positions.
+    k_labels : list, optional
+        Labels for the high-symmetry points.
+    save_as : str, optional
+        Filename to save the figure.
+    gap_window : float, optional
+        Energy window (eV) around the Fermi level used to detect
+        the VBM and CBM. If None, no band-gap detection is performed.
+
+    Returns
+    -------
+    None
+    """
+
+    try:
+        print(f"Loading QE band data from {filepath}...")
+
+        bands = []
+        current_band = []
+
+        # ---------------------------------------------------------
+        # Read QE band file
+        # ---------------------------------------------------------
+        with open(filepath, "r") as f:
+            for line in f:
+                line = line.strip()
+
+                if line:
+                    parts = line.split()
+                    if len(parts) >= 2:
+                        current_band.append([float(parts[0]), float(parts[1])])
+
+                else:
+                    if current_band:
+                        bands.append(np.array(current_band))
+                        current_band = []
+
+        if current_band:
+            bands.append(np.array(current_band))
+
+        # ---------------------------------------------------------
+        # Band-gap detection (optional)
+        # ---------------------------------------------------------
+        if gap_window is not None:
+
+            all_energies = np.concatenate(
+                [band[:, 1] - e_fermi for band in bands]
+            )
+
+            occupied = all_energies[
+                (all_energies <= 0.0) &
+                (all_energies >= -gap_window)
+            ]
+
+            unoccupied = all_energies[
+                (all_energies >= 0.0) &
+                (all_energies <= gap_window)
+            ]
+
+            if len(occupied) > 0 and len(unoccupied) > 0:
+
+                vbm = occupied.max()
+                cbm = unoccupied.min()
+                gap = cbm - vbm
+
+                print("\n==============================")
+                print(" Band Gap Information")
+                print("==============================")
+                print(f"VBM : {vbm:10.6f} eV")
+                print(f"CBM : {cbm:10.6f} eV")
+                print(f"Gap : {gap:10.6f} eV")
+
+            else:
+                print("\nUnable to determine a band gap within "
+                      f"±{gap_window:.2f} eV of the Fermi level.")
+
+        # ---------------------------------------------------------
+        # Plotting
+        # ---------------------------------------------------------
+        plt.figure(figsize=(6, 8), dpi=300)
+
+        for band in bands:
+            k_dist = band[:, 0]
+            energy = band[:, 1] - e_fermi
+            plt.plot(k_dist, energy, color="#004c99", linewidth=2)
+
+        # High-symmetry points
+        if k_nodes is not None:
+            for k in k_nodes:
+                plt.axvline(x=k, color="black", linewidth=0.8)
+
+            if k_labels is not None:
+                plt.xticks(k_nodes, k_labels, fontsize=14)
+
+            plt.xlim(k_nodes[0], k_nodes[-1])
+
+        # Fermi level
+        plt.axhline(y=0,
+                    color="red",
+                    linewidth=1.2,
+                    linestyle="--",
+                    label="Fermi Level")
+
+        # Plot VBM and CBM if a gap was found
+        if gap_window is not None and len(occupied) > 0 and len(unoccupied) > 0:
+            plt.axhline(vbm,
+                        color="green",
+                        linestyle="--",
+                        linewidth=1.5,
+                        label=f"VBM = {vbm:.3f} eV")
+
+            plt.axhline(cbm,
+                        color="purple",
+                        linestyle="--",
+                        linewidth=1.5,
+                        label=f"CBM = {cbm:.3f} eV")
+
+        # Formatting
+        plt.ylabel(r"$E-E_F$ (eV)", fontsize=14)
+        plt.title("Electronic Band Structure", fontsize=16, pad=15)
+
+        plt.tick_params(axis="x", direction="in", length=5)
+        plt.tick_params(axis="y", direction="in", length=5)
+        plt.yticks(fontsize=12)
+
+        if xlim is not None:
+            plt.xlim(xlim)
+
+        if ylim is not None:
+            plt.ylim(ylim)
+
+        plt.tight_layout()
+
+        # Save figure
+        if save_as is not None:
+            plt.savefig(save_as, dpi=300)
+            print(f"\n-> Plot successfully saved as '{save_as}'")
+
+        plt.show()
+
+    except FileNotFoundError:
+        print(f"Error: Could not find '{filepath}'.")
+
+    except Exception as e:
+        print(f"An error occurred while plotting: {e}")
